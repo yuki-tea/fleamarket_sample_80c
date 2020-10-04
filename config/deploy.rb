@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "fleamarket_sample_80c"
-set :repo_url, "git@github.com:yuki-tea/.git"
+set :repo_url, "git@github.com:yuki-tea/fleamarket_sample_80c.git"
 
 set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/chatspace.pem']
