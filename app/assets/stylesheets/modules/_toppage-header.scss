@@ -1,0 +1,552 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.toppage-primary-wrapper  {
+  box-sizing: border-box;
+}
+.toppage-header-wrapper{
+  background-color: rgb(255, 255, 255);
+}
+.-header-top {
+  width: 700px;
+  margin: 0px auto;
+  padding: 8px 0px 0px;
+  font-family: '游ゴシック', 'YuGothic', 'arial unicode ms',sans-serif;
+    &__header {
+      display: flex;
+      &-contents  {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+          &--mercari-logo {
+            width: 150px;
+          }
+    .-header-top__header-search {
+      width: 100%;
+      position: relative;
+      &--search-form {
+          background-color: rgb(245, 245, 245);
+          font-size: 16px;
+          height: 40px;
+          line-height: 1.4em;
+          -webkit-appearance: none;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(204, 204, 204);
+          border-image: initial;
+          border-radius: 4px;
+          outline: none;
+          padding: 0px 50px 0px 10px;
+          transition: all 0.3s ease-out 0s;
+          width: 100%;
+          &:focus{
+            border-color: rgb(0, 149, 238);
+          }
+          }
+        &--search-btn {
+          width: 16px;
+          height: 16px;
+          line-height: 1.4em;
+          cursor: pointer;
+          position: absolute;
+          right: 5px;
+          top: 5px;
+        }
+       }
+    }
+  }
+
+    &__footer {
+      display: flex;
+      -webkit-box-pack: justify;
+      margin-top: 8px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      content: '.';
+
+      &-search  {
+        height: 44px;
+        line-height: 44px;
+        padding-right: 20px;
+        a, a:visited {
+          color: black;
+        }
+        &-categories  {
+          font-weight: 600;
+          a:hover {
+            color: sky_blue;
+          }
+        }
+        &-text  {
+          padding-right: 20px;
+        }
+        &-brand {
+          font-weight: 600;
+          display: inline;
+          a:hover {
+            color: sky_blue;
+          }
+          &--icon {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      &-contents  {
+        justify-content: flex-end;
+        &--new-register-btn {
+          background-color: red;
+          color: white;
+          display: inline;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: red;
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          a, a:visited {
+            color: white;
+            text-decoration: none;
+          }
+        }
+        &--user-login-btn {
+          background-color: white;
+          color: sky_blue;
+          display: inline;
+          font-size: 14px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: skyblue;
+          border-image: initial;
+          border-radius: 4px;
+          padding: 8px 10px;
+          transition: all 0.3s ease-out 0s;
+          margin-left: 8px;
+          &:hover {
+            background-color: skyblue;
+            color: white;
+          }
+          a, a:visited {
+            color: skyblue;
+            transition: 0.3s;
+            &:hover{
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      &-login {
+        font-size: 14px;
+      }
+  }
+}
+
+.-header-top__footer-search-categories  {
+  position: relative;
+}
+ul.-header-top__footer-search  {
+  &-categories li{
+    float: left;
+  }
+  &-categories li a {
+      font-size: 14px;
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 44px;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+ul.-header-top__footer-search-categories:after{
+  height: 0;
+  visibility: hidden;
+  content: '.';
+  display: block;
+  clear: both;
+}
+
+
+li.first-category {
+  box-sizing: border-box;
+  margin: 0;
+  width: 224px;
+  padding: 0 16px;
+  &.active-list {
+    background-color: red;
+    color: white;
+    opacity: 1;
+    }
+  &:hover {
+    background-color: red;
+    color: white;
+    opacity: 1;
+    }
+  }
+  .first-category__wrapper {
+    display: none;
+    font-size: 14px;
+    height: 572px;
+    width: 224px;
+    font-weight: normal;
+    position: absolute;
+    background: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .24);;
+    box-sizing: border-box;
+    left: -40px;
+    top: 44px;
+    z-index: 1000;
+    white-space: nowrap;
+  }
+
+
+.second-category {
+  box-sizing: border-box;
+  color: black;
+  font-size: 14px;
+  margin: 0;
+  width: 224px;
+  padding: 0 16px;
+
+  &:hover {
+    background-color: gray;
+    color: black;
+    opacity: 1;
+    }
+
+  &__wrapper {
+    display: none;
+    height: 572px;
+    line-height: 30px;
+    font-weight: normal;
+    position: absolute;
+    top: 44px;
+    left: 183px;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .24);;
+    box-sizing: border-box;
+    z-index: 1001;
+    overflow: scroll;
+
+  }
+}
+
+.third-category {
+  display: block;
+  width: 320px;  
+  box-sizing: border-box;
+  color: black;
+  font-size: 14px;
+  margin: 0;
+  box-shadow: 0 rgba(0, 0, 0, .24);;
+  left: 224px;
+  padding: 0 10px;
+
+  &:hover {
+    background-color: gray;
+    color: black;
+    opacity: 1;
+  }
+
+  &__wrapper  {
+    display: none;
+    height: 572px;
+    width: 320px;  
+    font-weight: normal;
+    line-height: 30px;
+    background: white;
+    bottom: 0;
+    box-sizing: border-box;
+    position: absolute;
+    left: 407px;
+    top: 44px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .24);;
+    z-index: 1001;
+    overflow: scroll;
+  }
+  }
+
+  .brand {
+    box-sizing: border-box;
+    font-size: 14px;
+    margin: 0;
+    width: 224px;
+    padding: 0 16px;
+  
+    &:hover {
+      background-color: red;
+      color: white;
+      opacity: 1;
+    }
+  
+    &__wrapper {
+      display: none;
+      height: 264px;
+      width: 224px;
+      font-weight: normal;
+      position: absolute;
+      background: white;
+      box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.02);
+      box-sizing: border-box;
+      top: 44px;
+      z-index: 1000;
+    }
+  }
+@media (min-width: 1068px){
+  .-header-top {
+    width: 1020px;
+  }
+}
+
+.-header-top__footer-login-contents  {
+  display: flex;
+  height: 44px;
+  line-height: 32px;
+  flex-direction: row;
+  position: relative;
+  justify-content: baseline;
+  li  {
+    padding: 0 14px;
+    display: inline-block;
+  }
+   a {
+    color: black;
+    text-decoration: none;
+  }
+  span  {
+    margin-left: 10px;
+  }
+  span:hover  {
+    color: skyblue;
+  }
+}
+
+.-header-top__footer-login-content {
+  &--heart-icon {
+    font-size: 20px;
+  }
+  &--bell-icon {
+    font-size: 20px;
+  }
+  &--check-icon {
+    font-size: 20px;
+  }
+  &--mypage-header-user-icon   {
+    border-radius: 50%;
+    display: inline;
+  }
+  &--mypage-pulldown-user-icon  {
+    border-radius: 50%;
+    vertical-align: center;
+  }
+  &--notice-count {
+    position: absolute;
+    top: -2px;
+    left: 168px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: white;
+      & a :hover  {
+        color: white;
+      }
+  }
+  &--todo-list  {
+    position: absolute;
+    top: 44px;
+    left: 140px;
+    z-index: 1;
+    display: none;
+    width: 320px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+    font-size: 14px;
+    background-image: image-url('logo-gray-icon.svg');
+    padding: 160px 0 60px;
+    background-repeat: no-repeat;
+    background-position: center 40px;
+    background-size: 78px 85px;
+    text-align: center;
+    color: #ccc;
+  }
+  &--mypage {
+    a:hover {
+      color: skyblue;
+    }
+  }
+  &--mypage-box  {
+    box-sizing: border-box;
+    background-color: white;
+    position: absolute;
+    top: 44px;
+    right: 0;
+    z-index: 1;
+    width: 320px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    display: none;
+    text-align: center;
+    & a:hover {
+      color: black;
+    }
+  }
+  &--mypage-box-content {
+    background-image: image-url('user-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 320px 80px;
+    padding: 56px 0 0;
+    & figcaption {
+      margin: 8px 0 0;
+      padding: 0 8px;
+      font-size: 16px;
+      display: block;
+      & a :hover {
+        color: black;
+      }
+    }
+    
+  }
+  &--mypage-review-listing  {
+    background: #fff;
+    font-size: 14px;
+    color: #333;
+    display: block;
+    text-align: center;
+  }
+  &--mypage-sales-point {
+    width: 300px;
+    margin: 16px auto;
+    background: #fafafa;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    li  {
+    border-top: 1px solid #eee;
+    padding: 0 8px;
+    line-height: 36px;
+      &:first-child {
+        border: 0;
+      }
+      & .fa-chevron-right {
+        margin-left: 8px;
+        color: #ccc;
+      }
+    }
+    .mypage-list-left, .l-left {
+      float: left;
+    }
+    .mypage-list-right, .l-right {
+      float: right;
+    }
+  }
+
+  // ヘッダーのマイページプルダウン
+  &--mypage-nav-list  {
+    text-align: left;
+    width: 320px;
+    li  {
+      border-top: 1px solid #eee;
+      width: 320px;
+    }
+    &-item {
+      position: relative;
+      display: block;
+      min-height: 48px;
+      padding: 16px;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+      box-sizing: border-box;
+      line-height: 14px;
+      .fa-chevron-right  {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        color: #ccc;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        -webkit-transition: all ease-out .2s;
+        transition: all ease-out .2s;
+      }
+      a:hover {
+        background: #fafafa;
+        text-decoration: none;
+        opacity: 1;
+        .fa-chevron-right{
+          -webkit-transform: translate(4px, -50%);
+          transform: translate(4px, -50%);
+          color: #333;
+        }
+      }
+    }
+
+  }
+  &--notice-lists {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    z-index: 1;
+    display: none;
+    width: 320px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+    font-size: 14px;
+      li  {
+    display: block;
+    min-height: 80px;
+    padding: 16px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    }
+    .notice-mercari-logo  {
+    position: absolute;
+    z-index: 1;
+    }
+
+    .notice-item-text {
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    max-height: 4.4em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    }
+  }
+  &--notice-item-body {
+    margin: 0 40px 0 68px;
+  }
+  &--notice-item {
+    position: relative;
+    & .fa-chevron-right  {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      color: #ccc;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      -webkit-transition: all ease-out .2s;
+      transition: all ease-out .2s;
+      }
+  }
+}
