@@ -4,11 +4,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|text|null: false|
+|nickname|string|null: false|
 |mail|string|null: false, unique: true, add_index|
 |password|string|null: false|
 |password_conf|string|null: false|
-|address|string|null: false|
 |last_name|string|null: false|
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -28,8 +27,8 @@ has_one: credit
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|customer_id|string|null: false, foreign_key: true|
-|card_id|string|null: false, foreign_key: true|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### Association
 belongs_to: user
@@ -40,10 +39,11 @@ belongs_to: user
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|first_name|text|null: false|
-|last_name|text|null: false|
-|last_name_kana|text|null: false|
-|first_name_kana|text|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|last_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|prefecture_id|integer|null: false, foreign_key: true|
 |zip_code|string|null: false|
 |municipality|string|null: false|
 |street_number|string|null: false|
@@ -59,19 +59,23 @@ belongs_to: user
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|image_id|string|null: false|
 |name|string|null: false, add_index|
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |brand|text||
-|price|string|null: false|
+|item_status_id|integer|null: false, foreign_key: true|
+|shipping_charge_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false, foreign_key: true|
+|handling_time_id|integer|null: false, foreign_key: true|
+|price|integer|null: false|
 
 ### Association
 has_many: images
 
 belongs_to: user
 belongs_to: category
-belongs_to: purchase
+
+has_one: purchase
 
 
 
@@ -89,6 +93,7 @@ has_many: items
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
+|item_id|integer|null: false, foreign_key: true|
 
 ### Association
 belongs_to: item
