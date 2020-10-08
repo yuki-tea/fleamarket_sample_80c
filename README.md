@@ -43,7 +43,7 @@ belongs_to: user
 |last_name|string|null: false|
 |last_name_kana|string|null: false|
 |first_name_kana|string|null: false|
-|prefecture_id|integer|null: false, foreign_key: true|
+|prefecture_id|integer|null: false|
 |zip_code|string|null: false|
 |municipality|string|null: false|
 |street_number|string|null: false|
@@ -63,10 +63,10 @@ belongs_to: user
 |description|text|null: false|
 |category_id|integer|null: false, foreign_key: true|
 |brand|text||
-|item_status_id|integer|null: false, foreign_key: true|
-|shipping_charge_id|integer|null: false, foreign_key: true|
-|prefecture_id|integer|null: false, foreign_key: true|
-|handling_time_id|integer|null: false, foreign_key: true|
+|item_status_id|integer|null: false|
+|shipping_charge_id|integer|null: false|
+|prefecture_id|integer|null: false|
+|handling_time_id|integer|null: false|
 |price|integer|null: false|
 
 ### Association
