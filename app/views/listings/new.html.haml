@@ -1,0 +1,17 @@
+
+.image
+  .image_main-text
+    .image_main-text_first
+      出品画像
+    .image_main-text_second
+      必須
+  .image_sub-text
+    最大10枚までアップロードできます
+  = form_with model: @iamge , html: {class: "image_post"}, local: true do |f|
+    .icons
+      = f.label :image, class: 'post-form__image' do
+        %i.far.fa-image
+        = f.file_field :image, class: 'Hidden'
+    .image_post_message
+      ドラッグアンドドロップ
+      %brまたはクリックしてファイルをアップロード

@@ -1,0 +1,67 @@
+.image{
+  width: 760px;
+  background-color: lightgray;
+  padding: 40px;
+  &_main-text{
+    display: flex;
+
+    &_first{
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+    }
+
+    &_second{
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+      padding: 0 3px;
+      margin-left: 8px;
+    }
+  }
+
+  &_sub-text{
+    font-size: 14px;
+    line-height: 1.4em;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+  &_post{
+    width: 100%;
+    height: 100px;
+    background-color: royalblue;
+    border: dashed 1px rgb(204,204 ,204);
+    .icons{
+      height: 24px;
+      width: 24px;
+      .post-form__image{
+        input{
+          display: none;
+        }
+      }
+    }
+    
+    &_message{
+      font-size: 12px;
+      line-height: 1.4em;
+      text-align: center;
+      width: 100%;
+    }
+
+
+
+}
+  
+
+
+
+}
+
+
+
+
+
+
