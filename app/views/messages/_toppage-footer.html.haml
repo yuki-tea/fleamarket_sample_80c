@@ -1,93 +1,58 @@
-%aside.-footer-top
-  .-footer-top__box
-    .-footer-top__downloadlink
-      .-footer-top__label
-        スマホでかんたんフリマアプリ
-      .-footer-top__text
-        今すぐ無料ダウンロード！
-      .-footer-top__linkicon
-        -# = image_tag 'mercari-icon.png',
-        class: '-footer-top__mercariicon',size: '68x68'
-        = link_to '', id: '-appleicon' do
-          -# = image_tag 'app-store.svg',
-          class: '-footer-top__appstoreicon'
-        = link_to '',
-        id: '-googleicon' do
-          -# = image_tag 'google-play.svg', class: '-footer-top__googleicon'
-    .-footer-top__photo
-      -# = image_tag 'download-app-pc-smartphon.png',
-      class: '-footer-top__smartphonimage',size: '300x260'
-%footer.-footer-bottom
-  %nav.-footer-bottom__navmain
-    .-footer-bottom__summary
-      %h2.-footer-bottom__navtitle メルカリについて
-      %ul.-footer-bottom__navlist
-        %li.-footer-bottom__nav
-          -# = link_to '会社概要（運営会社）', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to '採用情報', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'プレスリリース', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to '公式ブログ', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'メルカリロゴ利用ガイドライン', root_path, class: '-footer-bottom__navurl'
-        %a.-footer-bottom__iconbox{ href: '' }
-          %p.-footer-bottom__lefticon
-            %i.fab.fa-twitter.-footer-bottom__icon
-        %a.-footer-bottom__iconbox{ href: '' }
-          %p.-footer-bottom_righticon
-            %i.fab.fa-facebook-square.-footer-bottom__icon
-    .-footer-bottom__guide
-      %h2.-footer-bottom__navtitle ヘルプ&ガイド
-      %ul.-footer-bottom__navlist
-        %li.-footer-bottom__nav
-          -# = link_to 'メルカリガイド', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'らくらくメルカリ便', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'ゆうゆうメルカリ便', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to '大型メルカリ便', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to '車体取引ガイド', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'メルカリあんしん・あんぜん宣言！', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to '偽ブランド品撲滅への取り組み', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'メルカリボックス', root_path, class: '-footer-bottom__navurl'
-    .-footer-bottom__privacy
-      %h2.-footer-bottom__navtitle プライバシーと利用規約
-      .-footer-bottom__termsleft
-        %ul.-footer-bottom__navlist
-          %li.-footer-bottom__nav
+.footer-top
+  .footer-top__box
+    .footer-top__box__downloadlink
+      .footer-top__box__downloadlink__label
+        だれでもかんたん、人生を変えるフリマアプリ
+      .footer-top__box__downloadlink__text
+        今すぐ無料ダウンロード!
+      .footer-top__box__downloadlink__icon
+        = image_tag "app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: 'linkIcon-aBtn'
+        = image_tag "google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: 'linkIcon-gBtn'
+.footer-bottom
+  .footer-bottom__navmain
+    .footer-bottom__summary
+      %h2.footer-bottom__navtitle FURIMAについて
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            会社概要（運営会社）
+            -# = link_to '会社概要（運営会社）', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            プライバシーポリシー
+            -# = link_to '採用情報', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            FURIMA利用規約
+            -# = link_to 'プレスリリース', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            ポイントに関する特約
+            -# = link_to '公式ブログ', root_path, class: '-footer-bottom__navurl'
+        
+    .footer-bottom__sight
+      %h2.footer-bottom__navtitle FURIMAを見る
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            カテゴリー一覧
+            -# = link_to 'メルカリガイド', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            ブランド一覧
+            -# = link_to 'らくらくメルカリ便', root_path, class: '-footer-bottom__navurl'
+   
+    .footer-bottom__guide
+      %h2.footer-bottom__navtitle ヘルプ&ガイド
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            FURIMAガイド
             -# = link_to 'プライバシーポリシー', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
+          %li.footer-bottom__nav
+            FURIMAロゴ利用ガイドライン
             -# = link_to 'メルカリ利用規約', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
+          %li.footer-bottom__nav
+            お知らせ
             -# = link_to '安心スマホサポート制度に関する利用規約', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
-            -# = link_to 'コンプライアンスポリシー', root_path, class: '-footer-bottom__navurl'
-      .-footer-bottom__termsright
-        %ul.-footer-bottom__navlist
-          %li.-footer-bottom__nav
-            -# = link_to '個人データの安全管理に関する基本方針', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
-            -# = link_to '特定商取引に関する表記', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
-            -# = link_to '資金決済法に基づく表記', root_path, class: '-footer-bottom__navurl'
-          %li.-footer-bottom__nav
-            -# = link_to '法令厳守と犯罪抑止のために', root_path, class: '-footer-bottom__navurl'
-    .-footer-bottom__country
-      %h2.-footer-bottom__navtitle 国
-      %ul.-footer-bottom__navlist
-        %li.-footer-bottom__nav
-          -# = link_to '日本', root_path, class: '-footer-bottom__navurl'
-        %li.-footer-bottom__nav
-          -# = link_to 'United States', root_path, class: '-footer-bottom__navurl'
-  .-footer-bottom__license
-    %a.-footer-bottom__mercarilogo{ href: '/' }
-      -# = image_tag 'mercari-logo-white.svg', alt: 'Mercari',
-      class: '-footer-bottom__logo'
-    %span.-footer-bottom__information © 2019 Mercari
+  .footer-bottom__logo
+    %a.footer-bottom__mercarilogo{ href: '/' }
+      = image_tag 'logo-white.png', class: 'footer-bottom__logo'
+  .footer-bottom__lysence 
+    © FURIMA
