@@ -170,8 +170,16 @@ ul {
           width: 180px;
           margin-right: 10px;
         }
+        &__apple:hover{
+          width: 180px;
+          opacity: 0.6;
+        }
         &__google {
           width: 180px;
+        }
+        &__google:hover{
+          width: 180px;
+          opacity: 0.6;
         }
       }
     }
