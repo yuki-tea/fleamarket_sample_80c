@@ -1,17 +1,127 @@
+.exhibition-page
+  .exhibition-page_box
+    .image
+      .image_main-text
+        .image_main-text_first
+          出品画像
+        .image_main-text_second
+          必須
+      .image_sub-text
+        最大10枚までアップロードできます
+      = form_with model: @iamge , html: {class: "image_post_form"}, local: true do |f|
+        .icons
+          = f.label :image, class: 'icons_image' do
+            %i.far.fa-image
+            = f.file_field :image, class: 'Hidden'
+        .image_post_message
+          ドラッグアンドドロップ
+          %brまたはクリックしてファイルをアップロード
 
-.image
-  .image_main-text
-    .image_main-text_first
-      出品画像
-    .image_main-text_second
-      必須
-  .image_sub-text
-    最大10枚までアップロードできます
-  = form_with model: @iamge , html: {class: "image_post"}, local: true do |f|
-    .icons
-      = f.label :image, class: 'post-form__image' do
-        %i.far.fa-image
-        = f.file_field :image, class: 'Hidden'
-    .image_post_message
-      ドラッグアンドドロップ
-      %brまたはクリックしてファイルをアップロード
+    %hr 
+
+    .item
+      .form
+        .form__text
+          %label 商品名
+          %span.form__text__second 必須
+        = form_with model: @item, html: {class: "name__post"}, local: true do |f|
+          = f.text_field :content, class: 'name__post__input', placeholder: ' 40文字まで'
+
+      .describe
+        .form__text
+          %label 商品名
+          %span.form__text__second 必須
+        = form_with model: @item, html: {class: "describe__post"}, local: true do |f|
+          = f.text_area :content, class: 'describe__post__input', placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ)'
+      .word_count 
+        %span 1/1000
+
+    %hr
+
+    .details
+      .details_item
+        商品の詳細
+      .details_category
+        .details_category_first
+          カテゴリー
+        .details_category_second
+          必須
+      .details_select
+        .details_select_first
+          選択してください
+        .details_select_second
+          ▼
+      .details_brand
+        .details_brand_first
+          ブランド
+        .details_brand_second
+          任意
+      = form_with model: @user,  html: {class: "details_post"}, local: true do |f|
+        = f.text_field :brand, class: 'details_post_message' , placeholder: '例) シャネル'
+      .details_status
+        .details_status_first
+          商品の状態
+        .details_status_second
+          必須
+      .details_select
+        .details_select_first
+          選択してください
+        .details_select_second
+          ▼
+
+    %hr 
+      
+    .delivery
+      .delivery_about
+        配送のついて
+      .delivery_burden
+        .delivery_burden_first
+          配送料の負担
+        .delivery_burden_second
+          必須
+      .delivery_select
+        .delivery_select_first
+          選択してください
+        .delivery_select_second
+          ▼
+
+      .delivery_area
+        .delivery_area_first
+          発送元の地域
+        .delivery_area_second
+          必須
+      .delivery_select
+        .delivery_select_first
+          選択してください
+        .delivery_select_second
+          ▼
+
+      .delivery_days
+        .delivery_days_first
+          発送までの日数
+        .delivery_days_second
+          必須
+      .delivery_select
+        .delivery_select_first
+          選択してください
+        .delivery_select_second
+          ▼
+
+    %hr
+
+    .listing
+      .listing_profit
+        .listing_profit_first
+          販売利益
+        .listing_profit_second
+          －
+      .listing_button
+        出品する
+      .listing_draft-button
+        下書きを保存する
+      .listing_return
+        もどる
+      .listing_caution-message
+        禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+
+    %hr
