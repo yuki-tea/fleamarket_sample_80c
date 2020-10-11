@@ -5,9 +5,8 @@
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
 }
+
 .AccountPage__title {
   width: 50%;
   font-size: 14px;
@@ -53,6 +52,7 @@
       font-weight: 400;
     }
   }
+  
   &__input--normal {
     input {
       box-sizing: border-box;
