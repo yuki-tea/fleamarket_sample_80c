@@ -1,150 +1,270 @@
-.toppage-slider
-  %ul.toppage-slider__wrapper
-    %li.toppage-slider__contents-first
-      .toppage-slider__contents-first-content
-        = link_to '' do
-          -# = image_tag 'index-keyvisual01.png',
-          height: '390px', class: 'toppage-slider__contents-first--camp-photo'
-    %li.toppage-slider__contents-second
-      .toppage-slider__contents-second-content
-        -# = image_tag 'top-banner-main-device.png',
-        class: 'toppage-slider__contents-second-content--device-photo', size: '440x390'
-        .toppage-slider__contents-second-content-wrapper
-          .toppage-slider__contents-second-content-wrapper--large-text
-            スマホで かんたん
-            %br
-            フリマアプリ
-          .toppage-slider__contents-second-content-wrapper--small-text
-            メルカリはスマホアプリからすぐに出品できる
-            %br
-            購入時も安心な独自システムのアプリです
-          .toppage-slider__contents-second-content-wrapper-logos
-            = link_to '' do
-              -# = image_tag 'app-store.svg',
-              class: 'toppage-slider__contents-second-content-wrapper--app-logo', size: '170x50'
-            .toppage-slider__contents-second-content-wrapper-space
-            = link_to '' do
-              -# = image_tag 'google-play.svg',
-              id: 'toppage-slider__contents-second-content-wrapper--google-logo',
-              size: '170x50'
-    %li.toppage-slider__contents-third
-      .toppage-slider__contents-first-content
-        = link_to '' do
-          -# = image_tag 'top-banner-super-exhibition-fes-1354ceda34bd06081a45ee755e911f07.jpg',
-          height: '390px', class: 'toppage-slider__contents-first--merpay-photo'
-  .slide-dots-contents
-    %ul.slick-dots
-      %li.slick-active{ role: 'presentation' }
-        %button#slick-slide-control00
-      %li{ role: 'presentation' }
-        %button#slick-slide-control01
-.toppage-main
-  .toppage-main__category-top
-    人気のカテゴリー
-    %ul.toppage-main__list
-      %li.toppage-main__menu
-        .toppage-main__logo
-          レディース
-        .toppage-main__logo
-          メンズ
-        .toppage-main__logo
-          家電・スマホ・カメラ
-        .toppage-main__logo
-          おもちゃ・ホビー・グッズ
-  .toppage-main__category-bottom
-    .toppage-main__category-name
-      .toppage-main__text
-        レディース新着アイテム
-        .toppage-main__item-more
-          -# = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
-          -# - @products.each do |product|
-            .toppage-main__content
-              -# = link_to sell_path(product.id), method: :get do
-                .toppage-main__image
-                  %span
-                    -# = product.jpy
-                  -# = image_tag product.images[0], size: '188x252'
-                  -# -if product.status_id == 4
-                    .pickup-content__red
-                    .pickup-content__sold
-                      SOLD
-                  -# -if product.status_id == 3
-                    .pickup-content__gray
-                    .pickup-content__stop
-                      公開停止
-                .toppage-main__item-name
-                  -# %span= product.name
-    .toppage-main__category-name
-      .toppage-main__text
-        メンズ新着アイテム
-        .toppage-main__item-more
-          -# = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
-          -# - @products.each do |product|
-            .toppage-main__content
-              -# = link_to sell_path(product.id), method: :get do
-                .toppage-main__image
-                  %span
-                    -# = product.jpy
-                  -# = image_tag product.images[0], resize: '188x188'
-                  -# -if product.status_id == 4
-                    .pickup-content__red
-                    .pickup-content__sold
-                      SOLD
-                  -# -if product.status_id == 3
-                    .pickup-content__gray
-                    .pickup-content__stop
-                      公開停止
-                .toppage-main__item-name
-                  -# %span= product.name
-    .toppage-main__category-name
-      .toppage-main__text
-        家電・スマホ・カメラ新着アイテム
-        .toppage-main__item-more
-          -# = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
-          -# - @products.each do |product|
-            .toppage-main__content
-              -# = link_to sell_path(product.id), method: :get do
-                .toppage-main__image
-                  %span
-                    -# = product.jpy
-                  -# = image_tag product.images[0], resize: '188x188'
-                  -# -if product.status_id == 4
-                    .pickup-content__red
-                    .pickup-content__sold
-                      SOLD
-                  -# -if product.status_id == 3
-                    .pickup-content__gray
-                    .pickup-content__stop
-                      公開停止
-                .toppage-main__item-name
-                  -# %span= product.name
-    .toppage-main__category-name
-      .toppage-main__text
-        おもちゃ・ホビー・グッズ新着アイテム
-        .toppage-main__item-more
-          -# = link_to 'もっと見る >', '#', class: 'toppage-main__more-link'
-      .toppage-main__item
-        .toppage-main__contents
-          -# - @products.each do |product|
-            .toppage-main__content
-              -# = link_to sell_path(product.id), method: :get do
-                .toppage-main__image
-                  %span
-                    -# = product.jpy
-                  -# = image_tag product.images[0], resize: '188x188'
-                  -# -if product.status_id == 4
-                    .pickup-content__red
-                    .pickup-content__sold
-                      SOLD
-                  -# -if product.status_id == 3
-                    .pickup-content__gray
-                    .pickup-content__stop
-                      公開停止
-                .toppage-main__item-name
-                  -# %span= product.name
+.main
+  %section.mainVisual
+    .content
+      %h2.content__subtitle
+        %br 人生を変えるフリマアプリ
+      %p.content__text
+        FURIMAはだれでもかんたんに出品・購入できる
+        %br フリマアプリです
+      .content__btn
+        = link_to '#' do
+          = image_tag 'http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', alt: 'apple-logo', class: 'content__btn__apple'
+        = link_to '#' do
+          = image_tag 'http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', alt: 'google-logo', class: 'content__btn__google'
+  %section.topIntroduction
+    %h2.subtitle
+      FURIMAが選ばれる3つの理由
+    %ul.lists
+      %li.list
+        .list__pict
+          %span.number 1
+          = image_tag 'pict-reason-01.jpg', alt: '1pic',
+          class: 'list__pict-n'
+        %h3.list__text
+          %span 3分
+          ですぐに出品
+        %p.list__description
+          スマホで入力するだけで簡単に出品できる！
+      %li.list
+        .list__pict
+          %span.number 2
+          = image_tag 'pict-reason-02.jpg', alt: '2pic',
+          class: 'list__pict-n'
+        %h3.list__text
+          %span シンプル
+          で使いやすい
+        %p.list__description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+      %li.list--last
+        .list__pict
+          %span.number 3
+          = image_tag 'pict-reason-03.jpg', alt: '3pic',
+          class: 'list__pict-n'
+        %h3.list__text
+          手数料
+          %span 業界最安
+        %p.list__description
+          最大3%でお得に出品&購入！
+  %section.topMiddleDl
+    .topMiddleDl__inner
+      %h2.subtitle 
+        会員数日本一位
+      %p.text
+        FURIMAは、フリマアプリで最も人気。
+        %br 出品・購入回数も業界最多です！
+        欲しかったあの商品に出会えるかもしれません。
+      .btn
+        = link_to '#' do
+          = image_tag 'http://furima.tokyo/assets/app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg', alt: 'apple-logo',
+          class: 'btn__apple'
+        = link_to '#' do
+          = image_tag 'http://furima.tokyo/assets/google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg', alt: 'google-logo',
+          class: 'btn__google'
+  %section.topKeyFeatures
+    %h2.head
+      FURIMAの特徴
+    .items
+      %section.item
+        %figure.item__img
+          = image_tag 'icon-01.png', alt: '1pic',
+          class: 'item__img-n'
+        %h3.item__subtitle
+          簡単に売り買いできる
+        %p.item__detail
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+      %section.item
+        %figure.item__img
+          = image_tag 'icon-02.png', alt: '2pic',
+          class: 'item__img-n'
+        %h3.item__subtitle
+          売上金は即日振込みに対応
+        %p.item__detail
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします！
+      %section.item 
+        %figure.item__img
+          = image_tag 'icon-03.png', alt: '3pic',
+          class: 'item__img-n'
+        %h3.item__subtitle
+          様々な支払いに対応
+        %p.item__detail
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+
+  %section.pickupContainer
+    %h2.head
+      ピックアップカテゴリー
+    .productBox
+      .productHead
+        = link_to '#' do
+          %h3.title
+            新規登録商品
+      .productLists
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '1pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                テスト
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG', alt: '2pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                ee
+              .details
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    4
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', alt: '3pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', alt: '4pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product2
+              .details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    0
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '5pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product１
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+  %section.pickupContainer
+    %h2.head
+      ピックアップブランド
+    .productBox
+      .productHead
+        = link_to '#' do
+          %h3.title
+            アーカイバ
+      .productLists
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '1pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                テスト
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG', alt: '2pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                ee
+              .details
+                %ul
+                  %li 1000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    4
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', alt: '3pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product3
+              .details
+                %ul
+                  %li 30000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', alt: '4pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product2
+              .details
+                %ul
+                  %li 20000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    0
+                %p
+                  (税込)
+        .productList
+          = link_to '#' do
+            %figure.productList--img
+              = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '5pic',
+              class: 'productList--img-n'
+            .productList--body
+              %h3.name
+                product１
+              .details
+                %ul
+                  %li 10000円
+                  %li
+                    = icon('fa', 'star', class: 'star')
+                    1
+                %p
+                  (税込)
+

@@ -57,7 +57,7 @@ a {
               transition: all 0.3s ease-out 0s;
               width: 100%;
               &:focus{
-                border-color: blue;
+                border: 2px solid blue;
               }
             }
           }
