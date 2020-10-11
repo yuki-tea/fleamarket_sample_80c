@@ -1,0 +1,23 @@
+.purchaseBtn{
+  width: 120px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+  &__text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 
+    "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  }
+  &__icon{
+    width: 60%;
+    vertical-align: bottom;
+  }
+}
