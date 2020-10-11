@@ -77,6 +77,7 @@
   }
 }
 
+
 .Button {
   display: inline-block;
   height: 50px;
@@ -88,6 +89,50 @@
   border-radius: 2px;
   text-decoration: none;
 }
+
+.FormField_name {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  &__label--normal {
+    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    i {
+      font-size: 11px;
+    }
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+  }
+  
+  &__input--normal {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+}
+
 
 .UserButton {
   margin-top: 20px;

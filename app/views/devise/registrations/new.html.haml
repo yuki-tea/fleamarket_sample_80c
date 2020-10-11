@@ -29,3 +29,50 @@
           = f.password_field :password_confirmation, autocomplete: "off"
       .actions
         = f.submit "Create Account", class: 'Button UserButton'
+ 
+      .AccountPage__title
+        %h3 送付先情報
+      .FormField_name
+        .FormField__label--normal
+          = f.label :名字（氏）
+          .FormField__input--normal
+            = f.text_field :name, autofocus: true
+        .FormField__label--normal
+          = f.label :名前
+          .FormField__input--normal
+            = f.text_field :name, autofocus: true
+      .FormField_name
+        .FormField__label--normal
+          = f.label :名字（ふりがな）
+          .FormField__input--normal
+            = f.text_field :name, autofocus: true
+        .FormField__label--normal
+          = f.label :名前（ふりがな）
+          .FormField__input--normal
+            = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :郵便番号
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :都道府県
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :市区町村
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :番地
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :マンション名（任意）
+        .FormField__input--normal
+          = f.text_field :name, autofocus: true
+      
