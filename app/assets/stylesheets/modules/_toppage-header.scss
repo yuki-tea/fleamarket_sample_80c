@@ -1,0 +1,107 @@
+
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.toppage-primary-wrapper  {
+  box-sizing: border-box;
+}
+.toppage-header-wrapper{
+  background-color: white; 
+}
+
+.header-wrapper {
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  padding: 0 60px;
+  .header-top {
+    max-width: 1040px;
+    min-height: 82px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 15px 0px 0px;
+    &__header {
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      &__furima-logo {
+        width: 140px;
+        margin-right: 30px;
+      }
+
+      &__right-side{
+        display: flex;
+        width: 100%;
+        &__search {
+          display: flex;
+          width: 100%;
+          form{
+            width: 100%;
+            .header-top__header__right-side__search-form {     
+              background-color: white;
+              font-size: 16px;
+              height: 36px;
+              border: 1px solid rgb(118, 118, 118);
+              border-image: initial;
+              border-radius: 2px;
+              outline: none;
+              padding-left: 5px;
+              transition: all 0.3s ease-out 0s;
+              width: 100%;
+              &:focus{
+                border: 2px solid blue;
+              }
+            }
+          }
+          &__box {
+            position: relative;
+            height: 36px;
+            width: 36px;
+            cursor: pointer;
+            background-color: #3CCACE;
+            &-pic {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              height: 19.5px;
+              width: 19.5px;
+            }
+          }         
+        }
+      }
+    }  
+  }
+
+  .header-bottom {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 32px;
+    &__left-side {
+      display: flex;
+      font-size: 14px;
+      &__category-btn {
+        padding-right: 30px;
+      }
+      &__brand-btn {
+        padding-left: 16px;
+      }
+    }
+    &__right-side {
+      display: flex;
+      font-size: 14px;
+      &__new-register-btn {
+        padding-left: 16px;
+      }
+    }
+  }
+}
+
