@@ -177,8 +177,13 @@
 
 
 
-    .hr{
+    .border{
+      border-top-color: #efefef;
+      border-left: 0 solid #efefef;
       border-bottom: 0 solid #efefef;
+      border-right: 0 solid #efefef;
+      border-top-style: solid;
+      margin: 0;
     }
 
 
@@ -396,6 +401,104 @@
         }
       }
     }
+
+    .price{
+      padding: 40px 40px 0px;
+      .price-example{
+        color: rgb(136, 136, 136);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+        margin-bottom: 24px;
+      }
+      &__result{
+        margin-bottom: 40px;
+        &__form{
+          padding: 12px 0px;
+          display: flex;
+          align-items: center;
+          box-sizing: content-box;
+          height: 46px;
+          .price_selling{
+            margin-right: auto;
+            white-space: nowrap;
+            .price_text{
+              color: rgb(51, 51,51);
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 1.4em;
+              display: flex;
+              align-items: center;
+              &__second{
+                font-size: 12px;
+                padding: 0 4px;
+                margin-left: 8px;
+                background-color: #ff0211;
+                color: #fff;
+              }
+            }
+          }
+          .en{
+            font-size: 14px;
+            margin-right: 8px;
+          }
+          .price_fill_in{
+            .price__post{
+              width: 350px;
+              &__input{
+                text-align: right;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-family: inherit;
+                font-size: inherit;
+                height: 48px;
+                margin: 0;
+                outline: none;
+                padding: 0 16px;
+                width: inherit;
+              }
+            }
+          }
+        }
+        .fee{
+          font-size: 14px;
+          padding: 12px 0px;
+          display: flex;
+          align-items: center;
+          height: 46px;
+          &__label{
+            margin-right: auto;
+            white-space: nowrap;
+          }
+          &__value{
+          }
+        }
+        .border{
+          border-top-width: 1px;
+          border-top-color:#efefef ;
+          border-left: 0 solid #efefef;
+          border-bottom: 0 solid #efefef;
+          border-right: 0 solid #efefef;
+          border-top-style: solid;
+          margin: 0;
+        }
+        .profit{
+          font-size: 14px;
+          padding: 12px 0px;
+          padding-bottom: 0px;
+          display: flex;
+          align-items: center;
+          height: 46px;
+          &__label{
+            margin-right: auto;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    
+
 
     .listing{
       width: 760px;

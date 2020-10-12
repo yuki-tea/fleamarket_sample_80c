@@ -1,4 +1,5 @@
 .header
+//ここにヘッダーのビューが入ります
 
 .exhibition-page
   .exhibition-page_box
@@ -19,7 +20,7 @@
           ドラッグアンドドロップ
           %brまたはクリックしてファイルをアップロード
 
-    %hr 
+    %hr.border 
 
     .item
       .form
@@ -38,7 +39,7 @@
       .word_count 
         %span 1/1000
 
-    %hr
+    %hr.border
 
     .details
       .details_item
@@ -71,7 +72,7 @@
         .details_select_second
           ▼
 
-    %hr 
+    %hr.border 
       
     .delivery
       .delivery_about
@@ -109,7 +110,30 @@
         .delivery_select_second
           ▼
 
-    %hr
+    %hr.border
+    
+
+    .price
+      %p.price-example 価格（¥300〜9,999,999）
+      .price__result
+        .price__result__form
+          .price_selling
+            .price_text
+              %label 販売価格
+              %span.price_text__second 必須
+          %span.en ¥
+          .price_fill_in
+            = form_with model: @price, html: {class: "price__post"}, local: true do |f|
+              = f.number_field :price, class: 'price__post__input', placeholder: '0'
+        .fee
+          .fee__label 販売手数料（10％）
+          %span.fee__value —
+        %hr.border
+        .profit
+          .profit__label 販売利益
+          %span.profit-value —
+
+
 
     .listing
       .listing_button
@@ -121,6 +145,7 @@
       .listing_caution-message
         禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
 
-    %hr
+    %hr.border
 
     .footer
+    //ここにフッターのビューが入ります
