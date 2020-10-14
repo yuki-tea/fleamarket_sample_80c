@@ -1,0 +1,28 @@
+%header.header-wrapper
+  .header-top
+    .header-top__header
+      = link_to '#' do
+        = image_tag 'logo.png', alt: 'furima-logo',
+        class: 'header-top__header__furima-logo'
+      .header-top__header__right-side
+        .header-top__header__right-side__search
+          %form{ action: '/', method: 'post' }
+            %input{ name: 'seach', class: 'header-top__header__right-side__search-form',
+            placeholder: 'キーワードから探す' }
+          .header-top__header__right-side__search__box
+            = link_to '#' do
+              = image_tag 'icon-search 1.png', alt: 'search-logo',
+              class: 'header-top__header__right-side__search__box-pic'
+           
+    .header-bottom
+      .header-bottom__left-side
+        .header-bottom__left-side__category-btn
+          = link_to 'カテゴリー'
+        .header-bottom__left-side__brand-btn
+          = link_to 'ブランド'
+      .header-bottom__right-side
+        .header-bottom__right-side__login-btn
+          = link_to 'ログイン'
+        .header-bottom__right-side__new-register-btn
+          = link_to '新規会員登録'
+            

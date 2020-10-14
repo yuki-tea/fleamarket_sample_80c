@@ -1,0 +1,99 @@
+.footer-top{
+  background-image: url(/assets/bg-appBanner-pict.jpg);
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  &__box{
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    &__downloadlink{
+      color: #fff;
+      text-align: center;
+      &__label{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      &__text{
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__icon{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px auto 0;
+        .linkIcon-aBtn{
+          margin-right: 10px;
+          width: 180px;
+        }
+        .linkIcon-aBtn:hover{
+          width: 180px;
+          opacity: 0.6;
+        }
+        .linkIcon-gBtn{
+          width: 180px;
+        }
+        .linkIcon-gBtn:hover{
+          width: 180px;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
+.footer-bottom{
+  padding: 60px 0;
+    color: #fff;
+    background-color: #272727;
+    text-align: center;
+  &__navmain{
+    max-width: 840px;
+    margin: 0 auto;
+    display: flex;
+  }
+  &__navlist{
+    display: block;
+  }
+  &__summary{
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    margin: 0 2% 0 0;
+  }
+  &__sight{
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    margin: 0 2% 0 0;
+  }
+  &__guide{
+    flex-direction: column;
+    width: calc(1 / 3 * 100%);
+    margin: 0 2% 0 0;
+  }
+  &__navtitle{
+    margin: 0 0 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__nav{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 32px;
+  }
+  &__content{
+    display: inline-block;
+    vertical-align: top;
+  }
+  &__logo{
+    max-width: 160px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__lysence{
+    font-size: 14px;
+  }
+}

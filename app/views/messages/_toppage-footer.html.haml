@@ -1,0 +1,58 @@
+.footer-top
+  .footer-top__box
+    .footer-top__box__downloadlink
+      .footer-top__box__downloadlink__label
+        だれでもかんたん、人生を変えるフリマアプリ
+      .footer-top__box__downloadlink__text
+        今すぐ無料ダウンロード!
+      .footer-top__box__downloadlink__icon
+        = image_tag "app-store-9c5e28e8f81bd9912e0ded2f78821e04778a1356c05dc7c7bf1e88614be37c34.svg", class: 'linkIcon-aBtn'
+        = image_tag "google-play-469c63f1269e456307c4dde176b33cc3bbbbf142ac4d7369656010130149db1a.svg", class: 'linkIcon-gBtn'
+.footer-bottom
+  .footer-bottom__navmain
+    .footer-bottom__summary
+      %h2.footer-bottom__navtitle FURIMAについて
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            会社概要（運営会社）
+            -# = link_to '会社概要（運営会社）', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            プライバシーポリシー
+            -# = link_to '採用情報', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            FURIMA利用規約
+            -# = link_to 'プレスリリース', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            ポイントに関する特約
+            -# = link_to '公式ブログ', root_path, class: '-footer-bottom__navurl'
+        
+    .footer-bottom__sight
+      %h2.footer-bottom__navtitle FURIMAを見る
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            カテゴリー一覧
+            -# = link_to 'メルカリガイド', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            ブランド一覧
+            -# = link_to 'らくらくメルカリ便', root_path, class: '-footer-bottom__navurl'
+   
+    .footer-bottom__guide
+      %h2.footer-bottom__navtitle ヘルプ&ガイド
+      .footer-bottom__content
+        %ul.footer-bottom__navlist
+          %li.footer-bottom__nav
+            FURIMAガイド
+            -# = link_to 'プライバシーポリシー', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            FURIMAロゴ利用ガイドライン
+            -# = link_to 'メルカリ利用規約', root_path, class: '-footer-bottom__navurl'
+          %li.footer-bottom__nav
+            お知らせ
+            -# = link_to '安心スマホサポート制度に関する利用規約', root_path, class: '-footer-bottom__navurl'
+  .footer-bottom__logo
+    %a.footer-bottom__mercarilogo{ href: '/' }
+      = image_tag 'logo-white.png', class: 'footer-bottom__logo'
+  .footer-bottom__lysence 
+    © FURIMA
