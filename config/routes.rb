@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :messages, only: :index
   resources :listings, only: :new
   root "messages#index"
