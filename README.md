@@ -4,10 +4,9 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|mail|string|null: false, unique: true, add_index|
-|password|string|null: false|
-|password_conf|string|null: false|
+|name|string|null: false|
+|email|string|null: false, unique: true, add_index|
+||||
 |last_name|string|null: false|
 |first_name|string|null: false|
 |first_name_kana|string|null: false|
