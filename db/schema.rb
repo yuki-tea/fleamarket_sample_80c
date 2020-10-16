@@ -40,10 +40,8 @@ ActiveRecord::Schema.define(version: 2020_10_13_114814) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "nickname", null: false
-    t.string "mail", null: false
-    t.string "password", null: false
-    t.string "password_conf", null: false
+    t.string "name", null: false
+    t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "last_name", null: false
     t.string "first_name", null: false
@@ -55,7 +53,7 @@ ActiveRecord::Schema.define(version: 2020_10_13_114814) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["mail"], name: "index_users_on_mail", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
