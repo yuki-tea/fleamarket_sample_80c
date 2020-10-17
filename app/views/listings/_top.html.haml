@@ -23,14 +23,14 @@
       %label 商品名
       %span.form__text__second 必須
     = form_with model: @item, html: {class: "name__post"}, local: true do |f|
-      = f.text_field :content, class: 'name__post__input', placeholder: ' 40文字まで'
+      = f.text_field :name, class: 'name__post__input', placeholder: ' 40文字まで'
 
   .describe
     .form__text
-      %label 商品名
+      %label 商品の説明
       %span.form__text__second 必須
     = form_with model: @item, html: {class: "describe__post"}, local: true do |f|
-      = f.text_area :content, class: 'describe__post__input', placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ)'
+      = f.text_area :description, class: 'describe__post__input', placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ)'
   .word_count 
     %span 1/1000
 
@@ -44,11 +44,12 @@
       カテゴリー
     .details_category_second
       必須
-  .details_select
+  
+  = form_with model: @item, html: {class: "details_select"}, local: true do |f|
     .details_select_first
-      選択してください
-    .details_select_second
-      ▼
+      = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"}, {class: "details_select"}
+
+
   .details_brand
     .details_brand_first
       ブランド
@@ -61,10 +62,9 @@
       商品の状態
     .details_status_second
       必須
-  .details_select
+       
+  = form_with model: @item, html: {class: "details_select"}, local: true do |f|
     .details_select_first
-      選択してください
-    .details_select_second
-      ▼
+      = f.collection_select :item_status_id,ItemStatus.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
 
 %hr.border 
