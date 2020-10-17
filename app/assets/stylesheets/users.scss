@@ -1,3 +1,71 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// .mypage-contents.clearfix {
+//   width: 1020px;
+//   height: 1252px;
+//   padding: 0 0 40px 0;
+//   display: block;
+//   border-style: solid;
+//   border-width: 0;
+//   margin:0 auto;
+//   margin-top:40px; 
+// }
+.main-p { 
+  width: 700px;
+  height: 1211.840px;
+  background-color: #fff;
+  padding-right: 40px;
+  position: relative;
+  float:right;
+  .profile-form{
+    text-align: center;
+    width: 100%;
+    height: 200px;
+    padding-left: 20px;
+    background-position: center;
+    background-size: cover;
+    .profile-header{
+      font-size: 24px;
+      padding: 8px 24px;
+    }
+    .profile-details {
+      .profile-name{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 8px 24px;
+        background-image: image-url("user-bg.jpg");
+        height:150px;
+      }
+      // .form-group{
+      //   .edit-btn {
+      //     border: 1px solid white;
+      //     padding: 10px 20px;
+      //     color: white;
+      //     background-color: #3CCACE;
+      //   }
+      // }
+    }
+  } 
+  .mypage-nav-list{
+    padding: 16px;
+    &-item {
+      position: relative;
+      display: block;
+      min-height: 48px;
+      padding: 16px;
+      background-color: #ffffff;
+      font-size: 14px;
+    }
+  }
+  
+}
+
+ul {
+  list-style: none;
+}
+
