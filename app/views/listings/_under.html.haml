@@ -8,8 +8,8 @@
       必須
   .delivery_select
     .delivery_select_first
-    = form_with model: @item, html: {class: "price__post"}, local: true do |f|
-      = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name　
+      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
+        = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}
     .delivery_select_second
       ▼
 
@@ -20,7 +20,8 @@
       必須
   .delivery_select
     .delivery_select_first
-      選択してください
+      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
+        = f.collection_select :prefecture, Prefecture.all, :id, :name, {include_blank: "選択してください"}
     .delivery_select_second
       ▼
 
@@ -31,7 +32,8 @@
       必須
   .delivery_select
     .delivery_select_first
-      選択してください
+      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
+        = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}
     .delivery_select_second
       ▼
 
