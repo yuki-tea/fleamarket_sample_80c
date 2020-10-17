@@ -8,7 +8,8 @@
       必須
   .delivery_select
     .delivery_select_first
-      選択してください
+    = form_with model: @item, html: {class: "price__post"}, local: true do |f|
+      = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name　
     .delivery_select_second
       ▼
 
