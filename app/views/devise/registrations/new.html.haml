@@ -70,64 +70,70 @@
           = f.text_field :birthday, autofocus: true, class:"birth"
 
 
-      -# .AccountPage__title__send
-      -#   %h4 送付先情報
-      -# .Customer
-      -#   .FormField_name
-      -#     .FormField__label--name
-      -#       = f.label :名字
-      -#       .FormField__need 必須
-      -#       .FormField__input--name
-      -#         = f.text_field :first_name, autofocus: true
-      -#   .FormField_name      
-      -#     .FormField__label--name
-      -#       = f.label :名前
-      -#       .FormField__need 必須
-      -#       .FormField__input--name
-      -#         = f.text_field :last_name, autofocus: true
-      -# .Customer        
-      -#   .FormField_name
-      -#     .FormField__label--name
-      -#       = f.label :名字（ふりがな）
-      -#       .FormField__need 必須
-      -#       .FormField__input--name
-      -#         = f.text_field :first_name_kana, autofocus: true
-      -#   .FormField_name      
-      -#     .FormField__label--name
-      -#       = f.label :名前（ふりがな）
-      -#       .FormField__need 必須
-      -#       .FormField__input--name
-      -#         = f.text_field :last_name_kana, autofocus: true
-      -# .FormField
-      -#   .FormField__label--normal
-      -#     = f.label :郵便番号
-      -#     .FormField__input--normal-need 必須
-      -#   .FormField__input--normal
-      -#     = f.text_field :name, autofocus: true
-      -# .FormField
-      -#   .FormField__label--normal
-      -#     = f.label :都道府県
-      -#     .FormField__input--normal-need 必須
-      -#   .FormField__input--normal
-      -#     = f.text_field :name, autofocus: true
-      -# .FormField
-      -#   .FormField__label--normal
-      -#     = f.label :市区町村
-      -#     .FormField__input--normal-need 必須
-      -#   .FormField__input--normal
-      -#     = f.text_field :name, autofocus: true
-      -# .FormField
-      -#   .FormField__label--normal
-      -#     = f.label :番地
-      -#     .FormField__input--normal-need 必須
-      -#   .FormField__input--normal
-      -#     = f.text_field :name, autofocus: true
-      -# .FormField
-      -#   .FormField__label--normal
-      -#     = f.label :マンション名（任意）
-      -#     .FormField__input--normal-need 必須
-      -#   .FormField__input--normal
-      -#     = f.text_field :name, autofocus: true
+      .AccountPage__title__send
+        %h4 送付先情報
+      .Customer
+        .FormField_name
+          .FormField__label--name
+            = f.label :名字
+            .FormField__need 必須
+            .FormField__input--name
+              = f.text_field :delivery_first_name, autofocus: true
+        .FormField_name      
+          .FormField__label--name
+            = f.label :名前
+            .FormField__need 必須
+            .FormField__input--name
+              = f.text_field :delivery_last_name, autofocus: true
+      .Customer        
+        .FormField_name
+          .FormField__label--name
+            = f.label :名字（ふりがな）
+            .FormField__need 必須
+            .FormField__input--name
+              = f.text_field :delivery_first_name_kana, autofocus: true
+        .FormField_name      
+          .FormField__label--name
+            = f.label :名前（ふりがな）
+            .FormField__need 必須
+            .FormField__input--name
+              = f.text_field :delivery_last_name_kana, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :郵便番号
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.text_field :zip_code, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :都道府県
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+      .FormField
+        .FormField__label--normal
+          = f.label :市区町村
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.text_field :municipality, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :番地
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.text_field :street_number, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :マンション名（任意）
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.text_field :building_name, autofocus: true
+      .FormField
+        .FormField__label--normal
+          = f.label :電話番号
+          .FormField__input--normal-need 必須
+        .FormField__input--normal
+          = f.text_field :telephone_number, autofocus: true
 
       .actions
         = f.submit "Create Account", class: 'UserButton'
