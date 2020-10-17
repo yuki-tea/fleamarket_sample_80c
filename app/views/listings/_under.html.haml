@@ -9,9 +9,7 @@
   .delivery_select
     .delivery_select_first
       = form_with model: @item, html: {class: "details_select"}, local: true do |f|
-        = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}
-    .delivery_select_second
-      ▼
+        = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "details_select"}
 
   .delivery_area
     .delivery_area_first
@@ -22,8 +20,6 @@
     .delivery_select_first
       = form_with model: @item, html: {class: "details_select"}, local: true do |f|
         = f.collection_select :prefecture, Prefecture.all, :id, :name, {include_blank: "選択してください"}
-    .delivery_select_second
-      ▼
 
   .delivery_days
     .delivery_days_first
@@ -34,8 +30,6 @@
     .delivery_select_first
       = form_with model: @item, html: {class: "details_select"}, local: true do |f|
         = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}
-    .delivery_select_second
-      ▼
 
 %hr.border
 
@@ -50,7 +44,7 @@
           %span.price_text__second 必須
       %span.en ¥
       .price_fill_in
-        = form_with model: @price, html: {class: "price__post"}, local: true do |f|
+        = form_with model: @item, html: {class: "price__post"}, local: true do |f|
           = f.number_field :price, class: 'price__post__input', placeholder: '0'
     .fee
       .fee__label 販売手数料（10％）
