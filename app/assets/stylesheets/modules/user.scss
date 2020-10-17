@@ -67,19 +67,19 @@
       margin-bottom: 8px;
       width: 36px;
     }
-    .field_with_errors {
-      position: relative;
+      .field_with_errors {
+        position: relative;
 
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 5px;
-        background-color: #d65f4c;
-      }
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 5px;
+          background-color: #d65f4c;
+        }
     }
   }
 }
@@ -147,34 +147,34 @@
     }
   }
 }
-  .FormField__input--birth {
-    input {
-      box-sizing: border-box;
-      width: 400px;
-      padding: 10px;
-      letter-spacing: 1px;
-      margin-top: 10px;
-    }
-  }
-
-    .field_with_errors {
-      display: inline-block;
-      color: #d65f4c;
-      font-weight: 400;
-    }
-    .field_with_errors {
-      position: relative;
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: 5px;
-        background-color: #d65f4c;
+    .FormField__input--birth {
+      input {
+        box-sizing: border-box;
+        width: 400px;
+        padding: 10px;
+        letter-spacing: 1px;
+        margin-top: 10px;
       }
+    }
+
+        .field_with_errors {
+          display: inline-block;
+          color: #d65f4c;
+          font-weight: 400;
+        }
+        .field_with_errors {
+          position: relative;
+
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: #d65f4c;
+          }
     }
 
 #error_explanation {
