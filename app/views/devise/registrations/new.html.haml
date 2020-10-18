@@ -1,3 +1,6 @@
+.header
+  = render "messages/toppage-header"
+
 .AccountPage
   .AccountPage__title
     %h2 会員情報登録
@@ -137,3 +140,6 @@
 
       .actions
         = f.submit "Create Account", class: 'UserButton'
+
+.footer
+  = render "messages/toppage-footer"

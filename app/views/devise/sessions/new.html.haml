@@ -1,3 +1,6 @@
+.header
+  = render "messages/toppage-header"
+
 .AccountPage
   .AccountPage__title
     %h2 ログイン
@@ -9,7 +12,7 @@
         .FormField__label--normal
           = f.label :email
         .FormField__input--normal
-          = f.email_field :mail, autofocus: true
+          = f.email_field :email, autofocus: true
         .FormField
           .FormField__label--normal
             = f.label :password
@@ -18,3 +21,6 @@
             = f.password_field :password, autocomplete: "off"
         .actions
           = f.submit "Log in", class: 'Button UserButton'
+
+.footer
+  = render "messages/toppage-footer"
