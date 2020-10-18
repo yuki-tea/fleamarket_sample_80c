@@ -44,10 +44,9 @@
       カテゴリー
     .details_category_second
       必須
-  
+  .details_selec
   = form_with model: @item, html: {class: "details_select"}, local: true do |f|
-    .details_select_first
-      = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"}, {class: "details_select"}
+    = f.collection_select :category_id,Category.all, :id, :name,{include_blank: "選択してください"}, {class: "details_select"}
 
 
   .details_brand

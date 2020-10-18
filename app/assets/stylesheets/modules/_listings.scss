@@ -221,15 +221,13 @@ background-color: white;
 
     &_select{
       height: 48px;
+      width: 100%;
       border: 1px solid rgb(204,204 ,204);
       font-size: 16px; 
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-radius: 5px;
-      &_first{
-
-      }
 
       &_second{
         padding-right: 15px;
