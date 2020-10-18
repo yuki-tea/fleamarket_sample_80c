@@ -6,30 +6,24 @@
       配送料の負担
     .delivery_burden_second
       必須
-  .delivery_select
-    .delivery_select_first
-      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
-        = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "details_select"}
+  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+    = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
   .delivery_area
     .delivery_area_first
       発送元の地域
     .delivery_area_second
       必須
-  .delivery_select
-    .delivery_select_first
-      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
-        = f.collection_select :prefecture, Prefecture.all, :id, :name, {include_blank: "選択してください"}
+  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+    = f.collection_select :prefecture, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
   .delivery_days
     .delivery_days_first
       発送までの日数
     .delivery_days_second
       必須
-  .delivery_select
-    .delivery_select_first
-      = form_with model: @item, html: {class: "details_select"}, local: true do |f|
-        = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}
+  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+    = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
 %hr.border
 
