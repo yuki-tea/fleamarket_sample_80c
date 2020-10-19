@@ -2,6 +2,9 @@
 -# - breadcrumb :profile
 -# = render "layouts/breadcrumbs"
 -# =render "mypage_side"
+.header
+  = render 'messages/toppage-header'
+
 .mypage_a  
   %main.mypage-contents.clearfix
     .main-p
@@ -33,3 +36,5 @@
         %li
           =link_to '#', class: "mypage-nav-list-item" do
             クレジットカード登録/変更
+.footer
+  = render 'messages/toppage-footer'
