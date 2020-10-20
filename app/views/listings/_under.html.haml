@@ -42,12 +42,11 @@
           = f.number_field :price, class: 'price__post__input', placeholder: '0'
     .fee
       .fee__label 販売手数料（10％）
-      %span.fee__value —
+      %input.price_fee{placeholder: "例) 300", type: "number"}
     %hr.border
     .profit
       .profit__label 販売利益
-      %span.profit-value —
-
+      %input.price_profit{placeholder: "例) 300", type: "number"}
 
 
 .listing
