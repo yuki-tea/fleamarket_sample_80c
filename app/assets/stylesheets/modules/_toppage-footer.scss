@@ -1,3 +1,50 @@
+.footer-top{
+  background-image: image-url("bg-appBanner-pict.jpg");
+  padding: 100px 40px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  &__box{
+    height: 100%;
+    width: 100%;
+    margin: 0px auto;
+    &__downloadlink{
+      color: #fff;
+      text-align: center;
+      &__label{
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 1.4;
+      }
+      &__text{
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__icon{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px auto 0;
+        .linkIcon-aBtn{
+          margin-right: 10px;
+          width: 180px;
+        }
+        .linkIcon-aBtn:hover{
+          width: 180px;
+          opacity: 0.6;
+        }
+        .linkIcon-gBtn{
+          width: 180px;
+        }
+        .linkIcon-gBtn:hover{
+          width: 180px;
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}
 .footer-bottom{
   padding: 60px 0;
     color: #fff;
