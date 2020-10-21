@@ -1,0 +1,23 @@
+.logout {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  &-content{
+    width: 250px;
+    background: #3CCACE;
+    text-align: center;
+    padding: 15px;
+    margin-top: 60px;
+    margin-bottom: 120px;
+    .btn{
+      color: #fff;
+      display: block;
+      font-size: 18px;
+      text-decoration: none;
+      margin-bottom: 5px;
+      font-family: "Source Sans Pro", Helvetica, Arial, 
+      "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+    }
+    
+  }
+}
