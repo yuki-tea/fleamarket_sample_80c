@@ -21,7 +21,9 @@
     .item-image {
       width: 300px;
       height: 300px;
-      margin: 50px;
+      margin: 50px 0 50px 170px;
+      border: 1px solid;
+      border-color: lightgrey;
     }
     .item-payment {
       display: flex;
@@ -29,6 +31,7 @@
       margin-top: 20px;
       .item-payment-credit{
         font-size: 12px;
+        margin-left: 20px;
       }
       .item-shipping-change {
         font-size: 13px;
@@ -42,6 +45,7 @@
       margin-top: 20px;
       .item-address-change {
         font-size: 12px;
+        margin-left: 20px;
       }
       .item-shipping-change {
         font-size: 13px;
@@ -51,10 +55,16 @@
     .item-price {
       display: flex;
       margin: 30px 0;
+      .item-price-total {
+        h3 {
+        font-weight: bold;
+        margin: 20px 0 0 50px;
+        }
+      }
       .item-price-detail {
         h2 {
           font-weight: bold;
-          margin-left: 200px;
+          margin-left: 150px;
           font-size: 30px;
         }
       }
