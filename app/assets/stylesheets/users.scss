@@ -2,20 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-// .mypage-contents.clearfix {
-//   width: 1020px;
-//   height: 1252px;
-//   padding: 0 0 40px 0;
-//   display: block;
-//   border-style: solid;
-//   border-width: 0;
-//   margin:0 auto;
-//   margin-top:40px; 
-// }
-
 .main-p { 
+  img {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+  }
   width: 700px;
   background-color: #fff;
   padding-right: 40px;
@@ -38,25 +31,21 @@
         margin: 0 auto;
         font-size: 16px;
         padding: 8px 24px;
-        background-image: image-url("user-bg.jpg");
         height:150px;
         
-        .user-img {
-          cursor: pointer;
+        &__img {
+          // background-image: image-url("https://static.mercdn.net/images/member_photo_noimage_thumb.png");
+          // cursor: pointer;
+          // height: 50px;
+          // width: 50px;
+          // border-radius: 30px;
+          
         }
         
           
       }
-    }  
-      // .form-group{
-      //   .edit-btn {
-      //     border: 1px solid white;
-      //     padding: 10px 20px;
-      //     color: white;
-      //     background-color: #3CCACE;
-      //   }
-      // }
-    }
+    } 
+  }
   } 
   .mypage-nav-list{
     padding: 16px;
@@ -75,5 +64,3 @@
 ul {
   list-style: none;
 }
-
-
