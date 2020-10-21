@@ -1,13 +1,15 @@
 .defalt-container {
-  height: 3835px;
+  height: 850px;
   width: 1440px;
   background-color: lightgrey;
   .item-box-container {
     background-color: white;
-    margin: 40px 370px 0;
+    margin: 0 370px 0;
     padding: 24px 40px 40px;
     width: 700px;
-    height: 983px;
+    height: 850px;
+    border: 2px solid;
+    border-color: lightgrey;
     .item-name {
       width: 620px;
       height: 33px;
