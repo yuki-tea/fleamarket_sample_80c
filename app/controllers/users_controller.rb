@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
   def profile   
   end
 
@@ -28,16 +29,13 @@ class UsersController < ApplicationController
       render :profile
     end
   end
+
   def ready
   end
 
   private
   def address_params
     params.require(:address).permit(:postal_code, :prefecture, :city, :address, :apartment)
-  end
-
-  def set_user
-    # @user = User.find(params[:id])
   end
 
   def set_address
@@ -47,6 +45,7 @@ class UsersController < ApplicationController
   def set_category
     @parents = Category.all.order("id ASC").limit(13)
   end
+
   def user_params
     params.require(:user).permit(
       :nickname,
