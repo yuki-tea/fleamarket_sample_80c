@@ -1,0 +1,80 @@
+.defalt-container {
+  height: 3835px;
+  width: 1440px;
+  background-color: lightgrey;
+  .item-box-container {
+    background-color: white;
+    margin: 40px 370px 0;
+    padding: 24px 40px 40px;
+    width: 700px;
+    height: 983px;
+    .item-name {
+      width: 620px;
+      height: 33px;
+      font-size: 25px;
+      flex-direction: column;
+      h2 {
+        font-weight: bold;
+        padding-left: 230px;
+      }
+    }
+    .item-image {
+      width: 300px;
+      height: 300px;
+      margin: 50px;
+    }
+    .item-payment {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .item-payment-credit{
+        font-size: 12px;
+      }
+      .item-shipping-change {
+        font-size: 13px;
+        color: lightblue;
+      }
+    }
+
+    .item-address {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      .item-address-change {
+        font-size: 12px;
+      }
+      .item-shipping-change {
+        font-size: 13px;
+        color: lightblue;
+      }
+    }
+    .item-price {
+      display: flex;
+      margin: 30px 0;
+      .item-price-detail {
+        h2 {
+          font-weight: bold;
+          margin-left: 200px;
+          font-size: 30px;
+        }
+      }
+    }
+
+    .item-buy-btn {
+      width: 620px;
+      height: 60px;
+      background-color: red;
+      display: flex;
+      .item-buy-detail {
+        justify-content: center;
+        h4 {
+        width: 620px;
+        height: 60px;
+        color: white;
+        font-size: 20px;
+        margin: 15px 0 0 270px;
+        }
+      }
+    }
+  }
+}
