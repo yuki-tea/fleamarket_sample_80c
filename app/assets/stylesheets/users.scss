@@ -40,7 +40,14 @@
         padding: 8px 24px;
         background-image: image-url("user-bg.jpg");
         height:150px;
+        
+        .user-img {
+          cursor: pointer;
+        }
+        
+          
       }
+    }  
       // .form-group{
       //   .edit-btn {
       //     border: 1px solid white;
@@ -63,7 +70,7 @@
     }
   }
   
-}
+
 
 ul {
   list-style: none;

@@ -1,0 +1,37 @@
+.header
+  = render 'messages/toppage-header'
+.add-credit-top
+  .add-credit-top__main
+    .add-credit-top__main__new
+      %h2 クレジットカード情報入力
+    .add-credit-top__main__content
+      .form-list
+        %label{for: "nickname"} カード番号
+        %span.form-must 必須
+        %input.payment-input-data{name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
+
+      .form-list
+        %label{for: "exparation-limit"} 有効期限
+        %span.form-must 必須
+      .exparation-select-wrap
+        .select-wrap
+          %i.icon-arrow-bottom
+          %input.select-default{name: "year"}
+            %option{value: ""} 
+        %span.date 年
+        .exparation-wrap.select-wrap
+          %i.icon-arrow-bottom
+          %input.select-default{name: "month"}
+            %option{value: ""} 
+        %span.date 月
+      .form-list
+        %label{for: "email"} セキュリティコード
+        %span.form-must 必須
+        %input.payment-input-data{name: "email", placeholder: "カード背面4行もしくは3行の番号", type: "email", value: ""}/
+        %p.card-back
+      .yourselfs
+        = link_to 'カード裏面の番号とは？', "/jp/help_center/article/423/" ,target: "_blank"  
+      %button.btn-red-payment{type: "submit"} 追加する
+
+.footer
+  = render 'messages/toppage-footer'
