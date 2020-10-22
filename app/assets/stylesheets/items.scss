@@ -1,3 +1,129 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.showMain{
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.contentLeftqq{
+  display: block;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  box-sizing: border-box;
+}
+
+.contentRight{
+  width: 700px;
+  margin: 0 auto;
+}
+
+.itemBox{
+  background-color: #fff;
+  padding: 24px 40px 40px;
+  &__name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  &__body{
+    margin: 16px 0 0;
+  }
+  &__price{
+    margin: 24px 0 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &-detail{
+      font-size: 16px;
+    }
+  }
+}
+
+.itemDetail{
+  line-height: 1.5;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.table{
+  margin-bottom: 20px;
+}
+
+.opticalArea{
+  display: flex;
+  justify-content: space-between;
+}
+
+.opticalBtn{
+  margin-right: auto;
+  padding: 6px 10px;
+  border-radius: 40px;
+  color: #3CCACE;
+  border: 1px solid #ffb340;
+}
+
+.fa-star{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.optical{
+  margin: 10px 0 0;
+  display: flex;
+}
+
+.opticalBtn{
+  font-size: 14px;
+}
+
+.commentBox{
+  padding: 24px;
+  background-color: #fff;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.commentContent{
+  padding: 24px;
+  background-color: #fff;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.commentBtn{
+  line-height: 48px;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 60%;
+  font-size: 18px;
+  border-radius: 100px;
+}
+
+.fa-comment{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fa-angle-left{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.relatedItems{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.productList{
+  margin: 0 0 10px;
+  float: left;
+  width: calc(100% / 3);
+}
