@@ -1,0 +1,24 @@
+.header
+  = render 'messages/toppage-header'
+.main
+  .showMain
+    .contentLeftqq
+    .contentRight
+      .topContent
+        .itemBox
+          %h2.itemBox__name テスト
+          .itemBox__body
+            %ul
+              %li
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: ''
+                %ul
+                  %li
+          .itemBox__price
+          .itemDetail テストテストテスト
+          .table
+          .optionalArea
+        .commentBox
+      %ul.links
+      .relatedItems
+.footer
+  = render 'messages/toppage-footer'
