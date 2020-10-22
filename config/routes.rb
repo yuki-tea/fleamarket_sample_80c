@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :listings, only: :new
   resources :users, only: [:show, :destroy]
   resources :cards, only: :show
-  resources :items, only: :show
+  resources :buyers, only: :show
   root "messages#index"
+end
