@@ -1,3 +1,6 @@
+.header
+  = render "messages/toppage-header"
+
 .AccountPage
   .AccountPage__title
     %h2 ログイン
@@ -18,3 +21,6 @@
             = f.password_field :password, autocomplete: "off"
         .actions
           = f.submit "Log in", class: 'Button UserButton'
+
+.footer
+  = render "messages/toppage-footer"

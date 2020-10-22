@@ -1,5 +1,5 @@
 .AccountPage {
-  width: 980px;
+  width: 100%;
   margin: 60px auto;
   padding: 60px;
   background-color: #fff;
@@ -17,13 +17,14 @@
     margin-bottom: 10px;
     letter-spacing: 3px;
     font-size: 40px;
-    padding-left: 310px;
+    text-align: center;
   }
   .Button {
+    display: flex;
     margin-top: 40px;
-    margin-left: 330px;
     color: #fff;
     background-color: lightpink;
+    justify-content: center;
   }
 }
 
@@ -38,7 +39,7 @@
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
-    width: 400px;
+    width: 200px;
     display: flex;
     i {
       font-size: 11px;
@@ -53,7 +54,7 @@
   &__input--normal {
     input {
       box-sizing: border-box;
-      width: 100%;
+      width: 70%;
       padding: 10px;
       letter-spacing: 1px;
     }
