@@ -10,15 +10,87 @@
           .itemBox__body
             %ul
               %li
-                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: ''
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-1'
                 %ul
                   %li
+                    = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
           .itemBox__price
+            %span ¥10000
+            .itemBox__price-detail
+              %span （税込）
+              %span 送料込み
           .itemDetail テストテストテスト
           .table
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td あああ
+                %tr
+                  %th カテゴリー
+                  %td
+                    =link_to '#', class: "" do
+                      レディース
+                    =link_to '#', class: "" do
+                      トップス
+                    =link_to '#', class: "" do
+                      Tシャツ/カットソー(半袖/袖なし)
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品のサイズ
+                  %td
+                %tr
+                  %th 配送料の負担
+                  %td 送料込み（出品者負担）
+                %tr
+                  %th 発送元の地域
+                  %td
+                    =link_to '#', class: "" do
+                      北海道
+                %tr
+                  %th 発送日の目安
+                  %td 1-2日で発送
+                %tr
           .optionalArea
+            %ul
+              %li.optionalBtn
+            %ul.optional
+              %li.optionalBtn
+                = icon('fa', 'star', class: 'star')
         .commentBox
+          %ul.commentContents
+            = form_for "#" do |c|
+              =c.text_area :comment,class:""
+              %p.noticeMsg 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              =c.submit 'コメントする',class:""
       %ul.links
+        %li
+          =link_to '#', class: "" do
+            = icon('fa', 'angle-left', class: 'star')
+            前の商品
+        %li
+          =link_to '#', class: "" do
+            = icon('fa', 'angle-right', class: 'star')
+            後ろの商品
       .relatedItems
+        =link_to '#', class: "" do
+          レディースをもっと見る
+        .productsLists
+          .productsList
+            =link_to '#', class: "" do
+              %figure.productList--img
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '',  class: ''
+                .productList--body 
+                  %h3.name product1
+                  .details
+                    %ul
+                      %li 10000円
+                      %li
+                        = icon('fa', 'star', class: 'star')
+                    %p 税込
+
 .footer
   = render 'messages/toppage-footer'
+

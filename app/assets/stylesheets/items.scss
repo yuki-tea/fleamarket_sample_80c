@@ -24,6 +24,18 @@
   }
   &__body{
     margin: 16px 0 0;
+    .img-1 {
+      width: 100%;
+      vertical-align: bottom;
+      object-fit: cover;
+      height: 346px;
+    }
+    .img-2 {
+      width: 100%;
+      vertical-align: bottom;
+      object-fit: cover;
+      height: 87px;
+    }
   }
   &__price{
     margin: 24px 0 24px;
