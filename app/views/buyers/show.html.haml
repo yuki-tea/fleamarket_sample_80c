@@ -1,0 +1,42 @@
+.header
+  = render 'messages/toppage-header'
+
+.defalt-container
+  .item-box-container
+    .item-name  
+      %h2 購入内容の確認
+    .item-image
+      image
+    .item-shipping
+      .item-payment
+        .item-payment-way
+          %h3 ・お支払方法
+          .item-payment-credit
+            xxx-xxxx-xxxx-xxxx
+            %br
+            有効期限 #/#
+        .item-shipping-change
+          %h3 変更する
+      .item-address
+        .item-address-detail
+          %h3 ・配送先
+          .item-address-change
+            〒000-0000
+            %br
+            大阪府大阪市〇〇町
+            %br
+            ◯ー◯ー◯
+        .item-shipping-change
+          %h3 変更する
+    .item-price  
+      .item-price-total
+        %h3 支払金額
+      .item-price-detail
+        %h2 ¥700
+    .item-buy-btn
+      .item-buy-detail
+        %h4 購入する
+    .item-main-content
+      .item-photo
+.footer
+  = render 'messages/toppage-footer'
