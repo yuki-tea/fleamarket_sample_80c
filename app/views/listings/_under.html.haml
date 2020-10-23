@@ -39,14 +39,14 @@
       %span.en ¥
       .price_fill_in
         = form_with model: @item, html: {class: "price__post"}, local: true do |f|
-          = f.number_field :price, class: 'price__post__input', placeholder: '0'
+          = f.number_field :price, class: 'price__post__input', placeholder: '0', min:"300", max:"9999999"
     .fee
       .fee__label 販売手数料（10％）
-      %input.price_fee{placeholder: "例) 300", type: "number"}
+      %span#price_fee.price_result —
     %hr.border
     .profit
       .profit__label 販売利益
-      %input.price_profit{placeholder: "例) 300", type: "number"}
+      %span#price_profit.price_result —
 
 
 .listing

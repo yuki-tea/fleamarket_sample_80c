@@ -480,8 +480,6 @@
           margin-right: auto;
           white-space: nowrap;
         }
-        &__value{
-        }
       }
       .border{
         border-top-width: 1px;
@@ -503,6 +501,15 @@
           margin-right: auto;
           white-space: nowrap;
         }
+      }
+      .price_result{
+        text-align: right;
+        font-size: 14px;
+        margin: 0;
+        padding: 0 16px;
+        width: inherit;
+        border: none;
+        outline: none;
       }
     }
   }
