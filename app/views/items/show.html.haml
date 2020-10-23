@@ -15,10 +15,11 @@
                   %li
                     = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
           .itemBox__price
-            %span ¥10000
-            .itemBox__price-detail
-              %span （税込）
-              %span 送料込み
+            ¥10000
+          .itemBox__price-detail
+            .itemBox__price-detail__tax
+            （税込）
+            送料込み
           .itemDetail テストテストテスト
           .table
             %table
@@ -30,11 +31,11 @@
                   %th カテゴリー
                   %td
                     =link_to '#', class: "" do
-                      レディース
+                      %ul レディース
                     =link_to '#', class: "" do
-                      トップス
+                      %ul トップス
                     =link_to '#', class: "" do
-                      Tシャツ/カットソー(半袖/袖なし)
+                      %ul Tシャツ/カットソー(半袖/袖なし)
                 %tr
                   %th ブランド
                   %td
@@ -48,48 +49,52 @@
                   %th 発送元の地域
                   %td
                     =link_to '#', class: "" do
-                      北海道
+                      %ul 北海道
                 %tr
                   %th 発送日の目安
                   %td 1-2日で発送
                 %tr
           .optionalArea
-            %ul
-              %li.optionalBtn
             %ul.optional
               %li.optionalBtn
-                = icon('fa', 'star', class: 'star')
+                = icon('fa', 'star')
+                お気に入り 1
+            %ul.optional
+              %li.optionalBtn-2
+                = icon('fa', 'fa-flag')
+                不適切な商品の通報
+              
         .commentBox
           %ul.commentContents
             = form_for "#" do |c|
-              =c.text_area :comment,class:""
+              =c.text_area :comment,class:"commenttext"
               %p.noticeMsg 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-              =c.submit 'コメントする',class:""
+              =c.submit 'コメントする',class:"commentBtn"
       %ul.links
         %li
-          =link_to '#', class: "" do
+          =link_to '#', class: "links__text" do
             = icon('fa', 'angle-left', class: 'star')
             前の商品
         %li
-          =link_to '#', class: "" do
-            = icon('fa', 'angle-right', class: 'star')
+          =link_to '#', class: "links__text" do
             後ろの商品
+            = icon('fa', 'angle-right', class: 'star')
       .relatedItems
-        =link_to '#', class: "" do
+        =link_to '#', class: "relatedItems" do
           レディースをもっと見る
-        .productsLists
-          .productsList
+        .productLists
+          .productList
             =link_to '#', class: "" do
               %figure.productList--img
-                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '',  class: ''
-                .productList--body 
-                  %h3.name product1
-                  .details
-                    %ul
-                      %li 10000円
-                      %li
-                        = icon('fa', 'star', class: 'star')
-                    %p 税込
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '',  class: 'productList--img__img'
+              .productList--body 
+                %h3.productList--body__name product1
+                .details
+                  %ul
+                    %li 10000円
+                    %li
+                      = icon('fa', 'star.likeIcon', class: 'star')
+                  %p (税込)
 
 .footer
   = render 'messages/toppage-footer'
