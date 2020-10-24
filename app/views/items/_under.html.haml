@@ -1,62 +1,63 @@
-.delivery
-  .delivery_about
-    配送のついて
-  .delivery_burden
-    .delivery_burden_first
-      配送料の負担
-    .delivery_burden_second
-      必須
-  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+.under
+= form_with model: @item, local: true do |f|
+  .delivery
+    .delivery_about
+      配送のついて
+    .delivery_burden
+      .delivery_burden_first
+        配送料の負担
+      .delivery_burden_second
+        必須
+    -# = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
     = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
-  .delivery_area
-    .delivery_area_first
-      発送元の地域
-    .delivery_area_second
-      必須
-  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+    .delivery_area
+      .delivery_area_first
+        発送元の地域
+      .delivery_area_second
+        必須
+    -# = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
     = f.collection_select :prefecture, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
-  .delivery_days
-    .delivery_days_first
-      発送までの日数
-    .delivery_days_second
-      必須
-  = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
+    .delivery_days
+      .delivery_days_first
+        発送までの日数
+      .delivery_days_second
+        必須
+    -# = form_with model: @item, html: {class: "delivery_select"}, local: true do |f|
     = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
 
-%hr.border
+  %hr.border
+
+  .price
+    %p.price-example 価格（¥300〜9,999,999）
+    .price__result
+      .price__result__form
+        .price_selling
+          .price_text
+            %label 販売価格
+            %span.price_text__second 必須
+        %span.en ¥
+        .price_fill_in
+          -# = form_with model: @item, html: {class: "price__post"}, local: true do |f|
+          = f.number_field :price, class: 'price_fill_in__input', placeholder: '0', min:"300", max:"9999999"
+      .fee
+        .fee__label 販売手数料（10％）
+        %span#price_fee.price_result —
+      %hr.border
+      .profit
+        .profit__label 販売利益
+        %span#price_profit.price_result —
 
 
-.price
-  %p.price-example 価格（¥300〜9,999,999）
-  .price__result
-    .price__result__form
-      .price_selling
-        .price_text
-          %label 販売価格
-          %span.price_text__second 必須
-      %span.en ¥
-      .price_fill_in
-        = form_with model: @item, html: {class: "price__post"}, local: true do |f|
-          = f.number_field :price, class: 'price__post__input', placeholder: '0'
-    .fee
-      .fee__label 販売手数料（10％）
-      %input.price_fee{placeholder: "例) 300", type: "number"}
-    %hr.border
-    .profit
-      .profit__label 販売利益
-      %input.price_profit{placeholder: "例) 300", type: "number"}
-
-
-.listing
-  .listing_button
-    出品する
-  .listing_draft-button
-    下書きを保存する
-  .listing_return
-    もどる
-  .listing_caution-message
-    禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+  .listing
+    -# = form_with model: @item, html: {class: "listing_button"}, local: true do |f|
+    = f.submit "出品する", class: "listing__button"
+    -# .listing_draft-button
+    -#   下書きを保存する
+    .listing_return
+      もどる
+    .listing_caution-message
+      禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
 
 %hr.border
