@@ -50,10 +50,10 @@
 
 
 .listing
-  .listing_button
-    出品する
-  .listing_draft-button
-    下書きを保存する
+  = form_for model: @item, html: {class: "listing_button"}, local: true do |f|
+    = f.submit :item, class: "listing_button", placeholder: '出品する'
+  -# .listing_draft-button
+  -#   下書きを保存する
   .listing_return
     もどる
   .listing_caution-message
