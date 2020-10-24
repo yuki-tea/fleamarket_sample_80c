@@ -46,6 +46,7 @@
 
 .FormField {
   margin-bottom: 10px;
+  display: flex;
   &__label--normal {
     padding: 10px 0 10px 70px;
     letter-spacing: 1px;
@@ -71,13 +72,12 @@
 
   }
   &__input--normal {
-    input {
-      box-sizing: border-box;
-      width: 70%;
-      padding: 10px;
-      letter-spacing: 1px;
-      margin-left: 200px;
-    }
+  
+    box-sizing: border-box;
+    width: 70%;
+    padding: 10px;
+    letter-spacing: 1px;
+      
     &-need {
       background-color: red;
       color: white;
