@@ -1,17 +1,18 @@
--# .header
--#   = render 'messages/toppage-header'
+.header
+  = render 'messages/toppage-header'
 
 .exhibition-page_box
+= form_with model: @item, local: true do |f|
   .exhibition-page_box_top
     = render 'top'
-  -# .exhibition-page_box_under
-  -#   = render 'under'
+  .exhibition-page_box_under
+    = render 'under'
 
--# .footer
--#   = render 'messages/toppage-footer'
+.footer
+  = render 'messages/toppage-footer'
 
--# .review-box
--#   .main-box
--#     %img{alt:"preview"}
--#   .delete-box
--#     削除
+.review-box
+  .main-box
+    %img{alt:"preview"}
+  .delete-box
+    削除
