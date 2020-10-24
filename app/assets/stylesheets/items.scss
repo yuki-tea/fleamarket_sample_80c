@@ -120,6 +120,10 @@
   border: 1px solid #ffb340;
 }
 
+.optionalBtn:hover{
+  opacity: 0.6;
+}
+
 .optionalBtn-2{
   font-size: 14px;
   padding: 6px 10px;
@@ -130,6 +134,9 @@
   text-decoration: none;
 }
 
+.optionalBtn-2:hover{
+  opacity: 0.6;
+}
 
 
 .star {
@@ -219,6 +226,11 @@
   position: relative;
   width: calc(100% / 3);
 }
+
+.productList:hover{
+  opacity: 0.6;
+}
+
 .productList--img{
   width: 220px;
   height: 150px;
