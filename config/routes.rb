@@ -7,4 +7,3 @@ Rails.application.routes.draw do
   resources :buyers, only: :show
   root "messages#index"
 end
-
