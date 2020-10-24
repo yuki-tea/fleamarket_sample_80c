@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function() {
     if(data == ''){ // もし､計算結果が''なら表示も消す｡
     $('#price_fee').html('');
     $('#price_profit').html('');
-    } else if (data <= "299"){
+    } else if (data < 300){
         $('#price_fee').html('');
         $('#price_profit').html('');
       }
