@@ -57,11 +57,11 @@
           .optionalArea
             %ul.optional
               %li.optionalBtn
-                = icon('fa', 'star')
+                = icon('fa', 'star', class: 'star')
                 お気に入り 1
             %ul.optional
               %li.optionalBtn-2
-                = icon('fa', 'fa-flag')
+                = icon('fa', 'flag', class: 'flag')
                 不適切な商品の通報
               
         .commentBox
@@ -73,12 +73,12 @@
       %ul.links
         %li
           =link_to '#', class: "links__text" do
-            = icon('fa', 'angle-left', class: 'star')
+            = icon('fa', 'angle-left')
             前の商品
         %li
           =link_to '#', class: "links__text" do
             後ろの商品
-            = icon('fa', 'angle-right', class: 'star')
+            = icon('fa', 'angle-right')
       .relatedItems
         =link_to '#', class: "relatedItems" do
           レディースをもっと見る
@@ -93,7 +93,8 @@
                   %ul
                     %li 10000円
                     %li
-                      = icon('fa', 'star.likeIcon', class: 'star')
+                      = icon('fa', 'star', class: 'star')
+                      1
                   %p (税込)
 
 .footer

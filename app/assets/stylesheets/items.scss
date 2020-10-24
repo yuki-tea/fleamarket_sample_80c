@@ -130,12 +130,17 @@
   text-decoration: none;
 }
 
-.fa-star{
+
+
+.star {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
+}
+
+.flag {
+  content: "\f024";
 }
 
 .optical{
@@ -212,6 +217,7 @@
   font-weight: bold;
   font-size: 22px;
   position: relative;
+  width: calc(100% / 3);
 }
 .productList--img{
   width: 220px;
@@ -240,9 +246,17 @@
     line-height: 1.5;
     font-size: 16px;
     text-align: left;
-  .detail{
-    font-size: 16px;
   }
+  .details{
+    font-size: 16px;
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+    p {
+      font-size: 10px;
+      text-align: left;
+    }
   }
 }
 
