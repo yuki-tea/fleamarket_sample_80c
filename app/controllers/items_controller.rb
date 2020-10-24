@@ -18,11 +18,20 @@ class ItemsController < ApplicationController
       flash.now[:alert] = "商品出品に失敗しました"
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
 
   private
 
   def item_params
-    params.require(:item).permit(user_ids: [] , :name. :description, categories_id: [], :brand, item_statuses_id: [], shipping_charges_id: [],prefectures_id: [], :price, images_attributes: [:image])
+    params.require(:item).permit( :name, :description, :categories_id, :brand, :item_statuses_id, :shipping_charges_id,:prefectures_id , :price, images_attributes: [:image].merge(user_id: current_user.id))
   end
-
+end
 end
