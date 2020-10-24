@@ -35,7 +35,7 @@
     display: flex;
     margin-top: 40px;
     color: #fff;
-    background-color: lightpink;
+    background-color: #3CCACE;
     justify-content: center;
   }
 }
@@ -46,6 +46,9 @@
 
 .FormField {
   margin-bottom: 10px;
+  .FormField__input--prefecture {
+    margin-left: 200px;
+  }
   &__label--normal {
     padding: 10px 0 10px 70px;
     letter-spacing: 1px;
@@ -68,7 +71,6 @@
       letter-spacing: 1px;
       margin: 10px 0 0 130px;
     }
-
   }
   &__input--normal {
     input {
@@ -88,6 +90,7 @@
       margin:0 0 8px 10px;
       width: 36px;
     }
+    
     .field_with_errors {
       position: relative;
 
@@ -113,7 +116,7 @@
   border: none;
   text-decoration: none;
   width: 200px;
-  background-color: lightpink;
+  background-color: #3CCACE;
   color: #fff;
 }
 .actions {
@@ -126,7 +129,7 @@
     border: none;
     text-decoration: none;
     width: 200px;
-    background-color: lightpink;
+    background-color: #3CCACE;
     color: #fff;   
   }
 }
