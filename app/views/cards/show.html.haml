@@ -31,7 +31,9 @@
         %p.card-back
       .yourselfs
         = link_to 'カード裏面の番号とは？', "/jp/help_center/article/423/" ,target: "_blank"  
-      %button.btn-red-payment{type: "submit"} 追加する
+      -# %button.btn-red-payment{type: "submit"} 追加する
+      =link_to  mypage_path, class:"btn" do
+        追加する
 
 .footer
   = render 'messages/toppage-footer'
