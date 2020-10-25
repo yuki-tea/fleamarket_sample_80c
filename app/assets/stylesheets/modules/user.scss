@@ -28,8 +28,8 @@
     text-align: center;
   }
   h5 {
-    padding-left: 100px;
     font-size: 18px;
+    text-align: center;
   }
   .Button {
     display: flex;
@@ -119,8 +119,8 @@
   color: #fff;
 }
 .actions {
-  margin-left: 565px;
   margin-top: 50px;
+  position: relative;
   .UserButton {
     line-height: 50px;
     letter-spacing: 1px;
@@ -129,7 +129,10 @@
     text-decoration: none;
     width: 200px;
     background-color: #3CCACE;
-    color: #fff;   
+    color: #fff;  
+    position: absolute;
+    left: 40%;
+    
   }
 }
 .Customer {
