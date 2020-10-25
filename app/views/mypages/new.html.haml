@@ -2,7 +2,7 @@
   = render 'messages/toppage-header'
 .logout
   .logout-content
-    =link_to destroy_user_session_path, method: :delete, class:"btn" do
+    =link_to destroy_user_session_path, method: :delete, class:"btn-logout" do
       ログアウト
 .footer
   = render 'messages/toppage-footer'
