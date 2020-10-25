@@ -7,7 +7,7 @@
   .image_sub-text
     最大10枚までアップロードできます
   .image_post_form
-    -# = form_with model:@item, local:true do |f|
+    = form_with model:@item, local:true do |f|
       .prev-content
       .label-content
         = f.label :image, for: "item_images_attributes_1_image", class: "label-box", id: "label-box--1" do
