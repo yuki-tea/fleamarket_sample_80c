@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :cards, only: :show
   resources :buyers, only: :show
   resources :mypages, only: [:show, :destroy]
+  resources :items, only: :show
   root "messages#index"
 end
