@@ -111,7 +111,7 @@
         .FormField__label--normal
           = f.label :都道府県
           .FormField__input--normal-need 必須
-        .FormField__input--normal
+        .FormField__input--prefecture
           = f.collection_select :prefecture_id, Prefecture.all, :id, :name
       .FormField
         .FormField__label--normal
