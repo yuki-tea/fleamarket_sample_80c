@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :listings, only: :new
   resources :cards, only: :show
   resources :buyers, only: :show
-  resources :mypages, only: [:show, :destroy]
+  resources :mypages, only: [:show, :destroy, :new]
   resources :items, only: :show
   root "messages#index"
 end
