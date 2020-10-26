@@ -6,11 +6,11 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   h3 {
-    margin: 50px 0 30px 90px ;
+    margin: 50px 0 30px 70px ;
     font-weight: bold;
   }
   h4 {
-    margin: 50px 0 30px 90px;
+    margin: 50px 0 30px 70px;
     font-weight: bold;
   }
 }
@@ -28,7 +28,7 @@
     text-align: center;
   }
   h5 {
-    padding-left: 100px;
+    padding-left: 70px;
     font-size: 18px;
   }
   .Button {
@@ -45,6 +45,7 @@
 }
 
 .FormField {
+  max-width: 1200px;
   margin-bottom: 10px;
   .FormField__input--prefecture {
     margin: 0 0 0 200px;
@@ -54,7 +55,7 @@
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 200;
-    width: 200px;
+    max-width: 300px;
     i {
       font-size: 11px;
     }
@@ -65,7 +66,7 @@
     }
     .birth {   
       box-sizing: border-box;
-      width: 400px;
+      width: 70%;
       padding: 10px;
       letter-spacing: 1px;
       margin: 10px 0 0 130px;
@@ -119,7 +120,8 @@
   color: #fff;
 }
 .actions {
-  margin-left: 565px;
+  display: flex;
+  justify-content: center;
   margin-top: 50px;
   .UserButton {
     line-height: 50px;
@@ -134,16 +136,18 @@
 }
 .Customer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+
   .FormField_name { 
     margin: 0 60px 10px 0;
-    width: 400px;
+    max-width: 600px;
     height: 100px;
+    margin-left: 200px;
+
     .FormField__label--name {
       letter-spacing: 1px;
       font-size: 14px;
       font-weight: 200;
-      width: 400px;
       height: 30px;
        i {
         font-size: 11px;  
@@ -161,7 +165,7 @@
     .FormField__input--name {
       input {
         box-sizing: border-box;
-        width: 400px;
+        max-width: 300px;
         padding: 10px;
         letter-spacing: 1px;
         margin-top: 10px;
