@@ -28,8 +28,8 @@
     text-align: center;
   }
   h5 {
-    padding-left: 70px;
     font-size: 18px;
+    text-align: center;
   }
   h5 {
     font-size: 18px;
@@ -133,9 +133,11 @@
     border: none;
     text-decoration: none;
     width: 200px;
-    background-color: lightpink;
-    position: absolute; 
+    background-color: #3CCACE;
+    color: #fff;  
+    position: absolute;
     left: 40%;
+    
   }
 }
 .Customer {

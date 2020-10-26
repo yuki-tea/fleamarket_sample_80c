@@ -17,12 +17,16 @@
     .header-bottom
       .header-bottom__left-side
         .header-bottom__left-side__category-btn
-          = link_to 'カテゴリー'
+          = link_to '#' do
+            カテゴリー
         .header-bottom__left-side__brand-btn
-          = link_to 'ブランド'
+          = link_to '#' do
+            ブランド
       .header-bottom__right-side
         .header-bottom__right-side__login-btn
-          = link_to 'ログイン'
+          = link_to user_session_path do
+            ログイン
         .header-bottom__right-side__new-register-btn
-          = link_to '新規会員登録'
+          = link_to new_user_registration_path do
+            新規会員登録
             
