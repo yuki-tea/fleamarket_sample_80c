@@ -23,10 +23,15 @@
           = link_to '#' do
             ブランド
       .header-bottom__right-side
-        .header-bottom__right-side__login-btn
-          = link_to user_session_path do
-            ログイン
-        .header-bottom__right-side__new-register-btn
-          = link_to new_user_registration_path do
-            新規会員登録
+        - if user_signed_in?
+          .header-bottom__right-side__mypage-btn
+            = link_to mypage_path(current_user.id) do
+              マイページ
+        - else
+          .header-bottom__right-side__login-btn
+            = link_to user_session_path do
+              ログイン
+          .header-bottom__right-side__new-register-btn
+            = link_to new_user_registration_path do
+              新規会員登録
             
