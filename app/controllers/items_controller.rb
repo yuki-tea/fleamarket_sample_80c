@@ -5,9 +5,9 @@ class ItemsController < ApplicationController
   end
 
   def new
-     @item = Item.new
-     @item.images.new
-     @item.users << current_user
+    @item = Item.new
+    @item.images.new
+    @item.users << current_user
   end
 
   def create
