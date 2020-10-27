@@ -24,8 +24,7 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, uniqueness: true
   validates :prefecture_id, presence: true, uniqueness: true
   validates :municipality, presence: true, uniqueness: true
-  validates :street_number, presence: true, uniqueness: true
-  validates :building_name, presence: true, uniqueness: true
+  validates :street_number, presence: true,
   validates :telephone_number, presence: true, uniqueness: true
 
   
