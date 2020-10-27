@@ -1,8 +1,8 @@
 //初回読み込み、リロード、ページ切り替えで動く。
 $(document).on('turbolinks:load', function() {
   //リアルタイムで表示したいのでinputを使う｡入力の度にイベントが発火するようになる｡
-  $('.price__post__input').on('input', function(){
-    var data = $('.price__post__input').val(); // val()でフォームのvalueを取得(数値)
+  $('.price_fill_in__input').on('input', function(){
+    var data = $('.price_fill_in__input').val(); // val()でフォームのvalueを取得(数値)
     var fee = Math.round(data * 0.1); // 手数料計算を行う｡dataに0.1を掛けて手数料が10%になる｡
     var profit = (data - fee); //入力した数値から計算結果(profit)を引く｡それが利益となる｡
     $('#price_fee').html(fee); //  手数料の表示｡html()は追加ではなく､上書き｡入力値が変わる度に表示も変わるようにする｡

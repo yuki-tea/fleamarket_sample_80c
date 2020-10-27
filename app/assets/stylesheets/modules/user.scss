@@ -1,0 +1,226 @@
+.AccountPage {
+  width: 100%;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  h3 {
+    margin: 50px 0 30px 70px ;
+    font-weight: bold;
+  }
+  h4 {
+    margin: 50px 0 30px 70px;
+    font-weight: bold;
+  }
+}
+
+.AccountPage__title {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    text-align: center;
+  }
+  h5 {
+    font-size: 18px;
+    text-align: center;
+  }
+  h5 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .Button {
+    display: flex;
+    margin-top: 40px;
+    color: #fff;
+    background-color:#3CCACE;
+    justify-content: center;
+  }
+}
+
+.AccountPage__form {
+  width: 100%;
+}
+
+.FormField {
+  max-width: 1200px;
+  margin-bottom: 10px;
+  .FormField__input--prefecture {
+    margin: 0 0 0 200px;
+  }
+  &__label--normal {
+    padding: 10px 0 10px 70px;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    max-width: 300px;
+    i {
+      font-size: 11px;
+    }
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+    .birth {   
+      box-sizing: border-box;
+      width: 70%;
+      padding: 10px;
+      letter-spacing: 1px;
+      margin: 10px 0 0 130px;
+    }
+
+  }
+  &__input--normal {
+    input {
+      box-sizing: border-box;
+      width: 70%;
+      padding: 10px;
+      letter-spacing: 1px;
+      margin-left: 200px;
+    }
+    &-need {
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+      padding: 2px 3px;
+      margin:0 0 8px 10px;
+      width: 36px;
+    }
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+}
+
+
+.Button {
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  width: 200px;
+  background-color: #3CCACE;
+  color: #fff;
+}
+.actions {
+  margin-top: 50px;
+  position: relative;
+  .UserButton {
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    text-decoration: none;
+    width: 200px;
+    background-color: #3CCACE;
+    color: #fff;  
+    position: absolute;
+    left: 40%;
+    
+  }
+}
+.Customer {
+  display: flex;
+  justify-content: flex-start;
+
+  .FormField_name { 
+    margin: 0 60px 10px 0;
+    max-width: 600px;
+    height: 100px;
+    margin-left: 200px;
+
+    .FormField__label--name {
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-weight: 200;
+      height: 30px;
+       i {
+        font-size: 11px;  
+       }
+      
+      .FormField__need {
+        background-color: red;
+        color: white;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.4em;
+        padding: 2px 3px;
+        width: 36px;
+      }
+    .FormField__input--name {
+      input {
+        box-sizing: border-box;
+        max-width: 300px;
+        padding: 10px;
+        letter-spacing: 1px;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #d65f4c;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 17px;
+    list-style: square;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+}
