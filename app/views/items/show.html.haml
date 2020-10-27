@@ -1,0 +1,104 @@
+.header
+  = render 'messages/toppage-header'
+.main
+  .showMain
+    .contentLeftqq
+    .contentRight
+      .topContent
+        .itemBox
+          %h2.itemBox__name テスト
+          .itemBox__body
+            %ul
+              %li
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-1'
+                %ul
+                  %li
+                    = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
+          .itemBox__price
+            ¥10000
+          .itemBox__price-detail
+            .itemBox__price-detail__tax
+            （税込）
+            送料込み
+          .itemDetail テストテストテスト
+          .table
+            %table
+              %tbody
+                %tr
+                  %th 出品者
+                  %td あああ
+                %tr
+                  %th カテゴリー
+                  %td
+                    =link_to '#', class: "corsol" do
+                      レディース
+                    %br
+                    =link_to '#', class: "corsol" do
+                      トップス
+                    %br
+                    =link_to '#', class: "corsol" do
+                      Tシャツ/カットソー(半袖/袖なし)
+                %tr
+                  %th ブランド
+                  %td
+                %tr
+                  %th 商品のサイズ
+                  %td
+                %tr
+                  %th 配送料の負担
+                  %td 送料込み（出品者負担）
+                %tr
+                  %th 発送元の地域
+                  %td
+                    =link_to '#', class: "corsol" do
+                      北海道
+                %tr
+                  %th 発送日の目安
+                  %td 1-2日で発送
+                %tr
+          .optionalArea
+            %ul.optional
+              %li.optionalBtn
+                = icon('fa', 'star', class: 'star')
+                お気に入り 1
+            %ul.optional
+              %li.optionalBtn-2
+                = icon('fa', 'flag', class: 'flag')
+                不適切な商品の通報
+              
+        .commentBox
+          %ul.commentContents
+            = form_for "#" do |c|
+              =c.text_area :comment,class:"commenttext"
+              %p.noticeMsg 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+              =c.submit 'コメントする',class:"commentBtn"
+      %ul.links
+        %li
+          =link_to '#', class: "links__text" do
+            = icon('fa', 'angle-left')
+            前の商品
+        %li
+          =link_to '#', class: "links__text" do
+            後ろの商品
+            = icon('fa', 'angle-right')
+      .relatedItems
+        =link_to '#', class: "relatedItems" do
+          レディースをもっと見る
+        .productLists
+          .productList
+            =link_to '#', class: "" do
+              %figure.productList--img
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '',  class: 'productList--img__img'
+              .productList--body 
+                %h3.productList--body__name product1
+                .details
+                  %ul
+                    %li 10000円
+                    %li
+                      = icon('fa', 'star', class: 'star')
+                      1
+                  %p (税込)
+
+.footer
+  = render 'messages/toppage-footer'
+
