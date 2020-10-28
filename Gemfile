@@ -81,3 +81,4 @@ gem 'fog'
 
 gem 'devise'
 
+gem 'ancestry'
