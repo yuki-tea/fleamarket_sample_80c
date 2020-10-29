@@ -1,7 +1,7 @@
 - if user_signed_in?
   .purchaseBtn
     .purchaseBtn__text
-    = link_to new_listing_path(current_user.id), class: 'purchaseBtn__text' do
+    = link_to new_item_path(current_user.id), class: 'purchaseBtn__text' do
       出品する
     = image_tag "icon_camera.png", class: 'purchaseBtn__icon'
 - else
