@@ -12,6 +12,8 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.integer :handling_time_id, null: false
       t.integer :price, null: false
       t.timestamps
+      t.integer :saler_id, foreign_key: true
+      t.integer :buyer_id, foreign_key: true
     end
   end
 end
