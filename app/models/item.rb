@@ -24,4 +24,5 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :handling_time_id, presence: true
   validates :price, presence: true
+  validates :images, presence: true
 end
