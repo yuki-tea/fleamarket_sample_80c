@@ -77,7 +77,10 @@
     .details_selec
     = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
     .append__category
-    
+    -# = f.collection_select :category_id, @category_children, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+    -# = f.collection_select :category_id, @category_grandchildren, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+
+
     .details_brand
       .details_brand_first
         ブランド
