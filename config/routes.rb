@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :mypages, only: [:show, :destroy, :new]
 
   resources :items do
-    get 'get_category_children', defaults: { fomat: 'json'}
-    get 'get_category_grandchildren', defaults: { fomat: 'json'}
+    collection do
+      get 'get_category_children', defaults: { fomat: 'json'}
+      get 'get_category_grandchildren', defaults: { fomat: 'json'}
+    end
   end
 
   root "messages#index"
