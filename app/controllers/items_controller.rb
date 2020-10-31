@@ -22,16 +22,16 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # @category_parent_array = Category.where(ancestry: nil) 
-    # @category_children = Category.find(@category_parent_array).children
-    # @category_grandchildren = Category.find(@category_children).children
-    
-    # binding.pry
-    
+    @category_parent_array = Category.where(ancestry: nil) 
     if @item.save
-      # saling_items = SalingItems.new(item_id: @item.id, saler_id: params[:user_id], status: "出品中")
+
+      #       # saling_items = SalingItems.new(item_id: @item.id, saler_id: params[:user_id], status: "出品中")
       # saler = Saler.new(item_id: @item.id, user_id: params[:user_id])
-            
+      
+      # binding.pry
+      
+      # if @item.save
+        # selling_status.save && seller.save
         redirect_to root_path, notice: "出品が完了しました"
       else
         render :new
