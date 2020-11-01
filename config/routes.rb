@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :messages, only: :index
   resources :cards, only: :show
   resources :buyers, only: :show
-  resources :items, only: [:show, :new]
   resources :mypages, only: [:show, :destroy, :new]
 
   resources :items do
