@@ -1,13 +1,14 @@
 .exhibition-page_box{
   width: 100%;
-  margin: 0 auto;
+  margin: 40px auto;
+  padding: 0 100px;
   background-color: white;
 
   .image{
     width: 100%;
-    padding: 40px;
-
     &_main-text{
+      width: 100%;
+      padding:0 40px;
       display: flex;
 
       &_first{
@@ -29,17 +30,17 @@
     }
 
     &_sub-text{
+      width: 100%;
+      padding:0 40px;
       font-size: 14px;
       line-height: 1.4em;
-      margin-top: 16px;
-      margin-bottom: 16px;
+
     }
 
     &_post{
       height: 112px;
       &_form{
         width: 100%;
-        height: 112px;
         background-color: rgb(245, 245, 245);
         border: dashed 1px rgb(204,204 ,204);
         .prev-content{
@@ -125,6 +126,7 @@
     //     width: 100%;
     //   }
     // }
+    }
   
   
   .item{
@@ -222,6 +224,8 @@
     width: 100%;
     padding:40px;
     &_item{
+      width: 100%;
+      padding:40px;
       color: rgb(136, 136, 136);
       font-size: 14px;
       font-weight: 600;
@@ -322,6 +326,8 @@
       }
     }
   }
+
+
 
   .delivery{
     width: 100%;
@@ -528,16 +534,17 @@
 
 
   .listing{
-    width: 100%;
-    padding:40px;
+    display: flex;
+    justify-content: center;
     &__button{
       background-color: #ea352d;
       color: #fff;
       font-family: Arial,游ゴシック体,YuGothic,メイリオ,Meiryo,sans-serif;
-      width: 100%;
+      width: 200px;
       font-size: 17px;
       min-height: 48px;
       padding: 0 24px;
+      margin: 36px 0;
       border-radius: 4px;
       border: 1px solid transparent;
       box-sizing: border-box;
@@ -585,7 +592,7 @@
       font-size: 12.5px;
     }
   }
-}
+
 
 
 .review-box{
