@@ -30,14 +30,17 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =link_to '#', class: "corsol" do
-                      レディース
-                    %br
-                    =link_to '#', class: "corsol" do
-                      トップス
-                    %br
-                    =link_to '#', class: "corsol" do
-                      Tシャツ/カットソー(半袖/袖なし)
+                    - if [10, 11, 12, 13].include?(@category_id)
+                      = link_to "#{@category_grandchild.name}","#"
+                    - elsif [9].include?(@category_id)
+                      %td
+                        = link_to "#{@category_child.name}","#"
+                        %br= link_to "#{@category_grandchild.name}","#" 
+                    - else
+                      = link_to "#{@category_parent.name}","#"
+                        %br= link_to "#{@category_child.name}","#" 
+                        %br= link_to "#{@category_grandchild.name}","#" 
+
                 %tr
                   %th ブランド
                   %td

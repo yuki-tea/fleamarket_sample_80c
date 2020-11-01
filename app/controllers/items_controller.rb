@@ -41,7 +41,13 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.new
+    @category_id = @item.category_id
+    @category_parent = Category.where(@category_id).parent.parent
+    @category_child = Category.where(@category_id).parent
+    @category_grandchild = Category.where(@category_id)
   end
+
 
 
   private
