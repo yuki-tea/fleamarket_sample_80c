@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
+
   validates :name, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -27,6 +28,5 @@ class User < ApplicationRecord
   validates :municipality, presence: true
   validates :street_number, presence: true
   validates :telephone_number, presence: true
-
 end
 
