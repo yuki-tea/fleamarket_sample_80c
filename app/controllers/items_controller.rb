@@ -25,14 +25,10 @@ class ItemsController < ApplicationController
     @category_parent_array = Category.where(ancestry: nil) 
     if @item.save
         redirect_to root_path, notice: "出品が完了しました"
-      else
-        render :new
-        flash.now[:alert] = "商品出品に失敗しました"
-      end
-    # else
-    #   flash.now[:alert] = '入力されていない項目があります。'
-    #   render :new
-    # end
+    else
+      render :new
+      flash.now[:alert] = "商品出品に失敗しました"
+    end
   end
 
   def edit
