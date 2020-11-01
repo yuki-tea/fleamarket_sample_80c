@@ -11,27 +11,22 @@ class User < ApplicationRecord
   has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
   has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
-
-
-
-  validates :name, presence: true, uniqueness: true
-  validates :first_name, presence: true, uniqueness: true
-  validates :last_name, presence: true, uniqueness: true
-  validates :first_name_kana, presence: true, uniqueness: true
-  validates :last_name_kana, presence: true, uniqueness: true
-  validates :birthday, presence: true, uniqueness: true
-  validates :delivery_first_name, presence: true, uniqueness: true
-  validates :delivery_last_name, presence: true, uniqueness: true
-  validates :delivery_first_name_kana, presence: true, uniqueness: true
-  validates :delivery_last_name_kana, presence: true, uniqueness: true
-  validates :zip_code, presence: true, uniqueness: true
-  validates :prefecture_id, presence: true, uniqueness: true
-  validates :municipality, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :first_name_kana, presence: true
+  validates :last_name_kana, presence: true
+  validates :birthday, presence: true
+  validates :delivery_first_name, presence: true
+  validates :delivery_last_name, presence: true
+  validates :delivery_first_name_kana, presence: true
+  validates :delivery_last_name_kana, presence: true
+  validates :zip_code, presence: true
+  validates :prefecture_id, presence: true
+  validates :municipality, presence: true
   validates :street_number, presence: true
-  validates :telephone_number, presence: true, uniqueness: true
-
-  
-
+  validates :telephone_number, presence: true
 
 end
 
