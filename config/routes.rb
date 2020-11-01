@@ -5,5 +5,14 @@ Rails.application.routes.draw do
   resources :buyers, only: :show
   resources :items, only: [:show, :new]
   resources :mypages, only: [:show, :destroy, :new]
+
+  resources :items do
+    collection do
+      get 'get_category_children', defaults: { fomat: 'json'}
+      get 'get_category_grandchildren', defaults: { fomat: 'json'}
+    end
+  end
+  
   root "messages#index"
+  
 end
