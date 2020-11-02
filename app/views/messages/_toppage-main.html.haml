@@ -104,11 +104,11 @@
           -# = link_to item_path(@item), data:{"turbolinks" => false}, class: "line" do
           -# .pickup-container__product-box__product-lists__product-list__img
           -#   = image_tag image.image.url class: "productList--img-n"
-          - @item.item_images.each do |image|
-            = image_tag image.image.url
-          .productList--body
-            %h3.name
-              = item.name
+          - @item.each do |item|
+            = image_tag item.images.first&.image.url
+            .productList--body
+              %h3.name
+                = item.name
             .details
               %ul
                 %li
