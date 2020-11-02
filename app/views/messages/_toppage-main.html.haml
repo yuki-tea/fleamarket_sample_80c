@@ -102,8 +102,10 @@
           -# - if item.buyer_id.nil?
             -# .pickup-container__product-box__product-lists__product-list
           -# = link_to item_path(@item), data:{"turbolinks" => false}, class: "line" do
-          .pickup-container__product-box__product-lists__product-list__img
-            = image_tag image.image class: "productList--img-n"
+          -# .pickup-container__product-box__product-lists__product-list__img
+          -#   = image_tag image.image.url class: "productList--img-n"
+          - @item.item_images.each do |image|
+            = image_tag image.image.url
           .productList--body
             %h3.name
               = item.name
