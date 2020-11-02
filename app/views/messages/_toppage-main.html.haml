@@ -101,21 +101,21 @@
         .productList
           -# - if item.buyer_id.nil?
             -# .pickup-container__product-box__product-lists__product-list
-          = link_to item_path(@item), data:{"turbolinks" => false}, class: "line" do
-            .pickup-container__product-box__product-lists__product-list__img
-              = image_tag @item.url class: "productList--img-n"
-            .productList--body
-              %h3.name
-                = item.name
-              .details
-                %ul
-                  %li
-                    = item.price
-                    円
-                  %li
-                    ★0
-                %p
-                  (税込)
+          -# = link_to item_path(@item), data:{"turbolinks" => false}, class: "line" do
+          .pickup-container__product-box__product-lists__product-list__img
+            = image_tag image.image class: "productList--img-n"
+          .productList--body
+            %h3.name
+              = item.name
+            .details
+              %ul
+                %li
+                  = item.price
+                  円
+                %li
+                  ★0
+              %p
+                (税込)
           -# - else
           -#   -# .pickup-container__product-box__product-lists__product-list
           -#   = link_to item_path(item), data:{"turbolinks" => false}, class: "line" do
