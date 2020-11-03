@@ -100,122 +100,42 @@
       .productLists
         - @item.each do |item|
           .productList
-            = link_to item_path(item) do
-              .productList--img
-                = image_tag item.images.first&.image.url, class: 'productList--img-n'
-              .productList--body
-                %h3.name
-                  = item.name
-                .details
-                  %ul
-                    %li
-                      = item.price
-                      円
-                    %li
-                      = icon('fa', 'star', class: 'star')
-                      0
-                  %p
-                    (税込)
-          -# - else
-          -#   -# .pickup-container__product-box__product-lists__product-list
-          -#   = link_to item_path(item), data:{"turbolinks" => false}, class: "line" do
-          -#     %figure.productList--img
-          -#       -# = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '1pic',
-          -#       -# class: 'productList--img-n'
-          -#       = image_tag item.first_image.image.url, class: "productList--img-n"
-          -#     .sold-cover
-          -#     %p.sold sold
-          -#     .productList--body
-          -#       %h3.name
-          -#         = item.name
-          -#       .details
-          -#         %ul
-          -#           %li
-          -#             = item.price
-          -#             円
-          -#           %li
-          -#             ★0
-          -#         %p
-          -#         (税込)
-        -#   = link_to '#' do
-        -#     %figure.productList--img
-        -#       = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '1pic',
-        -#       class: 'productList--img-n'
-        -#     .productList--body
-        -#       %h3.name
-        -#         テスト
-        -#       .details
-        -#         %ul
-        -#           %li 10000円
-        -#           %li
-        -#             = icon('fa', 'star', class: 'star')
-        -#             1
-        -#         %p
-        -#           (税込)
-        -# .productList
-        -#   = link_to '#' do
-        -#     %figure.productList--img
-        -#       = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/16/IMG_9072.JPG', alt: '2pic',
-        -#       class: 'productList--img-n'
-        -#     .productList--body
-        -#       %h3.name
-        -#         ee
-        -#       .details
-        -#         %ul
-        -#           %li 1000円
-        -#           %li
-        -#             = icon('fa', 'star', class: 'star')
-        -#             4
-        -#         %p
-        -#           (税込)
-        -# .productList
-        -#   = link_to '#' do
-        -#     %figure.productList--img
-        -#       = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', alt: '3pic',
-        -#       class: 'productList--img-n'
-        -#     .productList--body
-        -#       %h3.name
-        -#         product3
-        -#       .details
-        -#         %ul
-        -#           %li 30000円
-        -#           %li
-        -#             = icon('fa', 'star', class: 'star')
-        -#             1
-        -#         %p
-        -#           (税込)
-        -# .productList
-        -#   = link_to '#' do
-        -#     %figure.productList--img
-        -#       = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png', alt: '4pic',
-        -#       class: 'productList--img-n'
-        -#     .productList--body
-        -#       %h3.name
-        -#         product2
-        -#       .details
-        -#         %ul
-        -#           %li 20000円
-        -#           %li
-        -#             = icon('fa', 'star', class: 'star')
-        -#             0
-        -#         %p
-        -#           (税込)
-        -# .productList
-        -#   = link_to '#' do
-        -#     %figure.productList--img
-        -#       = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png', alt: '5pic',
-        -#       class: 'productList--img-n'
-        -#     .productList--body
-        -#       %h3.name
-        -#         product１
-        -#       .details
-        -#         %ul
-        -#           %li 10000円
-        -#           %li
-        -#             = icon('fa', 'star', class: 'star')
-        -#             1
-        -#         %p
-        -#           (税込)
+            - if item.buyer_id.nil? #buyer_idがnilだったら（買い手がまだいなかったら）
+              = link_to item_path(item) do
+                %figure.productList--img
+                  = image_tag item.images.first&.image.url, class: 'productList--img-n'
+                .sold-cover
+                .productList--body
+                  %h3.name
+                    = item.name
+                  .details
+                    %ul
+                      %li
+                        = item.price
+                        円
+                      %li
+                        = icon('fa', 'star', class: 'star')
+                        1
+                    %p
+                      (税込)
+            - else
+              = link_to item_path(item) do
+                %figure.productList--img
+                  = image_tag item.images.first&.image.url, class: 'productList--img-n'
+                %p.sold sold
+                .productList--body
+                  %h3.name
+                    = item.name
+                  .details
+                    %ul
+                      %li
+                        = item.price
+                        円
+                      %li
+                        = icon('fa', 'star', class: 'star')
+                        1000
+                    %p
+                      (税込)
   %section.pickupContainer
     %h2.head
       ピックアップブランド
