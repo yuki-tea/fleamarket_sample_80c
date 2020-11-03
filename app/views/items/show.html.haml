@@ -26,7 +26,8 @@
               %tbody
                 %tr
                   %th 出品者
-                  %td あああ
+                  %td= @item.name
+                    
                 %tr
                   %th カテゴリー
                   %td
@@ -36,10 +37,10 @@
                       %td
                         = link_to "#{@category_child.name}","#"
                         %br= link_to "#{@category_grandchild.name}","#" 
-                    - else
+                    -else
                       = link_to "#{@category_parent.name}","#"
-                        %br= link_to "#{@category_child.name}","#" 
-                        %br= link_to "#{@category_grandchild.name}","#" 
+                      %br= link_to "#{@category_child.name}","#" 
+                      %br= link_to "#{@category_grandchild.name}","#" 
 
                 %tr
                   %th ブランド
@@ -49,15 +50,14 @@
                   %td
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td=@item.shipping_charge_id
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to '#', class: "corsol" do
-                      北海道
+                    =link_to "#{@item.prefecture_id}", class: "corsol" 
                 %tr
                   %th 発送日の目安
-                  %td 1-2日で発送
+                  %td=@item.handling_time_id
                 %tr
           .optionalArea
             %ul.optional

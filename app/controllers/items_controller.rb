@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: [:index, :show]
   
-  def index
-    @item = Item.includes(:images).order('created_at DESC')
-  end
+  # def index
+  #   @item = Item.includes(:images).order('created_at DESC')
+  # end
 
   def new
     @item = Item.new
@@ -41,11 +41,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.new
+    # 商品出品者のidを入れる
+    @item = Item.find(params[:id])
     @category_id = @item.category_id
-    @category_parent = Category.where(@category_id).parent.parent
-    @category_child = Category.where(@category_id).parent
-    @category_grandchild = Category.where(@category_id)
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
 
