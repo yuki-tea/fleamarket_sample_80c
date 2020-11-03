@@ -265,11 +265,12 @@ ul {
         width: 780px;
         margin:  26px auto;
         display: flex;
-        justify-content: space-around;
+        // justify-content: space-around;
         .productList {
           width: 220px;
           display: inline-block;
           float: left;
+          width: 220px;
           a {
             background-color: #ffffff;
             display: inline-block;
