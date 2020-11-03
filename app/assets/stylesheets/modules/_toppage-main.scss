@@ -294,6 +294,13 @@ ul {
               object-fit: cover;
             }
           }
+          .sold-cover {
+            height: 29px;
+          }
+          .sold {
+            color: red;
+            font-size: 25px;
+          }
           &--body {
             background-color: white;
             color: #333333;
