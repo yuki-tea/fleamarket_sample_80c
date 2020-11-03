@@ -100,7 +100,7 @@
       .productLists
         - @item.each do |item|
           .productList
-            = link_to '#' do
+            = link_to item_path(item) do
               .productList--img
                 = image_tag item.images.first&.image.url, class: 'productList--img-n'
               .productList--body
