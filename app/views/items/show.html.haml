@@ -6,7 +6,8 @@
     .contentRight
       .topContent
         .itemBox
-          %h2.itemBox__name テスト
+          %h2.itemBox__name 
+          %p=@item.name
           .itemBox__body
             %ul
               %li
@@ -26,18 +27,22 @@
               %tbody
                 %tr
                   %th 出品者
-                  %td あああ
+                  %td= @username.name
+                    
                 %tr
                   %th カテゴリー
                   %td
-                    =link_to '#', class: "corsol" do
-                      レディース
-                    %br
-                    =link_to '#', class: "corsol" do
-                      トップス
-                    %br
-                    =link_to '#', class: "corsol" do
-                      Tシャツ/カットソー(半袖/袖なし)
+                    - if [10, 11, 12, 13].include?(@category_id)
+                      = link_to "#{@category_grandchild.name}","#"
+                    - elsif [9].include?(@category_id)
+                      %td
+                        = link_to "#{@category_child.name}","#"
+                        %br= link_to "#{@category_grandchild.name}","#" 
+                    -else
+                      = link_to "#{@category_parent.name}","#"
+                      %br= link_to "#{@category_child.name}","#" 
+                      %br= link_to "#{@category_grandchild.name}","#" 
+
                 %tr
                   %th ブランド
                   %td
@@ -46,15 +51,16 @@
                   %td
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td=@item.shipping_charge_id
+                    - if @item.shipping_charge_id = 1
+                      
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to '#', class: "corsol" do
-                      北海道
+                    =link_to "#{@item.prefecture_id}", class: "corsol" 
                 %tr
                   %th 発送日の目安
-                  %td 1-2日で発送
+                  %td=@item.handling_time_id
                 %tr
           .optionalArea
             %ul.optional
