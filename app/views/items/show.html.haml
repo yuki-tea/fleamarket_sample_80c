@@ -6,7 +6,8 @@
     .contentRight
       .topContent
         .itemBox
-          %h2.itemBox__name テスト
+          %h2.itemBox__name 
+          %p=@item.name
           .itemBox__body
             %ul
               %li
@@ -51,6 +52,8 @@
                 %tr
                   %th 配送料の負担
                   %td=@item.shipping_charge_id
+                    - if @item.shipping_charge_id = 1
+                      
                 %tr
                   %th 発送元の地域
                   %td
