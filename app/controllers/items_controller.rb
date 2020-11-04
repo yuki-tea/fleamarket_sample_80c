@@ -41,8 +41,7 @@ class ItemsController < ApplicationController
     # 商品出品者のidを入れる
     @item = Item.find(params[:id])
     @user = @item.user
-    @category_id = @item.category_id
-    @category_grandchild = Category.find(@category_id)
+    @category_grandchild = @item.category
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
     
