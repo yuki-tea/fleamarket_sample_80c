@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user_id = @item.user_id
     @username = User.find(@user_id)
+    @charge_id = @item.shipping_charge_id
     @category_id = @item.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
