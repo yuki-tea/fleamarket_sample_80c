@@ -34,7 +34,7 @@
           =link_to new_mypage_path, class: "mypage-nav-list-item" do
             ログアウト
         %li
-          =link_to card_path, class: "mypage-nav-list-item" do
+          =link_to new_card_path(current_user.id), class: "mypage-nav-list-item" do
             クレジットカード登録/変更
 .footer
   = render 'messages/toppage-footer'
