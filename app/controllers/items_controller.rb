@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
+
   def new
     @item = Item.new
     @item.images.new
