@@ -98,7 +98,7 @@
           %h3.title
             新規登録商品
       .productLists
-        - @item.each do |item|
+        - @items.each do |item|
           .productList
             - if item.buyer_id.nil? #buyer_idがnilだったら（買い手がまだいなかったら）
               = link_to item_path(item) do
