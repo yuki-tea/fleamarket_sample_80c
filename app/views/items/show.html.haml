@@ -27,7 +27,7 @@
               %tbody
                 %tr
                   %th 出品者
-                  %td= @username.name
+                  %td= @user.name
                     
                 %tr
                   %th カテゴリー
@@ -41,7 +41,7 @@
                     -else
                       = link_to "#{@category_parent.name}","#"
                       %br= link_to "#{@category_child.name}","#" 
-                      %br= link_to "#{@category_grandchild.name}","#" 
+                      = link_to "#{@category_grandchild.name}","#" 
 
                 %tr
                   %th ブランド
@@ -74,7 +74,17 @@
               %li.optionalBtn-2
                 = icon('fa', 'flag', class: 'flag')
                 不適切な商品の通報
-              
+        .deleteItem
+          - if user_signed_in? && current_user.id == @item.user_id
+            .sellerSelect
+              = link_to '商品の編集', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
+            .sellerSelect
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
+          - elsif user_signed_in? && current_user.id != @item.user_id
+            .sellerSelect
+              購入する
+              -# = link_to '購入する', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
+          - else
         .commentBox
           %ul.commentContents
             = form_for "#" do |c|
@@ -110,4 +120,3 @@
 
 .footer
   = render 'messages/toppage-footer'
-
