@@ -51,10 +51,10 @@
                   %td
                 %tr
                   %th 配送料の負担
-                  -# %td=@item.shipping_charge_id
-                  %td
-                    - if [1].include?(@charge_id)
-                      = link_to "#{ShippingCharge.name}"
+                  %td=@item.shipping_charge_id
+                  -# %td
+                  -#   - if [1].include?(@charge_id)
+                  -#     = link_to "#{ShippingCharge.name}"
                       
                 %tr
                   %th 発送元の地域
@@ -77,7 +77,8 @@
           - if user_signed_in? && current_user.id == @item.user_id
             .sellerSelect
               = link_to '商品の編集', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
-              %br= link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
+            .sellerSelect
+              = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
           - elsif user_signed_in? && current_user.id != @item.user_id
             .sellerSelect
               購入する
