@@ -52,8 +52,6 @@
                 %tr
                   %th 配送料の負担
                   %td
-                    - if [1].include?(@charge_id)
-                      = link_to "#{ShippingCharge.name}"
 
                 %tr
                   %th 発送元の地域
