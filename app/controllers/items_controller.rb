@@ -1,9 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :move_to_index, except: [:index, :show]
-  
-  # def index
-  #   @item = Item.includes(:images).order('created_at DESC')
-  # end
+  before_action :move_to_index, except: [:index, :show]
 
   def new
     @item = Item.new
@@ -48,6 +44,13 @@ class ItemsController < ApplicationController
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
     
+    # @user_id = @item.user_id
+    # @username = User.find(@user_id)
+    # @charge_id = @item.shipping_charge_id
+    # @category_id = @item.category_id
+    # @category_parent = Category.find(@category_id).parent.parent
+    # @category_child = Category.find(@category_id).parent
+    # @category_grandchild = Category.find(@category_id)
   end
 
 
@@ -58,8 +61,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit( :name, :description, :category_id, :brand, :item_status_id, :shipping_charge_id,:prefecture_id , :handling_time_id,:price, images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
-  # def move_to_index
-  #   redirect_to action: :index unless user_signed_in?
-  # end
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 
 end

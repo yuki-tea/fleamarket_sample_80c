@@ -270,6 +270,7 @@ ul {
           width: 220px;
           display: inline-block;
           float: left;
+          width: 220px;
           a {
             background-color: #ffffff;
             display: inline-block;
@@ -292,6 +293,13 @@ ul {
               height: 150px;
               object-fit: cover;
             }
+          }
+          .sold-cover {
+            height: 29px;
+          }
+          .sold {
+            color: red;
+            font-size: 25px;
           }
           &--body {
             background-color: white;

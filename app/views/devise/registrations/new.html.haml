@@ -65,12 +65,13 @@
             .FormField__need 必須
             .FormField__input--name
               = f.text_field :last_name_kana, autofocus: true
-      .FormField
-        .FormField__label--normal
-          = f.label :生年月日
-          .FormField__input--normal-need 必須
-          .FormField__input--birth
-          = f.text_field :birthday, autofocus: true, class:"birth"
+      .Customer
+        .FormField_name
+          .FormField__label--name
+            = f.label :生年月日
+            .FormField__need 必須
+            .FormField__input--name
+              = f.text_field :birthday, autofocus: true
 
 
       .AccountPage__title__send
