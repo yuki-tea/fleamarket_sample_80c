@@ -1,7 +1,7 @@
 .header
   = render 'messages/toppage-header'
 
-= form_tag(card_path, method: :post, id: 'charge-form',  name: "inputForm") do
+= form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
   %label カード番号
   = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
   %br

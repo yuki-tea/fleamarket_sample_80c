@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'purchases/index'
+  get 'purchases/done'
   devise_for :users
   resources :messages, only: :index
-  resources :cards, only: [:show, :new, :delete]
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
   resources :buyers, only: :show
   resources :mypages, only: [:show, :destroy, :new]
 
