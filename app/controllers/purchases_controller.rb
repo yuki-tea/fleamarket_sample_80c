@@ -4,7 +4,7 @@ class PurchasesController < ApplicationController
 
   def index
     # binding.pry
-    # @item = Item.find(params[:id])
+    @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     # 登録された情報がない場合、登録画面に移動
     if card.blank?
