@@ -35,11 +35,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    # if params[:item][:images_attributes] && @item.update(edit_item_params)
-    #   redirect_to root_path, notice: "商品情報を編集しました"
-    # else
-    #   render :edit
-    # end
     @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to item_path(@item), notice: "商品の編集が完了しました"
