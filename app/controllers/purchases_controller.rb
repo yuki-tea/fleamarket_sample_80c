@@ -17,6 +17,7 @@ class PurchasesController < ApplicationController
   end
 
   def pay
+    # binding.pry
     @item = Item.find(params[:id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
@@ -25,6 +26,10 @@ class PurchasesController < ApplicationController
       :customer => card.customer_id, #顧客ID
       :currency => 'jpy', #日本円
     )
+    # binding.pry
+    @item.buyer_id = current_user.id
+    @item.save
+    # セーブできなかったときのif文記述
     redirect_to action: 'done' #完了画面に移動
     end
   end
