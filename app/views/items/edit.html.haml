@@ -1,3 +1,5 @@
+.header
+  = render 'messages/toppage-header'
 .image
 = form_with model: @item, local: true do |f|
   .image_main-text
@@ -24,7 +26,7 @@
                 -#   %i.far.fa-image
                 .js-remove 削除
 
-            - if @item.persisted? 
+            -# - if @item.persisted? 
               = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
           - if @item.persisted?
             .js-file_group{data: {index: @item.images.count}}
@@ -75,7 +77,7 @@
       .details_category_second
         必須
     .details_selec
-    = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+    -# = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
     .append__category
 
     .details_brand
@@ -141,7 +143,7 @@
 
 
   .listing
-    = f.submit "編集する", class: "listing__button"
+    = f.submit "出品する", class: "listing__button"
 
 
   .listing_return
@@ -150,3 +152,6 @@
     禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
 
 %hr.border
+
+.footer
+  = render 'messages/toppage-footer'
