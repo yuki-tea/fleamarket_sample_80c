@@ -30,6 +30,8 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    @category_parent_array = Category.where(ancestry: nil) 
+    
   end
 
   def update
@@ -38,6 +40,7 @@ class ItemsController < ApplicationController
     # else
     #   render :edit
     # end
+    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to item_path(@item), notice: "商品の編集が完了しました"
     else
