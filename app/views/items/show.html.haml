@@ -11,12 +11,13 @@
           .itemBox__body
             %ul
               %li
-                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-1'
+                = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1'
+                -# = image_tag item.images.first&.image.url
                 %ul
                   %li
-                    = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
+                    = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
           .itemBox__price
-            ¥10000
+
           .itemBox__price-detail
             .itemBox__price-detail__tax
             （税込）
