@@ -21,7 +21,8 @@
             .itemBox__price-detail__tax
             （税込）
             送料込み
-          .itemDetail テストテストテスト
+          .itemDetail
+            %td= @item.description
           .table
             %table
               %tbody
@@ -60,7 +61,8 @@
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to "#{@item.prefecture_id}", class: "corsol" 
+                    =link_to "#{@prefecture.name}", class: "consol"
+                    
                 %tr
                   %th 発送日の目安
                   %td=@handling_time.name
