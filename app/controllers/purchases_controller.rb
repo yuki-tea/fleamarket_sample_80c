@@ -30,6 +30,6 @@ class PurchasesController < ApplicationController
     @item.buyer_id = current_user.id
     @item.save
     # セーブできなかったときのif文記述
-    redirect_to action: 'done' #完了画面に移動
+    redirect_to root_path #完了画面に移動
     end
   end

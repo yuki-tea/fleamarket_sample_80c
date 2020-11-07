@@ -1,6 +1,9 @@
 class CardsController < ApplicationController
 
   require "payjp"
+
+  def index
+  end
   
   def new
     card = Card.find_by(user_id: current_user.id)
@@ -14,6 +17,7 @@ class CardsController < ApplicationController
   end
 
   def pay
+    # binding.pry
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "new"

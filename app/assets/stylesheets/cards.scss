@@ -27,6 +27,25 @@
         // color: #0099e8;
         text-decoration: none;
       }
+      .form-list{
+        margin:25px auto 0px;
+        max-width: 343px;
+        .btn-cards{
+          margin: 45px auto 0;
+          background-color: #3CCACE;
+          color: #fff;
+          display: block;
+          width: 343px;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          // cursor: pointer;
+          text-align: center;
+        }
+        .yourselfs{
+          float:right;
+        }
+      }
     }
 
     &__new h2 {
@@ -43,11 +62,6 @@
 
 .exparaiton{
   padding-top:10px;
-}
-
-.form-list{
-  margin:25px auto 0px;
-  max-width: 343px;
 }
 
 .form-must {
@@ -91,29 +105,16 @@
   font-size: 16px;
 }
 
-.btn-cards{
-  margin: 45px auto 0;
-  background-color: #3CCACE;
-  color: #fff;
-  display: block;
-  width: 343px;
-  line-height: 48px;
-  font-size: 14px;
-  border: 1px solid transparent;
-  // cursor: pointer;
-  text-align: center;
-}
 
-.exparation-select-wrap{
-  padding-bottom:15px;
-  // float:left;
-  display:flex;
-}
+// .exparation-select-wrap{
+//   padding-bottom:15px;
+//   display:flex;
+// }
 
-.select-wrap {
-  float:left;
-  background: #fff;
-}
+// .select-wrap {
+//   float:left;
+//   background: #fff;
+// }
 
 .exparation-select-wrap .select-wrap {
   width: 76px;
@@ -135,8 +136,4 @@
 .date{
   height:48px;
   line-height:48px;
-}
-
-.yourselfs{
-  float:right;
 }

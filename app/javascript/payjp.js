@@ -3,7 +3,7 @@ document.addEventListener(
     if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
       Payjp.setPublicKey("pk_test_c1f0dccaadd6c5d8c750909c"); //ここに公開鍵を直書き
       let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得されます
-      btn.addEventListener("click", e => { //ボタンが押されたときに作動します
+      btn.addEventListener("click", e => {//ボタンが押されたときに作動します
         e.preventDefault(); //ボタンを一旦無効化します
         let card = {
           number: document.getElementById("card_number").value,
