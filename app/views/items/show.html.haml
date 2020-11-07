@@ -54,12 +54,13 @@
                   %td
                 %tr
                   %th 配送料の負担
+
                   %td
                     - if [1].include?(@charge_id)
                       = "送料込み（出品者負担）"
                     -else
                       = "送料込み（購入者負担）"
-
+                      
                 %tr
                   %th 発送元の地域
                   %td
@@ -85,9 +86,8 @@
             .sellerSelect
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
           - elsif user_signed_in? && current_user.id != @item.user_id
-            .sellerSelect
-              購入する
-              -# = link_to '購入する', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
+            .sellerSelect            
+              = link_to '購入する', purchases_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
           - else
         .commentBox
           %ul.commentContents

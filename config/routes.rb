@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :cards, only: :show
   resources :buyers, only: :show
   resources :mypages, only: [:show, :destroy, :new]
+  resources :purchases, only: :index
 
   resources :items do
     collection do

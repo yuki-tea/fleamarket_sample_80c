@@ -82,3 +82,5 @@ gem 'fog'
 gem 'devise'
 
 gem 'ancestry'
+
+gem 'payjp'
