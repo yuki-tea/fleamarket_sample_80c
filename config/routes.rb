@@ -4,11 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :messages, only: :index
 
-  resources :cards, only: [:new, :show] do
+  resources :cards, only: [:new, :show, :index] do
     collection do
-      post 'show', to: 'cards#show'
+      # post 'show', to: 'cards#:id'
       post 'pay', to: 'cards#pay'
-      post 'delete', to: 'cards#delete'
     end
   end
 
