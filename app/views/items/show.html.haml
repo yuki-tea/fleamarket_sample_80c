@@ -11,20 +11,17 @@
           .itemBox__body
             %ul
               %li
-                = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1'
-                -# = image_tag item.images.first&.image.url
+                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-1'
                 %ul
                   %li
-                    = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
+                    = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
           .itemBox__price
-            ¥
-            %td=@item.price
+            ¥10000
           .itemBox__price-detail
             .itemBox__price-detail__tax
             （税込）
             送料込み
-          .itemDetail
-            %td= @item.description
+          .itemDetail テストテストテスト
           .table
             %table
               %tbody
@@ -54,21 +51,18 @@
                   %td
                 %tr
                   %th 配送料の負担
-
-                  %td
-                    - if [1].include?(@charge_id)
-                      = "送料込み（出品者負担）"
-                    -else
-                      = "送料込み（購入者負担）"
+                  %td=@item.shipping_charge_id
+                  -# %td
+                  -#   - if [1].include?(@charge_id)
+                  -#     = link_to "#{ShippingCharge.name}"
                       
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to "#{@prefecture.name}", class: "consol"
-                    
+                    =link_to "#{@item.prefecture_id}", class: "corsol" 
                 %tr
                   %th 発送日の目安
-                  %td=@handling_time.name
+                  %td=@item.handling_time_id
                 %tr
           .optionalArea
             %ul.optional
@@ -86,7 +80,7 @@
             .sellerSelect
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
           - elsif user_signed_in? && current_user.id != @item.user_id
-            .sellerSelect            
+            .sellerSelect
               = link_to '購入する', purchases_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
           - else
         .commentBox

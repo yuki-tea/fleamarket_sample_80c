@@ -1,9 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  
-  def index
-  end
-  
+
+
   def new
     @item = Item.new
     @item.images.new
@@ -49,17 +47,7 @@ class ItemsController < ApplicationController
     @category_grandchild = @item.category
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
-    @handling_time = @item.handling_time
-    @prefecture = @item.prefecture
-    @description = @item.description
-    @price = @item.price
-    # @user_id = @item.user_id
-    # @username = User.find(@user_id)
-    # @charge_id = @item.shipping_charge_id
-    # @category_id = @item.category_id
-    # @category_parent = Category.find(@category_id).parent.parent
-    # @category_child = Category.find(@category_id).parent
-    # @category_grandchild = Category.find(@category_id)
+    
   end
 
 
