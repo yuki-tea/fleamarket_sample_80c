@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
     @category_grandchild = @item.category
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
-    
+    @handling_time = @item.handling_time
     # @user_id = @item.user_id
     # @username = User.find(@user_id)
     # @charge_id = @item.shipping_charge_id
