@@ -17,7 +17,8 @@
                   %li
                     = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
           .itemBox__price
-
+            ¥
+            %td=@item.price
           .itemBox__price-detail
             .itemBox__price-detail__tax
             （税込）

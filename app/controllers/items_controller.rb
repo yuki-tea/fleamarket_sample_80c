@@ -49,7 +49,8 @@ class ItemsController < ApplicationController
     @category_parent = @category_child.parent
     @handling_time = @item.handling_time
     @prefecture = @item.prefecture
-    @description =@item.description
+    @description = @item.description
+    @price = @item.price
     # @user_id = @item.user_id
     # @username = User.find(@user_id)
     # @charge_id = @item.shipping_charge_id
