@@ -5,3 +5,4 @@ class PurchasesControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 end
+
