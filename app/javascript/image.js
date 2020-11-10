@@ -92,7 +92,7 @@ $(document).on('turbolinks:load', ()=> {
 
     $('label').attr('for', 'item_images_attributes_' + [fileIndex[0] - 1]+'_image')
 
-    
+    // $("#js-file_group").removeAttr("width");
   });
 
 

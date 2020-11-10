@@ -66,13 +66,17 @@
               display: flex;
               input{
                 display: none;
-                .js-file_group{
-                  width: 10%;
-                }
+              }
+
+              #js-file_group{
+                width: 0px;
+              }
+
+              .js-file_group{
+                width: 10%;
               }
               .js-remove{
                 text-align: center;
-                width: 89px;
               }
               
 
