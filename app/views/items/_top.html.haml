@@ -12,40 +12,29 @@
     .label-content
       #image-box
         #previews
-          - if @item.persisted?
-            - @item.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
-        .select-box
-          =  f.fields_for :images do |image|
-            .js-file_group{data: {index: image.index}}
-            = image.label :image, for: "item_images_attributes_0_image", class: "label-box", id: "label-box--1" do
-              %i.far.fa-image
-                = image.file_field :image, class: 'js-file'  
-                -# = image.label :image, class: "form-image" do
-                -#   %i.far.fa-image
-                .js-remove 削除
+          #preview-box
+            - if @item.persisted?
+              - @item.images.each_with_index do |image, i|
+                = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
+            = f.label :image, for: "item_images_attributes_0_image", class: "label-box", id: "label-box--1" do
+              -# %i.far.fa-image
+            .select-box
+              =  f.fields_for :images do |image|
+                .js-file_group{data: {index: image.index}}
 
-            - if @item.persisted? 
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          - if @item.persisted?
-            .js-file_group{data: {index: @item.images.count}}
-              = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-          -#       .js-remove 
-        
-            %pre.label-box__text-visible クリックしてファイルをアップロード
-      
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-          -# %input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
-      -#   %pre.label-box__text-visible クリックしてファイルをアップロード
+                  = image.file_field :image, class: 'js-file' 
+                  .js-remove 
+                  -# = image.label :image, class: "form-image" do
+                  -#   %i.far.fa-image
 
-
-  -# = form_with model: @iamge , html: {class: "image_post_form"}, local: true do |f|
-  -#     .icons
-  -#       = f.label :image, class: 'icons_image' do
-  -#         %i.far.fa-image
-  -#         = f.file_field :image, class: 'Hidden'
+                - if @item.persisted? 
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              - if @item.persisted?
+                .js-file_group{data: {index: @item.images.count}}
+                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+              -#       .js-remove 
+            
+                %pre.label-box__text-visible クリックしてファイルをアップロード
 
 
   %hr.border 
