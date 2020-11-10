@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image"><br>
-                      <div class="js-remove">削除</div>
+                    <div class="js-remove">削除</div>
                   </div>
                 `;
     return html;
@@ -43,8 +43,7 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `
-    <img data-index="${index}" src="${url}" width="10%" height="112px">
-    `;
+    <img data-index="${index}" src="${url}" width="10%" height="112px">`;
     return html;
   }
 
@@ -64,7 +63,7 @@ $(document).on('turbolinks:load', ()=> {
   //     e.stopPropagation();
   //   });
 
-  $('.label-content').on('change', '.js-file', function(e) {
+  $('#image-box').on('change', '.js-file', function(e) {
     // .parent()マッチしている要素の各親要素を取得します。
     // 今回の場合js-file-groupのindexを取得する
     const targetIndex = $(this).parent().data('index');
@@ -95,8 +94,6 @@ $(document).on('turbolinks:load', ()=> {
     // $("#js-file_group").removeAttr("width");
   });
 
-
-
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
     // 該当indexを振られているチェックボックスを取得する
@@ -105,7 +102,7 @@ $(document).on('turbolinks:load', ()=> {
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
     $(this).parent().remove();
-    $(`img[data-index="${targetIndex - 1}"]`).remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));

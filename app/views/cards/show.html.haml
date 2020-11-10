@@ -1,16 +1,21 @@
 .header
   = render 'messages/toppage-header'
-%label 登録クレジットカード情報
-%br
-= "**** **** ****" + @default_card_information.last4
-%br
-/exp_month有効期限付
-- exp_month = @default_card_information.exp_month.to_s
-/exp_year有効年
-- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-= exp_month + "/" + %exp_year
-= form_tag(card_delete_path, method: :post, id: 'charge-form',  name: "inputForm") do
-  %input{ type: "hidden", name: "card_id", value: "" }
-  %button 削除する
+.add-credit-top
+  .add-credit-top__main
+    .add-credit-top__main__new
+      %h2 登録クレジットカード情報
+    .add-credit-top__main__content
+      .card-details
+        .form-list カード番号
+        .card-details2
+          = "**** **** **** " + @customer_card.last4
+      .card-details
+        .form-list 有効期限
+        .card-details2
+          = @exp_month + "/" + @exp_year
+      .card_delete
+        = link_to card_path(@card.id), method: :delete, claas: "card_delete__btn" do
+          %button 削除する
+
 .footer
   = render 'messages/toppage-footer'
