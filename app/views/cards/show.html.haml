@@ -1,40 +1,16 @@
 .header
   = render 'messages/toppage-header'
-.add-credit-top
-  .add-credit-top__main
-    .add-credit-top__main__new
-      %h2 登録クレジットカード情報
-    .add-credit-top__main__content
-      .form-list
-        %label{for: "nickname"} カード番号
-        %span.form-must 必須
-        %input.payment-input-data{name: "nickname", placeholder: "半角数字のみ", type: "text", value: ""}/
-
-      .form-list
-        %label{for: "exparation-limit"} 有効期限
-        %span.form-must 必須
-      .exparation-select-wrap
-        .select-wrap
-          %i.icon-arrow-bottom
-          %input.select-default{name: "year"}
-            %option{value: ""} 
-        %span.date 年
-        .exparation-wrap.select-wrap
-          %i.icon-arrow-bottom
-          %input.select-default{name: "month"}
-            %option{value: ""} 
-        %span.date 月
-      .form-list
-        %label{for: "email"} セキュリティコード
-        %span.form-must 必須
-        %input.payment-input-data{name: "email", placeholder: "カード背面4行もしくは3行の番号", type: "email", value: ""}/
-        %p.card-back
-      .yourselfs
-        = link_to 'カード裏面の番号とは？', "/jp/help_center/article/423/" ,target: "_blank"  
-      =link_to  mypage_path, class:"btn-cards" do
-        追加する
-
-            
-
+%label 登録クレジットカード情報
+%br
+= "**** **** ****" + @default_card_information.last4
+%br
+/exp_month有効期限付
+- exp_month = @default_card_information.exp_month.to_s
+/exp_year有効年
+- exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+= exp_month + "/" + %exp_year
+= form_tag(card_delete_path, method: :post, id: 'charge-form',  name: "inputForm") do
+  %input{ type: "hidden", name: "card_id", value: "" }
+  %button 削除する
 .footer
   = render 'messages/toppage-footer'

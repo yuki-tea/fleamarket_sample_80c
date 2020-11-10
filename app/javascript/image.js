@@ -88,6 +88,8 @@ $(document).on('turbolinks:load', ()=> {
       // push() メソッドは、配列の末尾に 1 つ以上の要素を追加することができます。また戻り値として新しい配列の要素数を返します
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
+
+    $('label').attr('for', 'item_images_attributes_' + [fileIndex[0] - 1]+'_image')
   });
 
   $('#image-box').on('click', '.js-remove', function() {
