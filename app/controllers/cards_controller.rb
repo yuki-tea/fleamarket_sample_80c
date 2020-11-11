@@ -36,17 +36,17 @@ class CardsController < ApplicationController
   end
 
   def show
-    card = Card.find_by(user_id: current_user.id)
-    if card.blank?
+    @card = Card.find_by(user_id: current_user.id)
+    if @card.blank?
       # 未登録なら新規会員登録
       redirect_to action: "new" 
     else
       # .envからAPI秘密鍵を呼び出し
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       # ログインユーザーのクレジットカード情報からPay.jpに登録されているカスタマー情報を引き出す
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       # カスタマー情報からカードの情報を引き出す
-      @customer_card = customer.cards.retrieve(card.card_id)
+      @customer_card = customer.cards.retrieve(@card.card_id)
 
       ##カードのアイコン表示のための定義づけ
       @card_brand = @customer_card.brand
@@ -73,15 +73,15 @@ class CardsController < ApplicationController
     end
   end
 
-  def delete
-    card = Card.where(user_id: current_user.id).first
+  def destroy
+    @card = Card.where(user_id: current_user.id).first
     # blank?中身なかったらtrue
-    if card.blank?
+    if @card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
       redirect_to action: "new"
   end
