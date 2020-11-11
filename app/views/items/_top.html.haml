@@ -7,28 +7,35 @@
       必須
   .image_sub-text
     最大10枚までアップロードできます
-
   .image_post_form
     .prev-content
     .label-content
-      = f.label :image, for: "item_images_attributes_1_image", class: "label-box", id: "label-box--1" do
-        #image-box
-          #previews
-            - if @item.persisted?
-              - @item.images.each_with_index do |image, i|
-                = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
-          .select-box
-            = f.fields_for :images do |image|
-              .js-file_group{data: {index: image.index}}
-                = image.file_field :image, class: 'js-file' 
-                .js-remove 削除
+      #image-box
+        #previews
+          - if @item.persisted?
+            - @item.images.each_with_index do |image, i|
+              = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
+          = f.label :image, for: "item_images_attributes_0_image", class: "label-box", id: "label-box--1" do
+            %i.far.fa-image
+        .select-box
+          =  f.fields_for :images do |image|
+            #js-file_group{data: {index: image.index}}
 
-              - if @item.persisted? 
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-              - if @item.persisted?
-                .js-file_group{data: {index: @item.images.count}}
-                  = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                  .js-remove 削除
+              = image.file_field :image, class: 'js-file' 
+              .js-remove 
+              -# = image.label :image, class: "form-image" do
+              -#   %i.far.fa-image
+
+            - if @item.persisted? 
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @item.persisted?
+            .js-file_group{data: {index: @item.images.count}}
+              = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+          -#       .js-remove 
+        
+            %pre.label-box__text-visible クリックしてファイルをアップロード
+
+
   %hr.border 
 
   .item
@@ -56,17 +63,9 @@
         カテゴリー
       .details_category_second
         必須
-    -if @item.persisted?
-      .details_selec
-        = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "----", selected: @item.category.parent.parent_id}, {id: "parent"})
-      .children
-        = f.collection_select(:category_id, @item.category.parent.parent.children, :id, :name, {prompt: "----", selected: @item.category.parent_id}, {id: "child"})
-      .grand_children
-        = f.collection_select(:category_id, @item.category.parent.children, :id, :name, {prompt: "----", selected: @item.category.id}, {id: "grand_child"})
-    -else
-      .details_selec
-        = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
-      .append__category
+    .details_selec
+    = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+    .append__category
 
     .details_brand
       .details_brand_first
