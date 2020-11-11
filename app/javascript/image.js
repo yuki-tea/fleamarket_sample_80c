@@ -35,7 +35,7 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image"><br>
-                    <div class="js-remove">削除</div>
+                      <div class="js-remove">削除</div>
                   </div>
                 `;
     return html;
@@ -43,7 +43,8 @@ $(document).on('turbolinks:load', ()=> {
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
     const html = `
-    <img data-index="${index}" src="${url}" width="10%" height="112px">`;
+    <img data-index="${index}" src="${url}" width="10%" height="112px">
+    `;
     return html;
   }
 
@@ -63,7 +64,7 @@ $(document).on('turbolinks:load', ()=> {
   //     e.stopPropagation();
   //   });
 
-  $('#image-box').on('change', '.js-file', function(e) {
+  $('.label-content').on('change', '.js-file', function(e) {
     // .parent()マッチしている要素の各親要素を取得します。
     // 今回の場合js-file-groupのindexを取得する
     const targetIndex = $(this).parent().data('index');
@@ -86,9 +87,15 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       // push() メソッドは、配列の末尾に 1 つ以上の要素を追加することができます。また戻り値として新しい配列の要素数を返します
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      fileIndex.push(fileIndex[fileIndex.length -1 ] + 1);
     }
+
+    $('label').attr('for', 'item_images_attributes_' + [fileIndex[0] - 1]+'_image')
+
+    // $("#js-file_group").removeAttr("width");
   });
+
+
 
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
@@ -98,7 +105,7 @@ $(document).on('turbolinks:load', ()=> {
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
     $(this).parent().remove();
-    $(`img[data-index="${targetIndex}"]`).remove();
+    $(`img[data-index="${targetIndex - 1}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
