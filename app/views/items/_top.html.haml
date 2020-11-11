@@ -63,10 +63,18 @@
         カテゴリー
       .details_category_second
         必須
-    .details_selec
-    = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
-    .append__category
-    
+    -if @item.persisted?
+      .details_selec
+        = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "----", selected: @item.category.parent.parent_id}, {id: "parent"})
+      .children
+        = f.collection_select(:category_id, @item.category.parent.parent.children, :id, :name, {prompt: "----", selected: @item.category.parent_id}, {id: "child"})
+      .grand_children
+        = f.collection_select(:category_id, @item.category.parent.children, :id, :name, {prompt: "----", selected: @item.category.id}, {id: "grand_child"})
+    -else
+      .details_selec
+        = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+      .append__category
+  
 
     .details_brand
       .details_brand_first
