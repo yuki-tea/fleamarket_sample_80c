@@ -20,11 +20,32 @@
     padding-top: 8px;
     padding-bottom: 64px;
     &__content{
-      display: flex;
-      flex-direction: column;
       margin: 0 auto;
       max-width: 343px;
       padding-top:20px;
+      a{
+        // color: #0099e8;
+        text-decoration: none;
+      }
+      .form-list{
+        margin:25px auto 0px;
+        max-width: 343px;
+        .btn-cards{
+          margin: 45px auto 0;
+          background-color: #3CCACE;
+          color: #fff;
+          display: block;
+          width: 343px;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          // cursor: pointer;
+          text-align: center;
+        }
+        .yourselfs{
+          float:right;
+        }
+      }
     }
 
     &__new h2 {
@@ -34,32 +55,85 @@
       text-align: center;
       padding: 8px 0;
       border-bottom: 2px solid #f5f5f5;
+
     }
   }
 }
 
-.card-details {
-  width: 100%;
-  margin-top: 30px;
+.exparaiton{
+  padding-top:10px;
 }
 
-.form-list {
-  width: 100%;
-  margin: 10px 0;
-  font-weight: bold;
+.form-must {
+  font-size: 12px;
+  padding: 0 4px;
+  background-color: #ff0211;
+  color: #fff;
+  font-weight: 600;
+  margin-left: 8px;
+  border-radius: 2px;
 }
 
-.card-details2 {
-  width: 100%;
-  font-size: 30px;
+.form-group label {
+  font-weight: 600;
 }
 
-.card_delete {
-  margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  &__btn {
-    color: white;
-  }
+.form-list .input-data {
+  width: 100%;
+  margin: 8px 0 0;
+}
+
+.form-list label {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.halfs{
+  display:flex;
+  padding:10px 0px;
+}
+
+.payment-input-data {
+  margin-top:5px;
+  width:343px;
+  padding: 10px 10px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+
+// .exparation-select-wrap{
+//   padding-bottom:15px;
+//   display:flex;
+// }
+
+// .select-wrap {
+//   float:left;
+//   background: #fff;
+// }
+
+.exparation-select-wrap .select-wrap {
+  width: 76px;
+}
+
+.select-default {
+  width: 70px;
+  z-index: 2;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.date{
+  height:48px;
+  line-height:48px;
 }
