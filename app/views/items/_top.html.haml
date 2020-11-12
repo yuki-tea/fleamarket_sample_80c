@@ -15,25 +15,22 @@
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
               = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
-          = f.label :image, for: "item_images_attributes_0_image", class: "label-box", id: "label-box--1" do
+          = f.label :image, for: "item_images_attributes_#{@item.images.count}_image", class: "label-box", id: "label-box--1" do
             %i.far.fa-image
         .select-box
-          =  f.fields_for :images do |image|
-            #js-file_group{data: {index: image.index}}
-
+          =  f.fields_for :images do |image, i|
+            .js-file_group{data: {index: image.index}}
               = image.file_field :image, class: 'js-file' 
-              .js-remove 
-              -# = image.label :image, class: "form-image" do
-              -#   %i.far.fa-image
+ 
 
             - if @item.persisted? 
               = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
           - if @item.persisted?
-            .js-file_group{data: {index: @item.images.count}}
-              = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-          -#       .js-remove 
+            .js-file_group{data: {index: i}}
+              = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file', id:"item_images_attributes_#{@item.images.count}_image"
+              .js-remove 削除
         
-            %pre.label-box__text-visible クリックしてファイルをアップロード
+            -# %pre.label-box__text-visible クリックしてファイルをアップロード
 
 
   %hr.border 
