@@ -20,12 +20,11 @@
         .select-box
           =  f.fields_for :images do |image, i|
             #js-file_group{data: {index: image.index}}
-              = image.file_field :image, class: 'js-file' 
+              = image.file_field :image, data: {type: image.index}, class: 'js-file' 
             - if @item.persisted? 
               .js-file_group{data: {index: image.index}}
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
                 .js-remove 削除
-                .js-edit 編集
                 
           - if @item.persisted?
             .js-file_group{data: {index: @item.images.count}}

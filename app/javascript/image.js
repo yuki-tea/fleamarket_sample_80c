@@ -53,8 +53,6 @@ $(document).on('turbolinks:load', ()=> {
       // fileIndexの先頭の数字を使ってinputを作る
       const test1 =`<div class="js-remove">削除</div>`
       $(this).after(test1)
-      const test2 =`<div class="js-edit">編集</div>`
-      $(this).after(test2)
       $('.select-box').append(buildFileField(fileIndex[0]));
       //shift() メソッドは、配列から最初の要素を取り除き、その要素を返します。このメソッドは配列の長さを変えます。
       fileIndex.shift();
@@ -75,24 +73,12 @@ $(document).on('turbolinks:load', ()=> {
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    $(this).parent().remove();
+    $(`input[data-type= ${targetIndex}]`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
 
-    
-  });
-
-  $('#image-box').on('click', '.js-edit', function() {
-    const targetIndex = $(this).parent().data('index');
-    // 該当indexを振られているチェックボックスを取得する
-    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
-    // もしチェックボックスが存在すればチェックを入れる
-    if (hiddenCheck) hiddenCheck.prop('checked', true);
-
-    $(this).parent().remove();
-    $(`img[data-index="${targetIndex}"]`).remove();
     
   });
 
