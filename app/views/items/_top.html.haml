@@ -21,14 +21,16 @@
           =  f.fields_for :images do |image, i|
             .js-file_group{data: {index: image.index}}
               = image.file_field :image, class: 'js-file' 
- 
             - if @item.persisted? 
-              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+              .js-file_group{data: {index: image.index}}
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                .js-remove 削除
+              
           - if @item.persisted?
             .js-file_group{data: {index: @item.images.count}}
               = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file', id:"item_images_attributes_#{@item.images.count}_image"
         
-            -# %pre.label-box__text-visible クリックしてファイルをアップロード
+
 
 
   %hr.border 
