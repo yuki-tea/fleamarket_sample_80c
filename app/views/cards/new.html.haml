@@ -8,17 +8,17 @@
         %h2 クレジットカード情報入力
       .add-credit-top__main__content
         .form-list
-          %label カード番号
+          %label{for: "nickname"} カード番号
           %span.form-must 必須
-        .exparation-select-wrap
-        .select-wrap
-          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
+          .exparation-select-wrap
+          .select-wrap
+          = text_field_tag "number", "", class: "text", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number"
         .form-list
           %label 有効期限
           %span.form-must 必須
           .exparation-select-wrap
             .select-wrap
-          %select#exp_month{name: "exp_month", type: "text"}
+          %select#exp_month{name: "exp_month", type: "text",class: "date"}
             %option{value: ""} --
             %option{value: "1"}01
             %option{value: "2"}02
@@ -33,7 +33,7 @@
             %option{value: "11"}11
             %option{value: "12"}12
           %span 月/
-          %select#exp_year{name: "exp_year", type: "text"}
+          %select#exp_year{name: "exp_year", type: "text",class: "date"}
             %option{value: ""} --
             %option{value: "2019"}19
             %option{value: "2020"}20
@@ -53,7 +53,7 @@
           %span.form-must 必須
           .exparation-select-wrap
             .select-wrap
-            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
+            = text_field_tag "cvc", "", class: "text", placeholder: "カード背面3~4桁の番号", maxlength: "4", id: "cvc"
           #card_token
           -# = link_to 'カード裏面の番号とは？', "/jp/help_center/article/423/" ,target: "_blank" 
           = submit_tag "追加する", id: "token_submit",class:"btn-cards"

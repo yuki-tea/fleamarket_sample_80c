@@ -1,6 +1,6 @@
 
 .add-credit-top{
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
   line-height: 1.4;
   text-align: center;
@@ -22,7 +22,10 @@
     }
   }
 }
-
+h2{
+  margin-bottom: 15px;
+  font-size: 20px;
+}
 .card_delete {
   margin-top: 40px;
   display: flex;
@@ -32,7 +35,7 @@
     background-color: #ea352d;
     color: #fff;
     width: 100%;
-    font-size: 17px;
+    font-size: 20px;
     min-height: 48px;
     padding: 0 24px;
     border-radius: 4px;
@@ -46,4 +49,60 @@
     text-decoration: none;
 
   }
+}
+.form-list{
+  margin:30px auto 0px;
+  max-width: 343px;
+  
+  .text{
+    font-size: 20px;
+    margin-top: 10px;
+    width: 340px;
+    height: 38px;
+  }
+  .form-must {
+    font-size: 16px;
+    padding: 0 4px;
+    background-color: #ff0211;
+    color: #fff;
+    font-weight: 600;
+    margin-left: 8px;
+    border-radius: 2px;
+  }
+  .form-group label {
+    font-weight: 600;
+  }
+  .select-wrap {
+    float:left;
+    background: #fff;
+  }
+  
+  .exparation-select-wrap .select-wrap {
+    width: 76px;
+  }
+  .form-list .input-data {
+    width: 100%;
+    margin: 8px 0 0;
+  }  
+}
+.btn-cards{
+  margin: 45px auto 0;
+  background-color: #3CCACE;
+  color: #fff;
+  display: block;
+  width: 343px;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  // cursor: pointer;
+  text-align: center;
+}
+.yourselfs{
+  float:right;
+}
+.date{
+  font-size: 20px;
+  margin: 10px 50px 0 10px;
+  width: 80px;
+  height: 35px;
 }
