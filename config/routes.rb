@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :buyers, only: :show
   resources :mypages, only: [:show, :destroy, :new]
+  resources :purchases, only: :index
 
   resources :items do
     collection do
@@ -31,3 +32,4 @@ Rails.application.routes.draw do
   root "messages#index"
   
 end
+

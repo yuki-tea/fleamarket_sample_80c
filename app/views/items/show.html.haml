@@ -11,17 +11,19 @@
           .itemBox__body
             %ul
               %li
-                = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-1'
+                = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1'
                 %ul
                   %li
-                    = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG', alt: '',  class: 'img-2'
+                    = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
           .itemBox__price
-            ¥10000
+            ¥
+            %td=@item.price
           .itemBox__price-detail
             .itemBox__price-detail__tax
             （税込）
             送料込み
-          .itemDetail テストテストテスト
+          .itemDetail
+            %td= @item.description
           .table
             %table
               %tbody
@@ -52,10 +54,6 @@
                 %tr
                   %th 配送料の負担
                   %td=@item.shipping_charge_id
-                  -# %td
-                  -#   - if [1].include?(@charge_id)
-                  -#     = link_to "#{ShippingCharge.name}"
-                      
                 %tr
                   %th 発送元の地域
                   %td
@@ -118,4 +116,3 @@
 
 .footer
   = render 'messages/toppage-footer'
-  

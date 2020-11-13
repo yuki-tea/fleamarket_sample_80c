@@ -28,6 +28,6 @@ class User < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :municipality, presence: true
   validates :street_number, presence: true
-  validates :telephone_number, presence: true
+  validates :telephone_number, presence: false
 end
 

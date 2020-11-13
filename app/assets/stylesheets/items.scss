@@ -22,6 +22,11 @@
     font-weight: bold;
     font-size: 24px;
   }
+  p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+  }
   &__body{
     margin: 16px 0 0;
     ul{
@@ -99,7 +104,7 @@
       padding: 15px 15px;
       border: 1px solid #dedede;
       font-size: 14px;
-      .corsol{
+      a {
         text-decoration: none;
         color: #3CCACE;
       }
@@ -271,6 +276,19 @@
     }
   }
 }
-
+.deleteItem{
+  display: flex;
+  justify-content: center;
+  .sellerSelect {
+    line-height: 48px;
+    background: #3CCACE;
+    border: 1px solid #3CCACE;
+    color: #fff;
+    width: 60%;
+    font-size: 18px;
+    border-radius: 100px;
+    text-align: center;
+  }
+}
 
 
