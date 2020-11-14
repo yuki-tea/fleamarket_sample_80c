@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'purchases/index'
-  get 'purchases/done'
   devise_for :users
   resources :messages, only: :index
 
