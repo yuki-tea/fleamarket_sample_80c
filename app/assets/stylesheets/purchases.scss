@@ -12,12 +12,10 @@
         font-size: 30px;
         line-height: 20vh;
         height: 20vh;
-        // background-color: lightgreen;
         font-weight: 600;
       }
 
       .conf-item{
-        // background-color: lightpink;
         height: 20vh;
         display: flex;
         flex-direction: column;
@@ -34,7 +32,6 @@
       }
       
       .payment-amount{
-        // background-color: lightsalmon;
         height: 20vh;
         font-weight: bold;
         font-size: 25px;
@@ -52,7 +49,6 @@
       .payment-method{
         height: 10vh;
         line-height: 10vh;
-        // background-color: lightslategrey;
         font-weight: bold;
         padding-left: 30px;
       }
@@ -60,13 +56,10 @@
       .payment-card{
         height: 10vh;
         padding-left: 30px;
-        // line-height: 10vh;
-        // background-color: mediumpurple;
       }
       
       .form{
         height: 20vh;
-        // background-color: midnightblue;
         display: flex;
         justify-content: center;
         align-items: center;

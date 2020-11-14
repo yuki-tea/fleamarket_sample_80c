@@ -1,23 +1,22 @@
 class CardsController < ApplicationController
+  before_action :card_user, only: [:new, :show, :destroy]
 
   require "payjp"
+
+  def card_user
+    @card = Card.find_by(user_id: current_user.id)
+  end
 
   def index
   end
   
   def new
-    card = Card.find_by(user_id: current_user.id)
     # データが存在するかどうかを知りたい時
     # exists?を使います。trueかfalseを返します。
-    redirect_to action: "show", id: card.id  if card.present? 
-  #   else
-  #     flash.now[:alert] = 'メッセージを入力してください。'
-  #     redirect_to action: "new"
-  #   end
+    redirect_to action: "show", id: @card.id  if @card.present? 
   end
 
   def pay
-    # binding.pry
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -36,7 +35,6 @@ class CardsController < ApplicationController
   end
 
   def show
-    @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       # 未登録なら新規会員登録
       redirect_to action: "new" 
@@ -74,7 +72,6 @@ class CardsController < ApplicationController
   end
 
   def destroy
-    @card = Card.where(user_id: current_user.id).first
     # blank?中身なかったらtrue
     if @card.blank?
     else
@@ -85,5 +82,4 @@ class CardsController < ApplicationController
     end
       redirect_to action: "new"
   end
-
 end
