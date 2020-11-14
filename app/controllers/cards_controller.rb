@@ -1,11 +1,6 @@
 class CardsController < ApplicationController
   before_action :card_user, only: [:new, :show, :destroy]
-
-  require "payjp"
-
-  def card_user
-    @card = Card.find_by(user_id: current_user.id)
-  end
+  before_action :card_data, only: [:pay, :show, :destroy]
 
   def index
   end
@@ -17,7 +12,6 @@ class CardsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -40,7 +34,6 @@ class CardsController < ApplicationController
       redirect_to action: "new" 
     else
       # .envからAPI秘密鍵を呼び出し
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       # ログインユーザーのクレジットカード情報からPay.jpに登録されているカスタマー情報を引き出す
       customer = Payjp::Customer.retrieve(@card.customer_id)
       # カスタマー情報からカードの情報を引き出す
@@ -74,11 +67,23 @@ class CardsController < ApplicationController
   def destroy
     # blank?中身なかったらtrue
     if @card.present?
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
       @card.delete
     end
       redirect_to action: "new"
   end
+
+  private
+
+  require "payjp"
+
+  def card_user
+    @card = Card.find_by(user_id: current_user.id)
+  end
+
+  def card_data
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+  end
+
 end
