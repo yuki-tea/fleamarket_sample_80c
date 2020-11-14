@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to item_path(@item), notice: "商品の編集が完了しました"
+      binding.pry
     else
       redirect_to edit_item_path(@item), notice: "必須項目を入力してください"
     end

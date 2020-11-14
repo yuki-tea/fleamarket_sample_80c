@@ -14,7 +14,7 @@
         #previews
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i}, width: "70", height: '112'
+              = image_tag image.image.url, data: { index: i}, width: "10%", height: '112'
           = f.label :image, for: "item_images_attributes_#{@item.images.count}_image", class: "label-box", id: "label-box--1" do
             %i.far.fa-image
         .select-box

@@ -75,6 +75,7 @@ $(document).on('turbolinks:load', ()=> {
 
     $(`input[data-type= ${targetIndex}]`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
+    $(`.js-file_group[data-index= ${targetIndex}]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
