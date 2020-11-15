@@ -51,7 +51,9 @@ $(document).on('turbolinks:load', ()=> {
       // targetindexではなかったら新しく画像を入れてtargetindexとurlをはる
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      const test1 =`<div data-index="${targetIndex}" class="js-remove">削除</div>`
+      const test1 =`<input  data-index="${targetIndex}" class="hidden-destroy" type="checkbox", name="item[images_attributes][${targetIndex}][_destroy]" id="item_images_attributes_${targetIndex}__destroy" >
+      <div data-index="${targetIndex}" class="js-remove">削除</div>`
+
       $(this).after(test1)
       $('.select-box').append(buildFileField(fileIndex[0]));
       //shift() メソッドは、配列から最初の要素を取り除き、その要素を返します。このメソッドは配列の長さを変えます。
