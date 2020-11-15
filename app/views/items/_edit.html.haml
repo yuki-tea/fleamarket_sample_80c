@@ -24,7 +24,7 @@
             - if @item.persisted? 
               .js-file_group{data: {index: image.index}}
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                .js-remove 削除
+                .js-remove{data: {index: image.index}} 削除
                 
           - if @item.persisted?
             .js-file_group{data: {index: @item.images.count}}
