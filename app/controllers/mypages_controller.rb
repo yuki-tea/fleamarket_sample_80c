@@ -4,6 +4,7 @@ class MypagesController < ApplicationController
   end
   
   def show
+    @users = User.find(params[:id])
   end
 
   def profile
