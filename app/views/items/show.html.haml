@@ -12,6 +12,7 @@
             %ul
               %li
                 = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1'
+                -# = image_tag item.images.first&.image.url
                 %ul
                   %li
                     = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
@@ -53,14 +54,21 @@
                   %td
                 %tr
                   %th 配送料の負担
-                  %td=@item.shipping_charge_id
+
+                  %td
+                    - if [1].include?(@charge_id)
+                      = "送料込み（出品者負担）"
+                    -else
+                      = "送料込み（購入者負担）"
+                      
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to "#{@item.prefecture_id}", class: "corsol" 
+                    =link_to "#{@prefecture.name}", class: "consol"
+                    
                 %tr
                   %th 発送日の目安
-                  %td=@item.handling_time_id
+                  %td=@handling_time.name
                 %tr
           .optionalArea
             %ul.optional
@@ -78,8 +86,8 @@
             .sellerSelect
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
           - elsif user_signed_in? && current_user.id != @item.user_id
-            .sellerSelect
-              = link_to '購入する', purchase_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
+            .sellerSelect            
+              = link_to '購入する', purchases_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
           - else
         .commentBox
           %ul.commentContents
@@ -116,3 +124,5 @@
 
 .footer
   = render 'messages/toppage-footer'
+  
+  
