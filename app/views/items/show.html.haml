@@ -85,7 +85,7 @@
               = link_to '商品の編集', edit_item_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
             .sellerSelect
               = link_to 'この商品を削除する', item_path(@item.id), method: :delete, data: { confirm: "本当に削除しますか？" }, class: 'commentBtn'
-          - elsif user_signed_in? && current_user.id != @item.user_id
+          - elsif user_signed_in? && current_user.id != @item.user_id && @item.buyer_id == nil
             .sellerSelect            
               = link_to '購入する', purchases_path(@item.id), data:{"turbolinks" => false}, class: 'commentBtn'
           - else
