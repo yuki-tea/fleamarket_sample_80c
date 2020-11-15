@@ -51,7 +51,6 @@ class ItemsController < ApplicationController
     @prefecture = @item.prefecture
     @description = @item.description
     @price = @item.price
-    
   end
 
 
