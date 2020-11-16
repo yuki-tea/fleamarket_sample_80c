@@ -1,147 +1,141 @@
 .image
-= form_with model: @item, local: true do |f|
-  .image_main-text
-    .image_main-text_first
-      出品画像
-    .image_main-text_second
-      必須
-  .image_sub-text
-    最大10枚までアップロードできます
-  .image_post_form
-    .prev-content
-    .label-content
-      #image-box
-        #previews
-          - if @item.persisted?
-            - @item.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i}, width: "70", height: '112'
-          = f.label :image, for: "item_images_attributes_#{@item.images.count}_image", class: "label-box", id: "label-box--1" do
-            %i.far.fa-image
-        .select-box
-          =  f.fields_for :images do |image, i|
-            .js-file_group{data: {index: image.index}}
-              = image.file_field :image, class: 'js-file' 
-            - if @item.persisted? 
-              .js-file_group{data: {index: image.index}}
+  = form_with model: @item, local: true do |f|
+    .image_main-text
+      .image_main-text_first
+        出品画像
+      .image_main-text_second
+        必須
+    .image_sub-text
+      最大10枚までアップロードできます
+    .image_post_form
+      .prev-content
+      .label-content
+        #image-box
+          #previews
+            - if @item.persisted?
+              - @item.images.each_with_index do |image, i|
+                = image_tag image.image.url, data: { index: i}, width: "100", height: '100'
+            = f.label :image, for: "item_images_attributes_0_image", class: "label-box", id: "label-box--1" do
+              %i.far.fa-image
+          .select-box
+            =  f.fields_for :images do |image|
+              #js-file_group{data: {index: image.index}}
+
+                = image.file_field :image, class: 'js-file' 
+                .js-remove 
+                -# = image.label :image, class: "form-image" do
+                -#   %i.far.fa-image
+
+              - if @item.persisted? 
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                .js-remove 削除
-              
-          - if @item.persisted?
-            .js-file_group{data: {index: @item.images.count}}
-              = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file', id:"item_images_attributes_#{@item.images.count}_image"
-        
+            - if @item.persisted?
+              .js-file_group{data: {index: @item.images.count}}
+                = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+            -#       .js-remove 
+          
+              %pre.label-box__text-visible クリックしてファイルをアップロード
 
 
 
-  %hr.border 
 
-  .item
-    .form
-      .form__text
-        %label 商品名
-        %span.form__text__second 必須
-      = f.text_field :name, class: 'name__post__input', placeholder: ' 40文字まで'
-
-    .describe
-      .form__text
-        %label 商品の説明
-        %span.form__text__second 必須
-      = f.text_area :description, class: 'describe__post__input', placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ)'
-    .word_count 
-      %span 1/1000
-
-  %hr.border
-
-  .details
-    .details_item
-      商品の詳細
-    .details_category
-      .details_category_first
-        カテゴリー
-      .details_category_second
-        必須
-    -if @item.persisted?
-      .details_selec
-        = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "----", selected: @item.category.parent.parent_id}, {id: "parent"})
-      .children
-        = f.collection_select(:category_id, @item.category.parent.parent.children, :id, :name, {prompt: "----", selected: @item.category.parent_id}, {id: "child"})
-      .grand_children
-        = f.collection_select(:category_id, @item.category.parent.children, :id, :name, {prompt: "----", selected: @item.category.id}, {id: "grand_child"})
-    -else
-      .details_selec
-        = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
-      .append__category
-  
-
-    .details_brand
-      .details_brand_first
-        ブランド
-      .details_brand_second
-        任意
-    = f.text_field :brand, class: 'details_post_message' , placeholder: '例) シャネル'
-    .details_status
-      .details_status_first
-        商品の状態
-      .details_status_second
-        必須
-        
-    = f.collection_select :item_status_id,ItemStatus.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
-
-  %hr.border 
-
-  .delivery
-  .delivery_about
-    配送のついて
-  .delivery_burden
-    .delivery_burden_first
-      配送料の負担
-    .delivery_burden_second
-      必須
-  = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
-
-  .delivery_area
-    .delivery_area_first
-      発送元の地域
-    .delivery_area_second
-      必須
-  = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
-
-  .delivery_days
-    .delivery_days_first
-      発送までの日数
-    .delivery_days_second
-      必須
-  = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
-
-  %hr.border
-
-  .price
-    %p.price-example 価格（¥300〜9,999,999）
-    .price__result
-      .price__result__form
-        .price_selling
-          .price_text
-            %label 販売価格
-            %span.price_text__second 必須
-        %span.en ¥
-        .price_fill_in
-          = f.number_field :price, class: 'price_fill_in__input', placeholder: '0', min:"300", max:"9999999"
-      .fee
-        .fee__label 販売手数料（10％）
-        %span#price_fee.price_result —
+    .item
       %hr.border
-      .profit
-        .profit__label 販売利益
-        %span#price_profit.price_result —
+      .form
+        .form__text
+          %label 商品名
+          %span.form__text__second 必須
+        = f.text_field :name, class: 'name__post__input', placeholder: ' 40文字まで'
+
+      .describe
+        .form__text
+          %label 商品の説明
+          %span.form__text__second 必須
+        = f.text_area :description, class: 'describe__post__input', placeholder: '商品の説明（必須 1,000文字以内）(色、素材、重さ)'
+      .word_count 
+        %span 1/1000
+
+    %hr.border
+
+    .details
+      .details_item
+        商品の詳細
+      .details_category
+        .details_category_first
+          カテゴリー
+        .details_category_second
+          必須
+      .details_selec
+      = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "details_select"}
+      .append__category
+
+      .details_brand
+        .details_brand_first
+          ブランド
+        .details_brand_second
+          任意
+      = f.text_field :brand, class: 'details_post_message' , placeholder: '例) シャネル'
+      .details_status
+        .details_status_first
+          商品の状態
+        .details_status_second
+          必須
+          
+      = f.collection_select :item_status_id,ItemStatus.all, :id, :name,{include_blank: "選択してください"},  {class: "details_select"}
+
+    %hr.border 
+
+    .delivery
+      .delivery_about
+        配送のついて
+      .delivery_burden
+        .delivery_burden_first
+          配送料の負担
+        .delivery_burden_second
+          必須
+      = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
+
+      .delivery_area
+        .delivery_area_first
+          発送元の地域
+        .delivery_area_second
+          必須
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
+
+      .delivery_days
+        .delivery_days_first
+          発送までの日数
+        .delivery_days_second
+          必須
+      = f.collection_select :handling_time_id, HandlingTime.all, :id, :name, {include_blank: "選択してください"}, {class: "delivery_select"}
+
+    .price
+      %hr.border
+      %p.price-example 価格（¥300〜9,999,999）
+      .price__result
+        .price__result__form
+          .price_selling
+            .price_text
+              %label 販売価格
+              %span.price_text__second 必須
+          %span.en ¥
+          .price_fill_in
+            = f.number_field :price, class: 'price_fill_in__input', placeholder: '0', min:"300", max:"9999999"
+        .fee
+          .fee__label 販売手数料（10％）
+          %span#price_fee.price_result —
+        %hr.border
+        .profit
+          .profit__label 販売利益
+          %span#price_profit.price_result —
 
 
-  .listing
-    = f.submit "出品する", class: "listing__button"
+    .listing
+      = f.submit "出品する", class: "listing__button"
 
 
-  .listing_return
-    もどる
-  .listing_caution-message
-    禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
+    .listing_return
+      もどる
+    .listing_caution-message
+      禁止されている行為および出品物を必ずご確認ください・偽ブレンドや盗品物などの販売は犯罪でさり、法律により処罰される可能性があります。また、出品をもちまして加盟店規約に同意したことになります。
 
-%hr.border
+    %hr.border
