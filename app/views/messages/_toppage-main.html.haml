@@ -119,7 +119,7 @@
                     %p
                       (税込)
             - else
-              = link_to item_path(item) do
+              = link_to item_path [item] do
                 %figure.productList--img
                   = image_tag item.images.first&.image.url, class: 'productList--img-n'
                 %p.sold sold

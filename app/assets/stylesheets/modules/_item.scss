@@ -9,7 +9,7 @@
 
     &_main-text{
       display: flex;
-
+      
       &_first{
         font-size: 14px;
         font-weight: 600;
@@ -86,12 +86,10 @@
       }
     }
   }
-        
   .item{
     margin-top: 20px;
     width: 100%;
-    padding: 40px;
-
+    padding-top: 50px;
     .form{
       &__text {
         color: rgb(51, 51,51);
@@ -99,6 +97,7 @@
         font-weight: 600;
         line-height: 1.4em;
         display: flex;
+        margin: 20px 0;
         align-items: center;
           &__second{
             font-size: 12px;
@@ -180,13 +179,13 @@
 
   .details{
     width: 100%;
-    padding:40px;
     &_item{
       color: rgb(136, 136, 136);
       font-size: 14px;
       font-weight: 600;
       line-height: 1.4em;
       margin-bottom: 24px;
+      margin-top: 20px;
     }
 
     &_category{
@@ -221,6 +220,7 @@
       align-items: center;
       justify-content: space-between;
       border-radius: 5px;
+      margin-bottom: 40px;
 
       &_second{
         padding-right: 15px;
@@ -285,7 +285,6 @@
 
   .delivery{
     width: 100%;
-    padding:40px;
 
     &_about{
       color: rgb(136, 136, 136);
@@ -294,6 +293,7 @@
       line-height: 1.4em;
       margin-bottom: 24px;
       border-radius: 5px;
+      margin-top: 20px;
     }
 
     &_burden{
@@ -385,13 +385,14 @@
   }
 
   .price{
-    padding: 40px 40px 0px;
+    padding-top: 40px;
     .price-example{
       color: rgb(136, 136, 136);
       font-size: 14px;
       font-weight: 600;
       line-height: 1.4em;
       margin-bottom: 24px;
+      margin-top: 20px;
     }
     &__result{
       margin-bottom: 40px;
@@ -489,7 +490,7 @@
 
   .listing{
     width: 100%;
-    padding:40px;
+    // padding:40px;
     &__button{
       background-color: #ea352d;
       color: #fff;
@@ -520,20 +521,5 @@
     &_caution-message{
       font-size: 12.5px;
     }
-  }
-}
-
-
-.review-box{
-  width: 10%;
-  height: 100px;
-  background-color: rgb(245, 245, 245);
-  border: dashed 1px rgb(204,204 ,204);
-  .main-box{
-    height: 80px;
-  }
-
-  .delete-box{
-    height: 20px;
   }
 }

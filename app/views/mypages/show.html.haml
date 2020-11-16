@@ -1,7 +1,3 @@
--# =render "home/header_login"
--# - breadcrumb :profile
--# = render "layouts/breadcrumbs"
--# =render "mypage_side"
 .header
   = render 'messages/toppage-header'
 
@@ -19,22 +15,14 @@
               .profile-name__img
                 = image_tag "https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "user-img"
                 .profile-name__form
-                  はる
-                  -# = current.user
-                  -# = form.text_field :nickname
-          -# .profile-message
-          -#   = form.text_area :introduction,class:'text-introduction',placeholder:"例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" 
-
-          -# .form-group
-          -#   = form.submit "変更する", class: "edit-btn"
-
+                  = @users.name
       %ul.mypage-nav-list
         設定
         %li
           =link_to new_mypage_path, class: "mypage-nav-list-item" do
             ログアウト
         %li
-          =link_to card_path, class: "mypage-nav-list-item" do
+          =link_to new_card_path(current_user.id), class: "mypage-nav-list-item" do
             クレジットカード登録/変更
 .footer
   = render 'messages/toppage-footer'

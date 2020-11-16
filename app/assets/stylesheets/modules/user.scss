@@ -136,8 +136,8 @@
   justify-content: flex-start;
 
   .FormField_name { 
-    margin: 0 60px 10px 270px;
-    max-width: 600px;
+    margin: 0 60px 10px 240px;
+    max-width: 600vw;
     height: 100px;
     .birth {   
       box-sizing: border-box;
@@ -172,6 +172,46 @@
         letter-spacing: 1px;
         margin-top: 10px;
       }
+    }
+  }
+}
+
+.FormField_name2 { 
+  margin: 0 60px 10px 100px;
+  max-width: 600vw;
+  height: 100px;
+  .birth {   
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    letter-spacing: 1px;
+    margin: 10px 0 0 0;
+  .FormField__label--name {
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    height: 30px;
+     i {
+      font-size: 11px;  
+     }
+    }
+  }
+    .FormField__need {
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4em;
+      padding: 2px 3px;
+      width: 36px;
+    }
+  .FormField__input--name {
+    input {
+      box-sizing: border-box;
+      max-width: 300px;
+      padding: 10px;
+      letter-spacing: 1px;
+      margin-top: 10px;
     }
   }
 }

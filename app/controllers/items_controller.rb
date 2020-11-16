@@ -55,7 +55,10 @@ class ItemsController < ApplicationController
     @category_grandchild = @item.category
     @category_child = @category_grandchild.parent
     @category_parent = @category_child.parent
-    
+    @handling_time = @item.handling_time
+    @prefecture = @item.prefecture
+    @description = @item.description
+    @price = @item.price
   end
 
 

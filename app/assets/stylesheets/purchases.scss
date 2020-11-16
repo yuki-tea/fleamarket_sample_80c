@@ -1,3 +1,88 @@
-// Place all the styles related to the purchases controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.purchase{
+  width: 100%;
+  background-color: rgba(236, 236, 236, 0.712);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &_box{
+    height: 100%;
+    width: 100%;
+    margin: 50px 100px;
+    background-color: white;
+    .conf-message{
+      text-align: center;
+      font-size: 30px;
+      line-height: 20vh;
+      height: 20vh;
+      font-weight: 600;
+    }
+
+    .conf-item{
+      height: 20vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &__name{
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 20px;
+      }
+      &__price{
+        text-align: right;
+        padding-right: 30px;
+        font-weight: 600;
+      }
+    }
+      
+    .payment-amount{
+      height: 20vh;
+      font-weight: bold;
+      font-size: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &_name{
+        padding-left: 30px;
+      }
+      &_price{
+        padding-right: 30px;
+      }
+    }
+
+    .payment-method{
+      height: 10vh;
+      line-height: 10vh;
+      font-weight: bold;
+      padding-left: 30px;
+    }
+
+    .payment-card{
+      height: 10vh;
+      padding-left: 30px;
+    }
+    
+    .form{
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .form-btn{
+        padding: 10px 100px;
+        font-size: 20px;
+        border-radius:10px;
+        text-decoration: none;
+        border-style: none;
+        background-color: powderblue;
+      }
+    }
+
+    .border{
+      border-top-color: #efefef;
+      border-left: 0 solid #efefef;
+      border-bottom: 0 solid #efefef;
+      border-right: 0 solid #efefef;
+      border-top-style: solid;
+      margin: 0;
+    }    
+  }
+}

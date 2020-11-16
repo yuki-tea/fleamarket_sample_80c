@@ -47,7 +47,8 @@ $(document).on('turbolinks:load', ()=> {
     // 
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
-    } else {  // 新規画像追加の処理
+    } 
+    else {  // 新規画像追加の処理
       // targetindexではなかったら新しく画像を入れてtargetindexとurlをはる
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
@@ -61,12 +62,19 @@ $(document).on('turbolinks:load', ()=> {
       // 末尾の数に1足した数を追加する
       // push() メソッドは、配列の末尾に 1 つ以上の要素を追加することができます。また戻り値として新しい配列の要素数を返します
       fileIndex.push(fileIndex[fileIndex.length -1 ] + 1);
+    if (img = $(`img[data-index="9"]`)[0]){
+        $('.far.fa-image').css('display', 'none');
+        }
     }
+
+    
 
     $('label').attr('for', 'item_images_attributes_' + [fileIndex[0] - 1]+'_image')
 
     // $("#js-file_group").removeAttr("width");
   });
+
+
 
   $('#image-box').on('click', '.js-remove', function() {
     const targetIndex = $(this).parent().data('index');
@@ -74,10 +82,10 @@ $(document).on('turbolinks:load', ()=> {
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-
     $(`input[data-type= ${targetIndex}]`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     $(`.js-remove[data-index= ${targetIndex}]`).remove();
+
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
