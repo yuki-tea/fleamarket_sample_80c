@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  before_action :item_data, only: [:edit, :update, :destroy, :show]
+  before_action :item_deta, only: [:edit, :update, :destroy, :show]
 
 
   def new
