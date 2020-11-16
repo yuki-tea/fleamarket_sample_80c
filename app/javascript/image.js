@@ -1,33 +1,3 @@
-// $(document).on('turbolinks:load', ()=> {
-//   // 画像用のinputを生成する関数
-//   const buildFileField = (index)=> {
-//     const html = `<div data-index="${index}" class="js-file_group">
-//                     <input class="js-file" type="file"
-//                     name="product[images_attributes][${index}][src]"
-//                     id="product_images_attributes_${index}_src"><br>
-//                     <div class="js-remove">削除</div>
-//                   </div>`;
-//     return html;
-//   }
-
-//   // file_fieldのnameに動的なindexをつける為の配列
-//   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-
-//   $('#image-box').on('change', '.js-file', function(e) {
-//     // fileIndexの先頭の数字を使ってinputを作る
-//     $('#image-box').append(buildFileField(fileIndex[0]));
-//     fileIndex.shift();
-//     // 末尾の数に1足した数を追加する
-//     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-//   });
-
-//   $('#image-box').on('click', '.js-remove', function() {
-//     $(this).parent().remove();
-//     // 画像入力欄が0個にならないようにしておく
-//     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
-//   });
-// });
-
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
@@ -35,7 +5,6 @@ $(document).on('turbolinks:load', ()=> {
                     <input class="js-file" type="file"
                     name="item[images_attributes][${num}][image]"
                     id="item_images_attributes_${num}_image"><br>
-                      <div class="js-remove">削除</div>
                   </div>
                 `;
     return html;
@@ -83,6 +52,10 @@ $(document).on('turbolinks:load', ()=> {
       // targetindexではなかったら新しく画像を入れてtargetindexとurlをはる
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
+      const test1 =`<input  data-index="${targetIndex}" class="hidden-destroy" type="checkbox", name="item[images_attributes][${targetIndex}][_destroy]" id="item_images_attributes_${targetIndex}__destroy" >
+      <div data-index="${targetIndex}" class="js-remove">削除</div>`
+
+      $(this).after(test1)
       $('.select-box').append(buildFileField(fileIndex[0]));
       //shift() メソッドは、配列から最初の要素を取り除き、その要素を返します。このメソッドは配列の長さを変えます。
       fileIndex.shift();
@@ -109,9 +82,10 @@ $(document).on('turbolinks:load', ()=> {
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
+    $(`input[data-type= ${targetIndex}]`).remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
+    $(`.js-remove[data-index= ${targetIndex}]`).remove();
 
-    $(this).parent().remove();
-    $(`img[data-index="${targetIndex - 1}"]`).remove();
 
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));

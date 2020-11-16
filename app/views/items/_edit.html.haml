@@ -14,18 +14,18 @@
         #previews
           - if @item.persisted?
             - @item.images.each_with_index do |image, i|
-              = image_tag image.image.url, data: { index: i}, width: "70", height: '112'
+              = image_tag image.image.url, data: { index: i}, width: "10%", height: '112'
           = f.label :image, for: "item_images_attributes_#{@item.images.count}_image", class: "label-box", id: "label-box--1" do
             %i.far.fa-image
         .select-box
           =  f.fields_for :images do |image, i|
-            .js-file_group{data: {index: image.index}}
-              = image.file_field :image, class: 'js-file' 
+            #js-file_group{data: {index: image.index}}
+              = image.file_field :image, data: {type: image.index}, class: 'js-file' 
             - if @item.persisted? 
               .js-file_group{data: {index: image.index}}
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-                .js-remove 削除
-              
+                .js-remove{data: {index: image.index}} 削除
+                
           - if @item.persisted?
             .js-file_group{data: {index: @item.images.count}}
               = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file', id:"item_images_attributes_#{@item.images.count}_image"
