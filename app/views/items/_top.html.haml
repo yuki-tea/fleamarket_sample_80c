@@ -19,7 +19,7 @@
               %i.far.fa-image
           .select-box
             =  f.fields_for :images do |image|
-              #js-file_group{data: {index: image.index}}
+              .js-file_group{data: {index: image.index}}
 
                 = image.file_field :image, class: 'js-file' 
                 .js-remove 

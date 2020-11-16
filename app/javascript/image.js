@@ -85,6 +85,7 @@ $(document).on('turbolinks:load', ()=> {
     $(`input[data-type= ${targetIndex}]`).remove();
     $(`img[data-index="${targetIndex}"]`).remove();
     $(`.js-remove[data-index= ${targetIndex}]`).remove();
+    $(`input[data-index= ${targetIndex}]`).unwrap();
 
 
     // 画像入力欄が0個にならないようにしておく
