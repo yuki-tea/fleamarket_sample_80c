@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :item_data, only: [:edit, :update, :destroy, :show]
 
 
   def new
@@ -29,12 +30,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
     @category_parent_array = Category.where(ancestry: nil) 
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
       redirect_to item_path(@item), notice: "商品の編集が完了しました"
     else
@@ -43,14 +42,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
 
   def show
     # 商品出品者のidを入れる
-    @item = Item.find(params[:id])
     @user = @item.user
     @category_grandchild = @item.category
     @category_child = @category_grandchild.parent
@@ -64,6 +61,10 @@ class ItemsController < ApplicationController
 
 
   private
+
+  def item_deta
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit( :name, :description, :category_id, :brand, :item_status_id, :shipping_charge_id,:prefecture_id , :handling_time_id,:price, images_attributes: [:image, :id, :_destroy]).merge(user_id: current_user.id)
