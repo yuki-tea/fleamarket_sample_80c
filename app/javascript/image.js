@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', ()=> {
   // 例）fileIndex.splice(0, 4)だったら次に入れるインデックスは5となる。
   fileIndex.splice(0, lastIndex);
   
-  $(`.js-file_group[data-index= "10"]`).remove();
+  $(`.js-file_group[data-index= "10"]`).hide();
   if (img = $(`img[data-index="9"]`)[0]){
     $('.far.fa-image').css('display', 'none');
   }
@@ -69,7 +69,7 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length -1 ] + 1);
       if (img = $(`img[data-index="9"]`)[0]){
         $('.far.fa-image').css('display', 'none');
-        $(`.js-file_group[data-index= "10"]`).remove();
+        $(`.js-file_group[data-index= "10"]`).hide();
       }
       
     }
