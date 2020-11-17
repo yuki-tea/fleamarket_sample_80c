@@ -25,6 +25,11 @@ $(document).on('turbolinks:load', ()=> {
   // fileIndexの0~lastIndexの場所まで削除する。
   // 例）fileIndex.splice(0, 4)だったら次に入れるインデックスは5となる。
   fileIndex.splice(0, lastIndex);
+  
+  $(`.js-file_group[data-index= "10"]`).remove();
+  if (img = $(`img[data-index="9"]`)[0]){
+    $('.far.fa-image').css('display', 'none');
+  }
 
   $('.hidden-destroy').hide();
 
@@ -62,13 +67,15 @@ $(document).on('turbolinks:load', ()=> {
       // 末尾の数に1足した数を追加する
       // push() メソッドは、配列の末尾に 1 つ以上の要素を追加することができます。また戻り値として新しい配列の要素数を返します
       fileIndex.push(fileIndex[fileIndex.length -1 ] + 1);
-    if (img = $(`img[data-index="9"]`)[0]){
+      if (img = $(`img[data-index="9"]`)[0]){
         $('.far.fa-image').css('display', 'none');
         $(`.js-file_group[data-index= "10"]`).remove();
-        }
-    
+      }
+      
     }
+    
 
+    
     
 
     $('label').attr('for', 'item_images_attributes_' + [fileIndex[0] - 1]+'_image')
