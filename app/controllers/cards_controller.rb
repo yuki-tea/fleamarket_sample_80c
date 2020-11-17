@@ -83,7 +83,7 @@ class CardsController < ApplicationController
   end
 
   def card_data
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
   end
 
 end
