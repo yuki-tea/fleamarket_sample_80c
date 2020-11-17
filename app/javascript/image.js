@@ -64,7 +64,9 @@ $(document).on('turbolinks:load', ()=> {
       fileIndex.push(fileIndex[fileIndex.length -1 ] + 1);
     if (img = $(`img[data-index="9"]`)[0]){
         $('.far.fa-image').css('display', 'none');
+        $(`.js-file_group[data-index= "10"]`).remove();
         }
+    
     }
 
     
