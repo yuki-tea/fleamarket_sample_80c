@@ -62,14 +62,14 @@
         必須
     -if @item.persisted?
       .details_selec
-        = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "----", selected: @item.category.parent.parent_id}, {id: "parent"})
+      = f.collection_select(:category_id, Category.where(ancestry: nil), :id, :name, {prompt: "----", selected: @item.category.parent.parent_id}, {class: "details_select"})
       .children
-        = f.collection_select(:category_id, @item.category.parent.parent.children, :id, :name, {prompt: "----", selected: @item.category.parent_id}, {id: "child"})
+      = f.collection_select(:category_id, @item.category.parent.parent.children, :id, :name, {prompt: "----", selected: @item.category.parent_id}, {class: "details_select"})
       .grand_children
-        = f.collection_select(:category_id, @item.category.parent.children, :id, :name, {prompt: "----", selected: @item.category.id}, {id: "grand_child"})
+      = f.collection_select(:category_id, @item.category.parent.children, :id, :name, {prompt: "----", selected: @item.category.id}, {class: "details_select"})
     -else
       .details_selec
-        = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
+      = f.collection_select :category_id, @category_parent_array, :id, :name,{include_blank: "選択してください"}, {class: "serect_field"}
       .append__category
   
 
