@@ -130,9 +130,6 @@ ul {
         line-height: 1.5;
         margin: 16px 0 0;
       }
-      // &--last {
-      //   margin: 16px 0 0;
-      // }
     }
     .list--last {
       width: 30%;
@@ -209,7 +206,6 @@ ul {
       width: 100%;
       margin: 0 auto;
       display: flex;
-      // flex-wrap: wrap;
       .item {
         display: flex;
         flex-direction: column;
