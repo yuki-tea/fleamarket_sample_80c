@@ -29,5 +29,7 @@ class User < ApplicationRecord
   validates :municipality, presence: true
   validates :street_number, presence: true
   validates :telephone_number, presence: false
+  validates :password, presence: true, length: { minimum: 8 }
+  validates :encrypted_password, presence: true, length: { minimum: 8 }
 end
 
