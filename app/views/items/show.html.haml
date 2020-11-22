@@ -48,12 +48,14 @@
                 %tr
                   %th ブランド
                   %td
+                    - if @category_brand.present?
+                      = @category_brand
+                    - else
                 %tr
-                  %th 商品のサイズ
-                  %td
+                  %th 商品の状態
+                  %td=@category_status.name
                 %tr
                   %th 配送料の負担
-
                   %td
                     - if [1].include?(@charge_id)
                       = "送料込み（出品者負担）"
