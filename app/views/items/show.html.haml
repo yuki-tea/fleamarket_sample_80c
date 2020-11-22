@@ -13,8 +13,9 @@
               %li
                 = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1'
                 %ul
-                  %li
-                    = image_tag = image_tag @item.images.first&.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
+                  - @item.images.each do |image|
+                    %li
+                      = image_tag image.image.url, alt: '',  class: 'img-1', alt: '',  class: 'img-2'
           .itemBox__price
             ¥
             %td=@item.price
